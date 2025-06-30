@@ -1,0 +1,119 @@
+<!-- Q.1 What is the purpose of the <table> tag in HTML? -->
+<!-- ANSWER = it is for making an table in html like names id's numbers for making an form like this -->
+
+<!-- Q.2 What is the difference between <td> and <th> tags? -->
+<!-- ANSWER = <td> is for adding an data to an table inside an <tr> tag and <th> is for making an header in <tr> tag -->
+
+ <!--Q.3 What is the role of the <caption> tag in a table? -->
+<!-- ANSWER = it is mainly used for giving an title in table tag -->
+
+<!-- Q.4 Why do we use the <thead>, <tbody>, and <tfoot> tags? -->
+<!-- ANSWER = we used it because it is an semantic tags of table tag (so that serch engine undertsand it properly) -->
+
+<!-- Q.5 How does the cellspacing attribute affect a table’s appearance? -->
+<!-- ANSWER = cellspacing is used for border attribute in html like if we add border = 1 then  -->
+<!-- the border will come but in reality its look like 2 borders so when we give the cellspaing = 0 -->
+<!-- into table then ist makes the table border appearance from 2 lines to 1 border line  -->
+
+<!-- Q.6 What is the purpose of the cellpadding attribute in a table? -->
+<!-- ANSWER = to give the cells an spacing and used also with border as well -->
+
+<!-- Q.7 How can you set the border for a table in HTML? -->
+<!-- ANSWER = so for that we add "border = 1" attribute into the table tag then it will add the border to the table -->
+
+<!-- Q.8 What happens if you set both width and height attributes in a table? -->
+<!-- ANSWER = it will give the table an width and height according to the given amount.-->
+
+<!-- Q.9 How can you apply background color to an entire table or a specific cell? -->
+<!-- ANSWER = we can just add the attribute of it as "bgcolor="blue"" this will give the whole table an blue color  -->
+<!-- but if you want to give it to specific tag you can just select that tag then give the same property to it. -->
+
+<!-- Q.10 What is the use of colspan and rowspan attributes in <td> or <th> tags? -->
+<!-- ANSWER = so lets say there is an cells but you want the specific cell to merge the whole width of cells then you use  -->
+<!-- colspan=1 or any value so this will merge the whole vertical cells. and for horizontally its vise versa -->
+
+<!-- Q.11 Design a structured attendance table using pure HTML that displays the daily attendance status of employees across multiple departments. -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Attendance table</title>
+</head>
+<body>
+	<table border=1 align="center" cellpadding=5px width=100%>
+		<caption>Attendance table</caption>
+		<thead>
+			<tr bgcolor="lightgrey">
+				<th>Department</th>
+				<th>Employee Name</th>
+				<th>Day 1 </th>
+				<th>Day 2 </th>
+				<th>Day 3 </th>
+				<th>Day 4 </th>
+				<th>Day 5 </th>
+				<th>Day 6 </th>
+				<th>Day 7 </th>
+				<th>Day 8 </th>
+				<th>Day 9 </th>
+				<th>Day 10 </th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr bgcolor="lightgreen">
+				<td rowspan=2 bgcolor="white">IT</td>
+				<td bgcolor="white">John Doe</td>
+				<td>Present</td>
+				<td bgcolor="red">Absent</td>
+				<td>Present</td>
+				<td>Present</td>
+				<td bgcolor="red">Absent</td>
+				<td>Present</td>
+				<td>Present</td>
+				<td>Present</td>
+				<td>Present</td>
+				<td bgcolor="red">Absent</td>
+			</tr>
+			<tr bgcolor="lightgreen">
+				<td bgcolor="white">Jane Smith</td>
+				<td>Present</td>
+				<td bgcolor="red">Absent</td>
+				<td>Present</td>
+				<td bgcolor="red">Absent</td>
+				<td bgcolor="red">Absent</td>
+				<td>Present</td>
+				<td bgcolor="red">Absent</td>
+				<td>Present</td>
+				<td>Present</td>
+				<td>Present</td>
+			</tr>
+			<tr bgcolor="lightgreen">
+				<td rowspan=2 bgcolor="white">HR</td>
+				<td bgcolor="white">Alice Johnson</td>
+				<td bgcolor="red">Absent</td>
+				<td bgcolor="red">Absent</td>
+				<td>Present</td>
+				<td>Present</td>
+				<td>Present</td>
+				<td>Present</td>
+				<td>Present</td>
+				<td>Present</td>
+				<td>Present</td>
+				<td>Present</td>
+			</tr>
+			<tr bgcolor="lightgreen">
+				<td bgcolor="white">Bob Williams</td>
+				<td>Present</td>
+				<td bgcolor="red">Absent</td>
+				<td>Present</td>
+				<td bgcolor="red">Absent</td>
+				<td bgcolor="red">Absent</td>
+				<td>Present</td>
+				<td bgcolor="red">Absent</td>
+				<td>Present</td>
+				<td>Present</td>
+				<td>Present</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

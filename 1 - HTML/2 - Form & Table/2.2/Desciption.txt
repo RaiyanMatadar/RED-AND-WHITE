@@ -1,0 +1,8 @@
+<Form> 
+<Select> 
+<Option> 
+<Text Area>
+<Button>
+<Input Type=”Text, Email, Password, Tel, Color, Range, File, Date, Radio(name="xyz"), Checkbox”/>
+
+Button Tag Attribute : Type=”Reset”, Type=”Submit”Required, Selected Attribute

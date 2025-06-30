@@ -1,0 +1,9 @@
+<Img/> <Marquee> <Center> 
+Img Tag Attribute: Src=”.Png/.Jpg/.Gif” Title=”…” Alt=”…” Width=”…” Height=”…”
+
+Marquee Tag Attribute: Direction=”…” Behavior=”…” Scrollamount=”…”
+
+<A Href=” ...” Target=” ...” > Href [Hypertext Reference]
+Bookmark Link, Internal Link & External Link
+
+<Font> Tag Attribute: Face=”...” Color=”...” Size=”...”

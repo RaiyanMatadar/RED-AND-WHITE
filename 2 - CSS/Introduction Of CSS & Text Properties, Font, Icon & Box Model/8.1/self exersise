@@ -1,0 +1,66 @@
+✅ CSS Types
+What is the difference between Internal, Inline, and External CSS? Give one advantage of each.
+1)internal css: we align it within the html file below the title tag as <style> </style>. its helpful
+                when we want to add css into 1 single file with html
+  
+2)inline css: we align the as <h1 style="color:red;">hello</h1>. its helps when we want an single 
+              element to give some specific decoration
+
+3)External css: we make diffrent file of css then we attach itwith html using <link href="style.css"           rel="stylesheet" type="text/css"/>. its can be helpful if the css is so large then we should use this method.
+
+Write an example of each CSS type (Internal, Inline, and External) using an <h1> tag.
+internal css: <h1>Hello World!</h1>   
+            <style> 
+                h1 {
+                    color:red;
+                }    
+            </style> 
+
+inline css: <h1 style="color:red;">Hello World!</h1>   
+
+external css: <h1>Hello World!</h1>
+              <link href="style.css" rel="stylesheet" type="text/css"/>
+
+✅ Text Properties
+What does the line-height property do, and how does it affect paragraph readability?
+lets say we wrote an header with paragraph so if we want to give space in-between or making it bit closer to each other we use line-hight property 
+
+Differentiate between letter-spacing and word-spacing with examples.
+letter-spacing gives space between each letter and word-spacing gives space between each word.
+
+Which CSS property would you use to make all letters in a heading appear in uppercase, and how?
+we can use transform property 
+header {
+    transform: uppercase; 
+}
+
+How do font-style and font-weight differ? Provide one use-case of each.
+font-style used for changing the font style og the font like italic etc
+font-weight is fot making the font bolder deppend on the value of it 
+
+What does the text-indent property do? Write a rule to indent the first line of a paragraph by 40px.
+it gives the space on the starting of the paragraph. 
+p {
+    text-indent:40px;
+}
+
+✅ CSS Selectors (Apply)
+How do tag, class, and ID selectors differ in syntax and usage? Provide one example of each.
+tag :
+<h1>Hello world</h1>    then h1 {  css content goes here }
+<h1 class="C1">Hello world</h1>    then .C1 {  css content goes here }
+<h1 id="I1">Hello world</h1>    then #I1 {  css content goes here }
+
+What is the priority order of selectors: Inline, Internal, External, Class, ID, and Tag?
+1 inline
+2 id
+3 class
+4 tag
+5 internal 
+6 external
+
+✅ Miscellaneous
+List three text-related properties that improve the visual spacing and readability of text content on a webpage.
+word-spacing:10px;
+text-decoration:italian;
+font-weight:800;

@@ -1,0 +1,4 @@
+HTML & HTML5 Difference... (HTML 2/3/4/4.1)
+HTML5 Tag: <Header> <Nav> <Section> <Footer> <Iframe> <Audio> <Video>Video, 
+
+Audio Tag Attribute : Controls, Muted, Loopsource Tag Attribute : Like Rel=”...” Type=”...”

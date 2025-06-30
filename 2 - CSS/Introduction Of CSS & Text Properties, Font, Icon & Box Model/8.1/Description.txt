@@ -1,0 +1,15 @@
+Introduction Of CSS
+
+- CSS Type : 
+Internal, Inline, External CSS
+
+- Text Properties : 
+font-family, font-size, font-weight, text-align, line-height, 
+letter-spacing, word-spacing, text-decoration, font-style, 
+text- transform, text-indent, color, list-style
+
+- CSS Apply : 
+<tag>, .class, #id
+
+- Ex : 
+CSS Type & Text Properties Practice
