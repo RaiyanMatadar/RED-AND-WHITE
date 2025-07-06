@@ -1,0 +1,15 @@
+Selector
+div,P, 
+Div P, 
+Div > P:First Letter,
+
+   = space (parent child selector)
+ , = two class property
+ > = all child selector
+ + = parent outside  HTML one element
+ ~ = all outside same elements
+
+
+
+ :First Line, :First Child, :LastChild, :Nth Child(), :Nth Last Child(), ::Selection
+

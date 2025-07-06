@@ -1,0 +1,53 @@
+🔤 Font Attachment (Offline)
+What is the correct syntax to attach an offline font using @font-face in CSS?
+@font-face {
+    font-family: 'Mulish';
+    src: url('Mulish-BlackItalic.woff2') format('woff2'),
+        url('Mulish-BlackItalic.woff') format('woff');
+	<!-- THIS IS AN woff type>
+	
+    src: url('Mulish-BlackItalic.woff2') format('woff2'),
+        url('Mulish-BlackItalic.woff') format('woff');
+	<!-- THIS IS AN ttf type>
+	
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+Example: Using a .ttf or .woff file stored in a local fonts/ folder.
+
+
+Why is it recommended to include multiple font formats like .ttf, .woff, and .woff2 when using offline fonts?
+ Hint: Think about browser compatibility.
+because if there are more formats of the font type than it can be significanlty easier for the browser to 
+render the text like if some xyz browser dosent support an format than with more formats it can use the other formats
+for rendering the text.
+
+What are the advantages of using offline fonts instead of web-hosted fonts like Google Fonts?
+because when we use online then the font are coming from the diffrent webpage so if that webpage gets server issue or any other 
+errors occures then its gonna afect our website but when we use the offline then its just hosted with the source code of the web
+so the chances of it to get an error becomes significantly lesser comparing to the online 
+
+🎯 IcoMoon Integration
+What steps are involved in generating a custom icon pack using IcoMoon and integrating it into your HTML project offline?
+After downloading the IcoMoon font pack, which files must be linked in your project to make the icons work properly?
+How can you customize the color and size of an IcoMoon icon using CSS? Provide a code example.
+
+🔗 Remix Icon Attachment
+How do you add Remix Icon to your project using a CDN, and what is the syntax to use an icon?
+ Example: Show how you'd add a search or mail icon.
+Can Remix Icon be used offline? If so, how would you download and attach it?
+
+💠 Font Awesome & SVG Favicon
+What is the difference between fas, far, and fab in Font Awesome? Give one example of each.
+fas : font awsome solid 
+far : font awsome regular
+fab : font awsome brand
+
+<i class="fas-fa-user"></i>
+<i class="far-fa-user"></i>
+<i class="fab-fa-user"></i>
+
+How do you attach a custom SVG file as a favicon? Show the correct HTML code snippet.
+<link type="img/svg.icon" rel="icon" href="favicon.svg"/>
+ Bonus: What are the benefits of using SVG over PNG for favicons?

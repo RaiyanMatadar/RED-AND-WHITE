@@ -1,0 +1,6 @@
+Box Model
+
+- width, height, background-color, content, padding, box-sizing, margin, border, border-radius
+
+- Ex : Create Box Design (Padding, Margin, Content, Border)
+

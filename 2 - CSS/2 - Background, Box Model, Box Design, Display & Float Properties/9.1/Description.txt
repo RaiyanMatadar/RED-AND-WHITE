@@ -1,0 +1,7 @@
+Background Image, size, repeat, position, attachment
+
+- Types Of Gradient : Linear, Radial, Conic
+
+-Two class Property , Parent-child Property
+
+- Ex : Create Parallax Scrolling Effect

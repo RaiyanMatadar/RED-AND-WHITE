@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    background-color: rgba(165, 165, 165, 0.386);
+    padding: 20px;
+}
+
+body {
+  height: 900px;
+}
+
+.image1 {
+  width: 100%;
+  height: 400px;
+  background-image: url('Images/car.png');
+  background-size:300px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.image2 {
+  width: 100%;
+  height: 400px;
+  background-image: url('Images/car2.png');
+  background-size:300px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.nature {
+  width: 100%;
+  height: 500px;
+  background-image: url('Images/nature.jpg');
+  background-attachment: fixed;
+}
+
+.nature2 {
+  width: 100%;
+  height: 500px;
+  background-image: url('Images/nature2.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.gradient {
+  width: 100%;
+  height: 300px;
+  background: linear-gradient(yellow,gold,orange,purple);
+  background-attachment: fixed;
+}
+
+
+.gradient2 {
+  width: 100%;
+  height: 300px;
+  background: radial-gradient(red,green,blue);
+  background-attachment: fixed;
+}
+
+
+.gradient3 {
+  width: 100%;
+  height: 300px;
+  background: conic-gradient(darkgreen,pink,lightblue);
+  background-attachment: fixed;
+}

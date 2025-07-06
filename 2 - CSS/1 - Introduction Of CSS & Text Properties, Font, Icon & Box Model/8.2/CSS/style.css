@@ -1,0 +1,19 @@
+body {
+    text-align: center;
+    font-family: 'Mulish';
+    background-color: lightsteelblue;
+}
+
+.subtitle {
+    line-height: 5px;
+    text-transform: uppercase;
+}
+
+.subtitle p {
+    color: cadetblue;
+    font-style: italic;
+}
+
+.title {
+    text-decoration: underline;
+}
