@@ -1,0 +1,7 @@
+Before, After, Transform, Hover & Transition
+
+- Transform Property : translate, rotate, scale, skew
+
+Hover - :hover
+
+- Transition Property : duration, timing-function, delay, property

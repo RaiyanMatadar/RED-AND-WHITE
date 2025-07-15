@@ -1,0 +1,7 @@
+Display Flex 
+
+(Parent Property)
+Justify-Content 
+(Flex-Start, Flex-End, Center, Space-Between, Space-Around, Space-Evenly)
+Align-Items (Stretch, Center, Flex-Start, Flex-End, Baseline)
+Align-Content (Stretch, Center, Flex-Start, Flex-End, Space-Between, Space-Around, Space-Evenly)

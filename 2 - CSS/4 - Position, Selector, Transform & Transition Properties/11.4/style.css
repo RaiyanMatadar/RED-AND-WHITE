@@ -1,0 +1,305 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html , body {
+    background-color: rgb(238, 238, 238);
+    width: 100%;
+    height: 100vh;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+}
+
+/* NAVBAR SECTION  */
+.nav-head{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 700;
+    padding: 20px;
+    text-align: center;
+    background-color: darkblue;
+    color: whitesmoke;
+}
+
+.nav-head p {
+    padding: 15px;
+    font-weight: 100;
+}
+
+/* LAYERED PROFILE CARDS SECTION */
+h2 {
+    font-size: 30px;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 10px;
+}
+
+.container {
+    width: 100%;
+    height: 300px;
+    position: relative;
+}
+
+.Profile1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    text-align: center;
+    width: 20%;
+    height: 200px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: lightgrey 0 0 10px;
+}
+
+
+.Profile1 img {
+    border-radius:50%;
+    border: 3px solid gold;
+    object-fit:cover;
+    
+}
+
+.Profile1 strong {
+    font-size: 30px;
+}
+
+
+.Profile1 p {    
+    margin: 20px;
+    color: lightslategray;
+}
+
+
+.Profile2 {
+    position: absolute;
+    top: 0;
+    left: 270px;
+
+    text-align: center;
+    width: 20%;
+    height: 200px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: lightgrey 0 0 10px;
+}
+
+
+.Profile2 img {
+    border-radius:50%;
+    border: 3px solid gold;
+    object-fit:cover;
+    
+}
+
+.Profile2 strong {
+    font-size: 30px;
+}
+
+
+.Profile2 p {    
+    margin: 20px;
+    color: lightslategray;
+}
+
+
+/* QUICK FLASH CARD SECTION  */
+
+h6 {
+    font-size: 30px;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 10px;
+}
+
+.container2 {
+    width: 300px;
+    height: 100px; 
+    margin: 20px;
+    perspective: 1000px;
+}
+
+.inner {
+    width: 100%;
+    height: 100%;
+    transition: all 1s linear;
+    transform-style: preserve-3d;
+    position: relative;
+}
+ 
+.element1,
+.element2 {
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight:800;
+    text-align: center;
+    line-height: 100px;
+    width: 100%;
+    height: 100%;
+    background-color: brown;
+    position: absolute;
+    backface-visibility: hidden;
+
+}
+
+.container2:hover .inner {
+    transform: rotateY(180deg);
+}
+
+.element2 {
+    background-color: gold;
+    transform: rotateY(180deg);
+}
+
+.element3,
+.element4 {
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight:800;
+    text-align: center;
+    line-height: 100px;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(42, 165, 67);
+    position: absolute;
+    backface-visibility: hidden;
+
+}
+
+.container2:hover .inner {
+    transform: rotateY(180deg);
+}
+
+.element4 {
+    background-color: rgb(121, 10, 200);
+    transform: rotateY(180deg);
+}
+
+
+
+.pos {
+    display: flex;
+    flex-direction: row;
+}
+
+/* CREATIVE BUTTON */
+
+h3 {
+    font-size: 30px;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 10px;
+}
+
+
+.container3 {
+    width: 100%;
+    height: 300px;
+    position: relative;
+}
+
+.Button1 {
+    width: 250px;
+    height: 80px;
+    position: relative;
+    background-color: blue;
+    margin-left: 20px;
+    border-radius: 35px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    color: whitesmoke;
+    overflow: hidden;
+    border: 0;
+    z-index: 1; 
+}
+
+.Button1 p {
+    position: relative;
+    z-index: 2;
+    line-height: 80px;
+    margin: 0;
+}
+
+.Button1::after {
+    content: '';
+    position: absolute;
+    background-color: gold;
+    width: 250px;
+    height: 80px;
+    top: 0;
+    left: -100%;
+    border-radius: 35px;
+    transition: all 1s linear;
+    
+}
+
+.Button1:hover::after {
+    left: 0;
+}
+
+
+.Button2 {
+     width: 250px;
+    height: 80px;
+
+    position: absolute;
+/* 
+    padding-top: 22px;
+    margin-top: 70px;
+    margin-left: 300px; */
+    margin-left: 50px;    
+
+    color: white;
+    background-color: blueviolet;
+    font-weight: 600;
+    border-radius: 35px;
+    line-height: 80px;
+    text-align: center;
+    font-size: 30px;
+    transition:all 0.5s linear;
+}
+
+.Button2:hover {
+    box-shadow: green 0 0 10px;
+    color: lightgreen;
+    background-color: green;
+}
+
+
+h4 {
+    font-size: 30px;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 10px;
+}
+
+
+/* Interactive Image Gallary */
+.container4 {
+    display: flex;
+    flex-direction: row;
+    padding: 30px;
+    gap: 50px;
+    width: 100%;
+    height: 300px;
+}
+
+.container4 div {
+    width: 300px;
+    height: 200px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: grey 0 0 5px;
+}
+
+.Image img{
+    transition: all 1s linear;
+}
+
+.Image img:hover {
+    transform:rotate(3deg);
+}

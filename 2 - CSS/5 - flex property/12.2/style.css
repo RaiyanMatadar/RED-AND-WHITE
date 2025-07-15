@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: grey;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: whitesmoke;
+}
+
+p {
+    margin: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin: 10px;
+}
+
+.main {
+    width: 100%;
+    height: 550px;
+    background-color: black;
+    display: flex;
+ 
+}
+
+.box {
+    background-color: gold;
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    font-size: 20px;
+    line-height: 80px;
+    margin: 5px;
+}
+
+.flex-start {
+    justify-content: flex-start;
+}
+
+
+
+.flex-end {
+    justify-content: flex-end;
+}
+
+.flex-center {
+    justify-content: center;
+}
+
+.space-evenly {
+    justify-content: space-evenly;
+} 
+
+.space-around {
+    justify-content: space-around;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.align-flex-start {
+    align-content: flex-start;
+    flex-wrap:wrap;
+}
+
+.align-flex-end {
+    align-content: flex-end;
+    flex-wrap:wrap;
+
+}
+
+.align-center {
+    align-content: center;
+    flex-wrap:wrap;
+}
+
+
+.align-strech {
+    align-content: stretch;
+    flex-wrap:wrap;
+}
+
+.align-space-between {
+    align-content: space-between;
+    flex-wrap: wrap;
+}
+
+.space-around {
+    align-content: space-around;
+    flex-wrap: wrap;
+}
+
+.space-evenly {
+    align-content: space-evenly;
+    flex-wrap: wrap;
+}
