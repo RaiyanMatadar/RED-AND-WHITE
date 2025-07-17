@@ -40,7 +40,7 @@ li {
 
 a {
     text-decoration: none;
-    /* display: inline-block; */
+    display: inline-block;
 }
 
 img {
@@ -53,7 +53,7 @@ to place where we gonna define the classes
 - the classes are belowed */
 
 .container {
-    max-width: 1200px;
+    max-width: 1250px;
     margin: 0 auto;
     padding: 0 15px;
 }
@@ -119,138 +119,29 @@ to place where we gonna define the classes
 /* Main CSS start here  */
 
 /* Navbar section*/
-
 header {
     padding: 20px 0;
-    height: 70px;
     position:absolute;
-    width: 100%;
     z-index: 9;
-
+    width: 100%;
 }
 
-nav ul {
-    gap: 30px;
-    font-size: larger;
+.header-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
-nav ul li a {
-    color: whitesmoke;
+.menu li{
+    color:var(--light-color);
+    margin: 0 20px;
     font-weight: 600;
-    
 }
 
-nav ul li button {
-    width: 90px;
-    height: 40px;
+ .menu ul li:nth-child(6) button,
+.title-btn button{
+    padding: 15px 35px;
     border-radius: 5px;
-    border: 0;
-    font-weight: 600;
-    color: var(--light-color);
-    /* background-color: transparent; */
-}
-
-nav ul li:nth-child(6){
-    margin-left: 30px;
-}
-
-nav ul li:nth-child(6) 
-button {
-    background-color: var(--object-color);
-    position: relative;
-    overflow: hidden;
-    z-index: 5;
-
-}
-
-nav ul li:nth-child(6) 
-button::after {
-    content: '';
-    position: absolute;
-    background-color: var(--theme-color);
-    width: 100%;
-    height: 100%;
-    left: -100%;
-    top: 0;
-    z-index: -1;
-}
-
-
-nav ul li:nth-child(6) 
-button:hover::after {
-    left: 0%;
-    top: 0;
-    
-    transition: all 0.3s ease-in-out;
-}
-
-
-
-nav ul li:nth-child(7) 
-button {
-    background-color:transparent;
-    position: relative;
-    overflow: hidden;
-    z-index: 5;
-    border: 1px solid whitesmoke;
-}
-
-nav ul li:nth-child(7) 
-button::after {
-    content: '';
-    position: absolute;
-    background-color: var(--object-color);
-    width: 100%;
-    height: 100%;
-    left: -100%;
-    top: 0;
-    z-index: -1;
-}
-
-
-nav ul li:nth-child(7) 
-button:hover::after {
-    left: 0%;
-    top: 0;
-    
-    transition: all 0.3s ease-in-out;
-}
-
-
-.top-title {
-    width: 100%;
-    height: 600px;
-    background-image:url(images/h1_hero.png);
-    background-repeat: no-repeat;
-    background-size:auto;
-    background-position: top;
-    position: relative;
-}
-
-section .container {
-    position: absolute;
-    top: 20%;
-    left: 5%;
-}
-
-.banner h1 {
-    font-size: 50px;
-    line-height: 60px;
-
-    margin-bottom: 20px;
-    color: var(--light-color);
-}
-
-.banner p {
-    line-height: 30px;
-    width: 66%;
-    margin-bottom: 10px;
-    color: var(--light-color);
-}
-
-.banner button {
-    padding: 15px 50px;
-    border-radius: 10px;
     border: none;
     color: var(--light-color);
     font-weight: 600;
@@ -261,7 +152,8 @@ section .container {
 
 }
 
-.banner button::after {
+.menu ul li:nth-child(6) button::after,
+.title-btn button::after {
     content: '';
     position: absolute;
     background-color: var(--theme-color);
@@ -272,43 +164,108 @@ section .container {
     z-index: -1;
 }
  
-.banner button:hover::after {
+.menu ul li:nth-child(6) button:hover::after,
+.title-btn button:hover::after {
     left: 0%;
     top: 0;
     
     transition: all 0.3s ease-in-out;
 }
 
+
+ .menu ul li:last-child button{
+    padding: 15px 33px;
+    border-radius: 5px;
+    border: 1px solid var(--light-color);
+    color: var(--light-color);
+    font-weight: 600;
+    background-color: transparent;
+    position: relative;
+    overflow: hidden;
+    z-index: 5;
+
+}
+
+.menu ul li:last-child button::after {
+    content: '';
+    position: absolute;
+    background-color: var(--theme-color);
+    width: 100%;
+    height: 100%;
+    left: 100%;
+    top: 0;
+    z-index: -1;
+}
+ 
+.menu ul li:last-child button:hover::after {
+    left: 0%;
+    top: 0;
+    
+    transition: all 0.3s ease-in-out;
+}
+
+/* Top-Title-section */
+main #first-section{
+    background-image: url(images/h1_hero.png);
+    background-repeat: no-repeat;
+    background-position: top;
+    height: 800px;
+    position: relative;
+}
+
+.Top-Title-section {
+    position: absolute;
+    top: 25%;
+    left: 10%;
+}
+
+.title h1 , p {
+    padding: 15px 0;
+}
+
+.title h1{
+    color: var(--light-color);
+    font-size:60px;
+    line-height: 70px;
+}
+
+.title p {
+    color: var(--light-color);
+    font-weight: 500;
+    line-height: 30px;
+}
+
+ .title-btn button{
+    padding: 17px 40px;
+} 
+
+
 /* Features Section */
 
 .width-content-3 {
+    padding: 10px 10px;    
+    margin: 20px;
+    background-color:var(--light-color);
+    min-width: 300px;
+    max-width: 300px;
     background-color: var(--light-color);
-    padding: 20px 30px;
-    margin: 20px 20px;
-    border-radius: 15px;
-    min-width: 200px;
-    max-width: 370px;
-    box-shadow: 0 0 10px -5px;
-    transform: translateY(-60%);
-
-}
- 
-.width-content-3,
-img, 
-h2 , p{
-    margin: 10px;
-    padding: 5px;    
-    align-content: center;
-    color: var(--text-main);
+    border-radius: 10px;
+    transform: translateY(-50%);
+    box-shadow: 0 0px 7px -4px;
 }
 
-.feature-img {
-    transform: translateY(+10%);
-    padding-right: 5px;
-} 
+.features-img,
+.features-content {
+    padding: 5px;
+}
 
-/* Courses */
+/* Courses Section */
+
 .course-title {
+    color: var(--text-main);
     text-align: center;
-    font-size: 30px;
+    font-size: 40px;
+    margin: 50px 0;
+    /* padding-bottom: 20%; */
 }
+
