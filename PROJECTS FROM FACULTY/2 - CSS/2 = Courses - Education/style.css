@@ -40,7 +40,7 @@ li {
 
 a {
     text-decoration: none;
-    /* display: inline-block; */
+    display: inline-block;
 }
 
 img {
@@ -53,9 +53,13 @@ to place where we gonna define the classes
 - the classes are belowed */
 
 .container {
-    max-width: 1200px;
+    max-width: 1250px;
     margin: 0 auto;
     padding: 0 15px;
+}
+
+.text-center {
+    text-align: center;
 }
 
 /* Flex classes */
@@ -119,138 +123,36 @@ to place where we gonna define the classes
 /* Main CSS start here  */
 
 /* Navbar section*/
-
 header {
     padding: 20px 0;
-    height: 70px;
     position:absolute;
-    width: 100%;
     z-index: 9;
-
+    width: 100%;
 }
 
-nav ul {
-    gap: 30px;
-    font-size: larger;
+.header-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
-nav ul li a {
-    color: whitesmoke;
+.menu li{
+    color:var(--light-color);
+    margin: 0 20px;
     font-weight: 600;
-    
 }
 
-nav ul li button {
-    width: 90px;
-    height: 40px;
+.menu li a {
+    color: var(--light-color);
+}
+
+ .menu ul li:nth-child(6) button,
+.title-btn button,
+.course-btn button,
+.explore-btn button,
+.about-area-3-btn button{
+    padding: 15px 35px;
     border-radius: 5px;
-    border: 0;
-    font-weight: 600;
-    color: var(--light-color);
-    /* background-color: transparent; */
-}
-
-nav ul li:nth-child(6){
-    margin-left: 30px;
-}
-
-nav ul li:nth-child(6) 
-button {
-    background-color: var(--object-color);
-    position: relative;
-    overflow: hidden;
-    z-index: 5;
-
-}
-
-nav ul li:nth-child(6) 
-button::after {
-    content: '';
-    position: absolute;
-    background-color: var(--theme-color);
-    width: 100%;
-    height: 100%;
-    left: -100%;
-    top: 0;
-    z-index: -1;
-}
-
-
-nav ul li:nth-child(6) 
-button:hover::after {
-    left: 0%;
-    top: 0;
-    
-    transition: all 0.3s ease-in-out;
-}
-
-
-
-nav ul li:nth-child(7) 
-button {
-    background-color:transparent;
-    position: relative;
-    overflow: hidden;
-    z-index: 5;
-    border: 1px solid whitesmoke;
-}
-
-nav ul li:nth-child(7) 
-button::after {
-    content: '';
-    position: absolute;
-    background-color: var(--object-color);
-    width: 100%;
-    height: 100%;
-    left: -100%;
-    top: 0;
-    z-index: -1;
-}
-
-
-nav ul li:nth-child(7) 
-button:hover::after {
-    left: 0%;
-    top: 0;
-    
-    transition: all 0.3s ease-in-out;
-}
-
-
-.top-title {
-    width: 100%;
-    height: 600px;
-    background-image:url(images/h1_hero.png);
-    background-repeat: no-repeat;
-    background-size:auto;
-    background-position: top;
-    position: relative;
-}
-
-section .container {
-    position: absolute;
-    top: 20%;
-    left: 5%;
-}
-
-.banner h1 {
-    font-size: 50px;
-    line-height: 60px;
-
-    margin-bottom: 20px;
-    color: var(--light-color);
-}
-
-.banner p {
-    line-height: 30px;
-    width: 66%;
-    margin-bottom: 10px;
-    color: var(--light-color);
-}
-
-.banner button {
-    padding: 15px 50px;
-    border-radius: 10px;
     border: none;
     color: var(--light-color);
     font-weight: 600;
@@ -261,7 +163,11 @@ section .container {
 
 }
 
-.banner button::after {
+.menu ul li:nth-child(6) button::after,
+.title-btn button::after,
+.course-btn button::after,
+.explore-btn button::after,
+.about-area-3-btn button::after{
     content: '';
     position: absolute;
     background-color: var(--theme-color);
@@ -272,43 +178,453 @@ section .container {
     z-index: -1;
 }
  
-.banner button:hover::after {
+.menu ul li:nth-child(6) button:hover::after,
+.title-btn button:hover::after,
+.course-btn button:hover::after,
+.explore-btn button:hover::after,
+.about-area-3-btn button:hover::after{
     left: 0%;
     top: 0;
     
     transition: all 0.3s ease-in-out;
 }
 
-/* Features Section */
 
-.width-content-3 {
-    background-color: var(--light-color);
-    padding: 20px 30px;
-    margin: 20px 20px;
-    border-radius: 15px;
-    min-width: 200px;
-    max-width: 370px;
-    box-shadow: 0 0 10px -5px;
-    transform: translateY(-60%);
+ .menu ul li:last-child button{
+    padding: 15px 33px;
+    border-radius: 5px;
+    border: 1px solid var(--light-color);
+    color: var(--light-color);
+    font-weight: 600;
+    background-color: transparent;
+    position: relative;
+    overflow: hidden;
+    z-index: 5;
 
+}
+
+.menu ul li:last-child button::after {
+    content: '';
+    position: absolute;
+    background-color: var(--theme-color);
+    width: 100%;
+    height: 100%;
+    left: 100%;
+    top: 0;
+    z-index: -1;
 }
  
-.width-content-3,
-img, 
-h2 , p{
-    margin: 10px;
-    padding: 5px;    
-    align-content: center;
-    color: var(--text-main);
+.menu ul li:last-child button:hover::after {
+    left: 0%;
+    top: 0;
+    
+    transition: all 0.3s ease-in-out;
 }
 
-.feature-img {
-    transform: translateY(+10%);
-    padding-right: 5px;
+/* Top-Title-section */
+main #first-section{
+    background-image: url(images/h1_hero.png);
+    background-repeat: no-repeat;
+    background-position: top;
+    height: 800px;
+    /* position: relative; */
+}
+
+.Top-Title-section {
+    /* position: absolute; */
+    position: relative;
+    width: 100%;
+    height: 800px;
+    /* top: 25%; */
+    /* left: 10%; */
+}
+
+.Top-title-content {
+    position: absolute;
+    top: 20%;
+}
+
+.title h1 , p {
+    padding: 15px 0;
+}
+.title h1{
+    color: var(--light-color);
+    font-size:60px;
+    line-height: 70px;
+}
+
+.title p {
+    color: var(--light-color);
+    font-weight: 500;
+    line-height: 30px;
+}
+
+ .title-btn button{
+    padding: 17px 40px;
 } 
 
-/* Courses */
+
+/* Features Section */
+.features
+.width-content-3 {
+    padding: 10px 10px;    
+    margin: 20px;
+    background-color:var(--light-color);
+    min-width: 300px;
+    max-width: 300px;
+    background-color: var(--light-color);
+    border-radius: 10px;
+    transform: translateY(-50%);
+    box-shadow: 0 0px 7px -4px;
+}
+
+.features-img,
+.features-content {
+    padding: 5px;
+}
+
+/* Courses Section */
+
 .course-title {
+    color: var(--text-main);
     text-align: center;
-    font-size: 30px;
+    font-size: 40px;
+    margin: 50px 0;
+}
+
+.course-captions p {
+    color: var(--text-other);
+}
+
+.course-captions a {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.courses .width-content-3 {
+    margin: 20px;
+    min-width: 300px;
+    max-width: 350px;
+    box-shadow: 0 0px 5px -2px;
+    border-radius: 10px;
+}
+
+.courses-content {
+    padding: 10px;
+}
+
+
+.course-ratting i{
+    width: 20px;
+    color: var(--object-color);
+}
+
+.review i {
+    color: var(--object-color);
+    padding-right: 10px;
+}
+
+.review {
+    color: var(--text-other);
+} 
+
+
+.course-feedback div p{
+    color: var(--text-main);
+    font-size: 20px;
+    font-weight: 700;
+} 
+
+.course-captions,
+.course-ratting ,
+.course-feedback,
+.course-button  {
+    padding: 10px;
+}
+
+.course-ratting {
+    margin-bottom: -30px;
+}
+
+.course-btn button{
+    width: 80%;
+    height: 40px; 
+    margin-bottom: 20px;
+}
+
+/* About Area (Learn new skills online) */
+.about-area-content {
+    padding: 50px 0;
+
+}
+
+.about-area-content h2 {
+    color: var(--text-main);
+    line-height: 30px;
+    padding: 10px 0;
+}
+
+.about-area-content p {
+    line-height: 30px;
+    color: var(--text-other);
+}
+
+.about-area-content li {
+    font-size: 14px;
+    line-height: 30px;
+}
+
+
+.about-area-content li i {
+    font-size: 14px;
+    padding-right: 15px;
+}
+
+
+.about-area-content li i {
+    color: var(--object-color);
+}
+ 
+.about-area-video-icon{
+    color: var(--object-color);
+    font-size: 100px;    
+}
+
+.About-Area
+.about-area-video-icon {
+    align-content: center;
+    text-align: center;
+    height: 400px;
+}
+
+.About-Area .width-content-2 {
+    min-width: 400px;
+}
+
+/* .Explore top subjects  */
+
+.Explore-subject {
+    color: var(--text-main);
+    text-align: center;
+    font-size: 40px;
+    margin: 50px 0;
+}
+
+.Explore-subject .row-wrap {
+    justify-content: center;
+}
+
+.width-content-4 {
+    min-width: 230px;
+    padding: 10px 20px;
+}
+
+.explore-content {
+    position: relative;
+    overflow: hidden;
+}
+
+.explore-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    transition: 0.3s ease-in-out;
+}
+
+.explore-content:hover::before {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.explore-content p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color:var(--light-color);
+    font-weight: 800;
+    font-size: 20px;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    z-index: 2;
+}
+
+.explore-content:hover p {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+.explore-btn button {
+    padding: 20px 40px;
+}
+
+/* About Area - 2  */
+
+.About-Area-2 {
+    margin: 150px 0 0 0;
+}
+
+
+.about-area-2-content {
+    padding: 50px 40px;
+
+}
+
+.about-area-2-content h2 {
+    color: var(--text-main);
+    line-height: 50px;
+    padding: 10px 0;
+    font-size: 40px;
+}
+
+
+.about-area-2-content li {
+    font-size: 15px;
+    line-height: 30px;
+    padding: 7px 0;
+}
+
+
+.about-area-2-content li i {
+    font-size: 14px;
+    padding-right: 15px;
+}
+
+
+.about-area-2-content li i {
+    color: var(--object-color);
+}
+
+.About-Area-2 .width-content-2 {
+    min-width: 400px;
+    align-items: center;
+}
+
+/* Community experts */
+
+
+.Community-experts-title {
+    color: var(--text-main);
+    text-align: center;
+    font-size: 40px;
+    margin: 50px 0;
+}
+
+.experts-content {
+    text-align: center;
+}
+
+.experts-content h3 {
+    color: var(--text-main);
+    font-size: 20px;
+    padding: 10px 0;
+}
+
+.experts-content p {
+    color: var(--text-other);
+    font-size: 15px;
+    text-align: center;
+}
+
+.Community-experts .width-content-4 {
+    min-width: 300px;
+    max-width: 350px;
+}
+
+/* About Area - 3 */
+
+
+.About-Area-3 {
+    margin: 150px 0 0 0;
+}
+
+
+.about-area-3-content {
+    padding: 50px 40px;
+
+}
+
+.about-area-3-content h2 {
+    color: var(--text-main);
+    line-height: 50px;
+    padding: 10px 0;
+    font-size: 40px;
+}
+
+.about-area-3-content p {
+    color: var(--text-main);
+    line-height: 25px;
+}
+
+.About-Area-3 .width-content-2 {
+    min-width: 400px;
+    max-width: 600px;
+    align-items: center;
+}
+
+/* Footer section */
+footer {
+    background-color: var(--text-main);
+    width: 100%;
+    height: auto;
+    margin-top: 80px;
+}
+
+.Footer {
+    padding: 50px 0;
+}
+
+.footer-logo {
+    margin-bottom: 20px;
+}
+
+.footer-Paragraph p {
+    padding: 0;
+    line-height: 24px;
+    margin-bottom: 50px;
+    color: var(--light-color);
+}
+
+.footer-icons i {
+    font-size: 20px;
+    margin: 10px;
+    background-color: rgba(128, 128, 128, 0.432);
+    border-radius: 50px;
+    padding: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.footer-icons i:hover {
+    background-color: var(--object-color);
+    color: var(--light-color);
+}
+
+.footer-title h3 {
+    font-size: 28px;
+    color: var(--light-color);
+    margin-bottom: 20px;
+}
+
+.footer-links a{
+    color: var(--light-color);
+    font-size: 16px;
+    line-height: 40px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+} 
+
+.Footer .width-content-4 {
+    min-width: 300px;
+    max-width: 350px;
+} 
+
+.footer-copyright p{
+    text-align: center;
+    color: var(--light-color);
 }
