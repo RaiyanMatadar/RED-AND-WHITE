@@ -1,0 +1,62 @@
+/* XXL */
+
+@media (max-width: 1500px) {
+    .container {
+        max-width: 1320px;
+    }
+
+    .width-XXL-5 {
+        width: 20%;
+    }
+}
+
+/* XL */
+@media (max-width: 1400px) {
+    .container {
+        max-width: 1140px;
+    }
+
+    .width-XL-4 {
+        width: 25%;
+    }
+}
+
+/* LG */
+@media (max-width:1199px) {
+    .container {
+        max-width: 960px;
+    }
+
+    .width-LG-3 {
+        width: 33.33%;
+    }
+}
+
+/* MD */
+@media (max-width:991px){
+    .container {
+        max-width: 720px;
+    }
+
+    .width-LG-2{
+        width: 50%;
+    }
+}
+
+/* SM */
+@media (max-width:767px){
+    .container {
+        max-width: 540px;
+    }
+}
+
+/* XS */
+@media (max-width:575px){
+    .container {
+        max-width: 100%;
+    }
+
+    .width-XS-1 {
+        width: 100%;
+    }
+}

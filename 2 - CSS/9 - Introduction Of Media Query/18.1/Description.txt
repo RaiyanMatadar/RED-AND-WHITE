@@ -1,0 +1,4 @@
+Use Of Media & Device Size 
+
+(Desktop, Mini Laptop, Tablet, Mobile Landscape, Mobile Portrait) 
+Xxl, Xl, Lg, Md, Sm, Xs Viewport Meta Tag
