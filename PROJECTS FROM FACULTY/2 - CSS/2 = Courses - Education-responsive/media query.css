@@ -1,0 +1,105 @@
+/* XS */
+
+@media (max-width:575px){
+    .container{
+        width: 100%;
+    }
+
+    .menu ul{
+        display: none;
+    }    
+
+    
+    .logo img{
+        width: 70%;
+    }
+
+    .header-btn button {
+        width: 50px;
+        height: 30px;
+    }
+
+    .menu-icon {
+        font-size: 25px;
+        margin: 5px;
+    }
+    
+}
+
+/* SM */
+
+@media (min-width:576px){
+    .container{
+        max-width: 540px;
+    }
+
+    .menu ul{
+        display: none;
+    }    
+
+}
+
+
+/* MD */
+
+@media (min-width:768px){
+    .container{
+        max-width: 720px;
+    }
+
+    .menu ul{
+        display: none; 
+    }    
+}
+
+
+/* LG */
+
+@media (min-width:992px){
+    .container{
+        max-width: 960px;
+    }
+}
+
+
+/* LG */
+
+@media (min-width:992px){
+    .container{
+        max-width: 960px;
+    }
+
+    .menu ul{
+        display: flex;        
+    }    
+
+    .menu-icon {
+        display: none;
+    }
+}
+
+/* XL */
+
+@media (min-width:1200px){
+    .container{
+        max-width: 1140px;
+    }
+}
+
+
+/* XL */
+
+@media (min-width:1200px){
+    .container{
+        max-width: 1140px;
+    }
+}
+
+/* XXL */
+
+@media (min-width:1400px){
+    .container{
+        max-width: 1320px;
+    }
+}
+
