@@ -91,9 +91,9 @@
 
 
 /*MD */
-@media (max-width:1199px){
+@media (max-width:991px){
     .container {
-        width: 991px;
+        width: 720px;
     }
 
     .width-MD-2-courses {
