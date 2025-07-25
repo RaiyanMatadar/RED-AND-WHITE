@@ -1,3 +1,12 @@
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
 .container {
     width: 1140px;
     margin: 0 auto;
@@ -42,6 +51,17 @@ body {
     padding: 20px 0;
 }
 
+.card-title h3 {
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.cards > div {
+    padding: 7px 0;
+}
+
+
+
 .top-items p,select {
     padding: 0% 10px;
 }
@@ -49,4 +69,65 @@ body {
 .top-items select {
     width: 100px;
     padding: 10px 0;
+}
+
+.cards-tickers li {
+    display: flex;
+    align-items: center;
+    margin: 11px 5px;
+}
+
+
+.cards-tickers i {
+    color: green;
+    margin-right: 10px;
+}
+
+.cards-btn button {
+    width: 100%;
+    padding: 10px 5px;
+    margin: 10px 0;
+    background-color: green;
+    border: none;
+    font-weight: 800;
+    color: white;
+}
+
+.cards-prices p,span{
+    color: rgba(128, 128, 128, 0.712);
+}
+
+.cards-prices strong {
+    font-size: 50px;
+    color: black;
+    
+}
+
+.cards-prices span {    
+    position: absolute;
+    left: 1%;
+
+}
+
+.cards {
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.164);
+    padding: 10px 20px;
+    margin: 20px 0;
+}
+
+.recommendation {
+    text-align: center;
+    position: relative;
+}
+
+.recommendation p {
+    position: absolute;
+        
+    background-color: yellow;
+    color: red;
+    width: 100%;
+    top: 0;
+    left: 0;
+    transform: translateY(110%);
 }
