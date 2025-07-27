@@ -24,6 +24,14 @@
         margin: 5px;
     }
 
+    nav {
+        display: none;
+    }
+
+    .header-btn button {
+        padding: 10px 20px;
+    }    
+
     /* Feautres */
     .width-XS-1 {
         width: 100%;
@@ -38,15 +46,6 @@
         width: 60%;
     }
 
-    /* Comunity experts */
-    .experts-content h3 {
-        font-size: 40px;
-    }
-
-    .experts-content p {
-        font-size: 20px;
-    }
-
 }
 
 /* SM */
@@ -57,6 +56,11 @@
     }
 
     .menu ul {
+        display: none;
+    }
+
+    
+    nav {
         display: none;
     }
 
@@ -73,15 +77,6 @@
 
     .features-content p {
         width: 80%;
-    }
-
-    /* Comunity experts */
-    .experts-content h3 {
-        font-size: 40px;
-    }
-
-    .experts-content p {
-        font-size: 20px;
     }
 
 }
@@ -110,7 +105,7 @@
 
 
     .features-img {
-        margin: 0 30px;
+        margin: 0 15px;
     }
 
     
@@ -136,6 +131,12 @@
 
     .menu-icon {
         display: none;
+    }
+
+
+    
+    nav {
+        display: flex;
     }
 
     /* Feautres */

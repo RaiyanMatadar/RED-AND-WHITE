@@ -29,9 +29,6 @@ h6 {
     font-family: 'Josefin Sans';
 }
 
-p {
-    text-align: justify;
-}
 
 li {
     list-style: none;
@@ -124,32 +121,43 @@ to place where we gonna define the classes
 
 /* Navbar section*/
 header {
-    padding: 20px 0;
     position: absolute;
     z-index: 9;
     width: 100%;
+    padding: 10px;
 }
 
-.header-content {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+
+
+.dropdown-menu {
+    top: 100%;
+    left: 0;
+    width: 110px;
+    background-color: var(--light-color);
+    border-radius: 5px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    transform: translateY(30px);
 }
 
-.menu li {
+.dropdown:hover .dropdown-menu {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.dropdown-menu ul li {
+    padding: 10px 20px;
+}
+
+
+nav ul li a {
     color: var(--light-color);
-    margin: 0 20px;
-    font-weight: 600;
+    margin: 0 15px;
+    padding: 30px 0;
 }
 
-.menu li a {
-    color: var(--light-color);
-}
-
-
-.header-btn {
-    gap: 10px;
-}
 
 .header-btn button,
 .title-btn button,
@@ -195,7 +203,9 @@ header {
     transition: all 0.3s ease-in-out;
 }
 
-
+.header-btn button{
+    margin: 0 10px;
+}
 
 .Login-btn button {
     padding: 15px 33px;
@@ -235,10 +245,12 @@ header {
 }
 
 /* Top-Title-section */
-main #first-section {
-    background-image: url(images/h1_hero.png);
+
+#banner {
+    background-image: url(../images/h1_hero.png);
     background-repeat: no-repeat;
     background-position: top;
+    background-size: cover;
     height: 800px;
 }
 
@@ -254,7 +266,7 @@ main #first-section {
 }
 
 .title h1,
-p {
+.title p {
     padding: 15px 0;
 }
 
@@ -278,18 +290,22 @@ p {
 /* Features Section */
 
 .features-items {
-    padding: 10px 10px;
-    margin: 20px;
+    margin: 20px 0px 20px 20px;
     background-color: var(--light-color);
     background-color: var(--light-color);
     border-radius: 10px;
     transform: translateY(-50%);
     box-shadow: 0 0px 7px -4px;
+    padding: 20px 0px 20px 20px;
 }
 
 .features-img,
 .features-content {
     padding: 5px;
+}
+
+.features-content {
+    color: var(--text-main);
 }
 
 
@@ -304,16 +320,21 @@ p {
 
 .course-captions p {
     color: var(--text-other);
+    margin: 10px 0;
+    padding: 5px 0;
+    line-height: 25px;
 }
 
 .course-captions a {
-    font-weight: 600;
+    font-weight: 700;
     font-size: 20px;
+    color: var(--text-main);
+    margin: 5px 0;
 }
 
 .courses-items {
     margin: 20px;
-    box-shadow: 0 0px 5px -2px;
+    box-shadow: 0 0px 5px -4px;
     border-radius: 10px;
 }
 
@@ -323,6 +344,7 @@ p {
 
 
 .course-ratting i {
+    margin: 20px 0;
     width: 20px;
     color: var(--object-color);
 }
@@ -337,7 +359,7 @@ p {
 }
 
 
-.course-feedback div p {
+.course-feedback p {
     color: var(--text-main);
     font-size: 20px;
     font-weight: 700;
@@ -369,6 +391,7 @@ p {
     color: var(--text-main);
     line-height: 30px;
     padding: 10px 0;
+    font-weight: 900;
 }
 
 .about-area-content p {
@@ -380,11 +403,12 @@ p {
     font-size: 14px;
     line-height: 30px;
     display: flex;
+    align-items: center;
 }
 
 
 .about-area-content li i {
-    font-size: 14px;
+    font-size: 20px;
     padding-right: 15px;
 }
 
@@ -420,11 +444,13 @@ p {
     font-size: 40px;
     margin: 50px 0;
 }
- 
+
 .explore-content {
     position: relative;
     overflow: hidden;
-    margin: 10px 0;
+    
+    width: 450px;
+    margin: 5px 10px;
 }
 
 .explore-content::before {
@@ -441,11 +467,6 @@ p {
 
 .explore-content:hover::before {
     background-color: rgba(0, 0, 0, 0.4);
-} 
-
-.explore-content {
-    width: 450px;
-    margin: 5px 10px;
 }
 
 .explore-content img {
@@ -472,6 +493,7 @@ p {
 
 .explore-btn button {
     padding: 20px 40px;
+    margin: 20px 0;
 }
 
 /* About Area - 2  */
@@ -483,6 +505,7 @@ p {
 
 .about-area-2-content {
     padding: 0 20px;
+    margin-left: 40px;
 
 }
 
@@ -499,11 +522,12 @@ p {
     line-height: 30px;
     padding: 7px 0;
     display: flex;
+    align-items: center;
 }
 
 
 .about-area-2-content li i {
-    font-size: 14px;
+    font-size: 20px;
     padding-right: 15px;
 }
 
@@ -528,18 +552,18 @@ p {
 
 .experts-content h3 {
     color: var(--text-main);
-    font-size: 20px;
+    font-size: 30px;
     padding: 10px 0;
 }
 
 .experts-content p {
     color: var(--text-other);
-    font-size: 15px;
+    font-size: 18px;
     text-align: center;
 }
 
 .comunity-experts-items {
-    margin: 0 10px;
+    margin: 0 30px;
 }
 
 /* About Area - 3 */
@@ -553,6 +577,10 @@ p {
     line-height: 50px;
     padding: 10px 0;
     font-size: 30px;
+}
+
+.about-area-3-content {
+    margin-left: 50px;
 }
 
 .about-area-3-content p {
@@ -590,6 +618,9 @@ footer {
 }
 
 .footer-icons i {
+    text-align: center;
+    width: 40px;
+    height: 40px;
     font-size: 20px;
     margin: 5px;
     background-color: rgba(128, 128, 128, 0.432);
@@ -625,6 +656,7 @@ footer {
 }
 
 .footer-copyright p {
+    padding: 40px 0;
     text-align: center;
     color: var(--light-color);
 }

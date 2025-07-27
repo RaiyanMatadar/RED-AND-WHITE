@@ -13,46 +13,49 @@
     <!-- FAVICON -->
     <link rel="icon" href="icons/favicon.ico">
     <!-- Main CSS -->
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
     <!-- media Query CSS -->
-    <link rel="stylesheet" href="media query.css" type="text/css">
+    <link rel="stylesheet" href="css/media query.css" type="text/css">
 </head>
 
 <body>
     <!-- Navbar section -->
     <header>
         <div class="container">
-            <div class="header-content row-wrap justify-between">
+            <div class="display-flex align-items-center justify-between">
                 <div class="logo">
                     <img src="images/logo.png.webp" alt="Logo">
                 </div>
                 <nav>
-                    <div class="menu display-flex">
-                        <ul class="row-wrap align-items-center">
-                            <li><a href="javascript:void(0)">Home</a></li>
-                            <li><a href="javascript:void(0)">Courses</a></li>
-                            <li><a href="javascript:void(0)">About</a></li>
-                            <li><a href="javascript:void(0)">Blog</a></li>
-                            <li><a href="javascript:void(0)">Contact</a></li>
-                        </ul>
-
-                        <div class="header-btn display-flex align-items-center">
-                            <div class="join-btn"><button style="text-align: center;">Join</button></div>
-                            <div class="Login-btn"><button>log in</button></div>
-                            <div class="menu-icon"><i class="fa-solid fa-bars"></i></div>
-                        </div>
-                    </div>
+                    <ul class="display-flex">
+                        <li><a href="javascript:void(0)">Home</a></li>
+                        <li><a href="javascript:void(0)">Courses</a></li>
+                        <li><a href="javascript:void(0)">About</a></li>
+                        <li class="dropdown position-relative">
+                            <a href="javascript:void(0)">Blog</a>
+                            <div class="dropdown-menu position-absolute">
+                                <ul>
+                                    <li>Blog</li>
+                                    <li>Blog Detailes</li>
+                                    <li>Elements</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="javascript:void(0)">Contact</a></li>
+                    </ul>
                 </nav>
-
-
-
+                <div class="header-btn display-flex">
+                    <div class="join-btn"><button>Join</button></div>
+                    <div class="Login-btn"><button>login</button></div>
+                    <div class="menu-icon"><i class="fa-solid fa-bars"></i></div>
+                </div>
             </div>
         </div>
     </header>
 
     <main>
         <!-- Top-Title-section -->
-        <section id="first-section">
+        <section id="banner">
             <div class="container">
                 <div class="Top-Title-section">
                     <div class="width-content-1">
@@ -121,11 +124,9 @@
                     <h2>Our featured courses</h2>
                 </div>
                 <div class="row-wrap">
-
                     <div class="width-content-3 width-XS-1 width-SM-1 width-MD-1 width-LG-2 width-XL-3">
                         <div class="courses-items">
                             <div class="course-img"><img src="images/C1.webp" alt="C1" width="100%"></div>
-
                             <div class="course-captions">
                                 <p>User Experience</p>
                                 <a href="#">Fundamental of UX for Application design</a>
@@ -133,24 +134,17 @@
                                     engage
                                     effectively with vulnerable children and young people.</p>
                             </div>
-
-                            <div class="course-ratting display-flex">
-                                <div>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                </div>
+                            <div class="course-ratting">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
                             </div>
-
                             <div class="course-feedback row-wrap justify-between align-items-center">
                                 <div class="review"><i>(4.5)</i>Based on 120</div>
-                                <div>
-                                    <p>$135</p>
-                                </div>
+                                <p>$135</p>
                             </div>
-
                             <div class="course-btn display-flex justify-center">
                                 <button>Find Out More</button>
                             </div>
@@ -160,7 +154,6 @@
                     <div class="width-content-3 width-XS-1 width-SM-1 width-MD-1 width-LG-2 width-XL-3">
                         <div class="courses-items">
                             <div class="course-img"><img src="images/C2.webp" alt="C2" width="100%"></div>
-
                             <div class="course-captions">
                                 <p>User Experience</p>
                                 <a href="#">Fundamental of UX for Application design</a>
@@ -168,8 +161,7 @@
                                     engage
                                     effectively with vulnerable children and young people.</p>
                             </div>
-
-                            <div class="course-ratting display-flex">
+                            <div class="course-ratting">
                                 <div>
                                     <i class="fa-solid fa-star"></i>
                                     <i class="fa-solid fa-star"></i>
@@ -178,7 +170,6 @@
                                     <i class="fa-solid fa-star"></i>
                                 </div>
                             </div>
-
                             <div class="course-feedback row-wrap justify-between align-items-center">
                                 <div class="review"><i>(4.5)</i>Based on 120</div>
                                 <div>
@@ -204,7 +195,7 @@
                                     effectively with vulnerable children and young people.</p>
                             </div>
 
-                            <div class="course-ratting display-flex">
+                            <div class="course-ratting">
                                 <div>
                                     <i class="fa-solid fa-star"></i>
                                     <i class="fa-solid fa-star"></i>
@@ -364,7 +355,7 @@
                         <div class="width-content-2 width-content-2 width-XS-1 width-SM-1 width-MD-1 width-LG-2">
                             <div class="about-2-items">
                                 <div class="about-area-2-img">
-                                    <img src="/images/About-2.png" alt="About 2">
+                                    <img src="images/About-2.png" alt="About 2">
                                 </div>
                             </div>
                         </div>
@@ -395,7 +386,6 @@
         <!-- Community experts -->
         <section>
             <div class="container">
-                <!-- <div class="Community-experts"> -->
                 <div class="Community-experts-title">
                     <h2>Community experts</h2>
                 </div>
@@ -449,7 +439,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- </div> -->
             </div>
         </section>
 
@@ -486,84 +475,84 @@
     <!-- Footer section -->
     <footer>
         <div class="container">
-                <div class="row-wrap">
-                    <div class="width-content-4 width-XS-1 width-SM-1 width-MD-2 width-LG-4 width-XL-4">
-                        <div class="footer-items">
-                            <div class="first-info">
-                                <div class="footer-logo">
-                                    <img src="images/logo.png.webp" alt="Footer logo">
-                                </div>
-                                <div class="footer-Paragraph">
-                                    <p>The automated process starts as soon as your clothes go into the machine.</p>
-                                </div>
-                                <div class="footer-icons">
-                                    <i class="fa-brands fa-facebook-f"></i>
-                                    <i class="fa-brands fa-twitter"></i>
-                                    <i class="fa-brands fa-instagram"></i>
-                                </div>
+            <div class="row-wrap">
+                <div class="width-content-4 width-XS-1 width-SM-1 width-MD-2 width-LG-4 width-XL-4">
+                    <div class="footer-items">
+                        <div class="first-info">
+                            <div class="footer-logo">
+                                <img src="images/logo.png.webp" alt="Footer logo">
+                            </div>
+                            <div class="footer-Paragraph">
+                                <p>The automated process starts as soon as your clothes go into the machine.</p>
+                            </div>
+                            <div class="footer-icons">
+                                <i class="fa-brands fa-facebook-f"></i>
+                                <i class="fa-brands fa-twitter"></i>
+                                <i class="fa-brands fa-instagram"></i>
                             </div>
                         </div>
                     </div>
-
-                    <div class="width-content-4 width-XS-1 width-SM-1 width-MD-2 width-LG-4 width-XL-4">
-                        <div class="footer-items">
-                            <div class="Footer-content">
-                                <div class="footer-title">
-                                    <h3>Our solutions</h3>
-                                </div>
-                                <div class="footer-links">
-                                    <ul>
-                                        <li><a href="javascript:void(0)">Design & creatives</a></li>
-                                        <li><a href="javascript:void(0)">Telecommunication</a></li>
-                                        <li><a href="javascript:void(0)">Restaurant</a></li>
-                                        <li><a href="javascript:void(0)">Programing</a></li>
-                                        <li><a href="javascript:void(0)">Architecture</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="width-content-4 width-XS-1 width-SM-1 width-MD-2 width-LG-4 width-XL-4">
-                        <div class="footer-items">
-                            <div class="Footer-content">
-                                <div class="footer-title">
-                                    <h3>Support</h3>
-                                </div>
-                                <div class="footer-links">
-                                    <ul>
-                                        <li><a href="javascript:void(0)">Design & creatives</a></li>
-                                        <li><a href="javascript:void(0)">Telecommunication</a></li>
-                                        <li><a href="javascript:void(0)">Restaurant</a></li>
-                                        <li><a href="javascript:void(0)">Programing</a></li>
-                                        <li><a href="javascript:void(0)">Architecture</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="width-content-4 width-XS-1 width-SM-1 width-MD-2 width-LG-4 width-XL-4">
-                        <div class="footer-items">
-                            <div class="Footer-content">
-                                <div class="footer-title">
-                                    <h3>Company</h3>
-                                </div>
-                                <div class="footer-links">
-                                    <ul>
-                                        <li><a href="javascript:void(0)">Design & creatives</a></li>
-                                        <li><a href="javascript:void(0)">Telecommunication</a></li>
-                                        <li><a href="javascript:void(0)">Restaurant</a></li>
-                                        <li><a href="javascript:void(0)">Programing</a></li>
-                                        <li><a href="javascript:void(0)">Architecture</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
-            
+
+                <div class="width-content-4 width-XS-1 width-SM-1 width-MD-2 width-LG-4 width-XL-4">
+                    <div class="footer-items">
+                        <div class="Footer-content">
+                            <div class="footer-title">
+                                <h3>Our solutions</h3>
+                            </div>
+                            <div class="footer-links">
+                                <ul>
+                                    <li><a href="javascript:void(0)">Design & creatives</a></li>
+                                    <li><a href="javascript:void(0)">Telecommunication</a></li>
+                                    <li><a href="javascript:void(0)">Restaurant</a></li>
+                                    <li><a href="javascript:void(0)">Programing</a></li>
+                                    <li><a href="javascript:void(0)">Architecture</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="width-content-4 width-XS-1 width-SM-1 width-MD-2 width-LG-4 width-XL-4">
+                    <div class="footer-items">
+                        <div class="Footer-content">
+                            <div class="footer-title">
+                                <h3>Support</h3>
+                            </div>
+                            <div class="footer-links">
+                                <ul>
+                                    <li><a href="javascript:void(0)">Design & creatives</a></li>
+                                    <li><a href="javascript:void(0)">Telecommunication</a></li>
+                                    <li><a href="javascript:void(0)">Restaurant</a></li>
+                                    <li><a href="javascript:void(0)">Programing</a></li>
+                                    <li><a href="javascript:void(0)">Architecture</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="width-content-4 width-XS-1 width-SM-1 width-MD-2 width-LG-4 width-XL-4">
+                    <div class="footer-items">
+                        <div class="Footer-content">
+                            <div class="footer-title">
+                                <h3>Company</h3>
+                            </div>
+                            <div class="footer-links">
+                                <ul>
+                                    <li><a href="javascript:void(0)">Design & creatives</a></li>
+                                    <li><a href="javascript:void(0)">Telecommunication</a></li>
+                                    <li><a href="javascript:void(0)">Restaurant</a></li>
+                                    <li><a href="javascript:void(0)">Programing</a></li>
+                                    <li><a href="javascript:void(0)">Architecture</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
         </div>
         <div class="footer-copyright">
             <p>Copyright ©2025 All rights reserved | This template is made with by Colorlib

@@ -1,0 +1,65 @@
+:root {
+    --main-color:#2A140E;
+    --sub-main:#2a140ea2;
+}
+
+body {
+     background-color: #d6bcaf;
+}
+
+
+ul li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--main-color);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-transform: uppercase;
+}
+
+p {
+    color: var(--sub-main);
+}
+
+.container {
+    width: 1320px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.display-flex {
+    display: flex;
+}
+
+.row-wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.align-content-center {
+    align-content: center;
+}
+
+/* Main CSS start here */
+
+header {
+    width: 100%;
+}

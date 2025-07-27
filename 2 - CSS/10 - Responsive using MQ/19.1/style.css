@@ -113,21 +113,7 @@ body {
     position: relative;
     border: 1px solid rgba(0, 0, 0, 0.164);
     padding: 10px 20px;
-    margin: 20px 0;
+    margin: 20px;
+    
 }
 
-.recommendation {
-    text-align: center;
-    position: relative;
-}
-
-.recommendation p {
-    position: absolute;
-        
-    background-color: yellow;
-    color: red;
-    width: 100%;
-    top: 0;
-    left: 0;
-    transform: translateY(110%);
-}
