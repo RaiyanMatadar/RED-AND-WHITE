@@ -1,0 +1,269 @@
+:root {
+    --text-primary: #1B1B1B;
+    --text-secondary: #555555;
+}
+
+a {
+    text-decoration: none;
+    display: inline-block;
+}
+
+img {
+    display: inline-block;
+}
+
+ul li {
+    list-style: none;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.row-wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.position-relative {
+    position: relative;
+}
+
+.position-absolute {
+    position: absolute;
+}
+
+
+.W-1 {
+    width: 100%;
+}
+
+
+.W-2 {
+    width: 50%;
+}
+
+
+.W-3 {
+    width: 33.33%;
+}
+
+
+.W-4 {
+    width: 25%;
+}
+
+.W-5 {
+    width: 20%;
+}
+
+
+.W-6 {
+    width: 16.66%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Main CSS start here */
+
+html,
+body {
+    font-family: sans-serif;
+}
+
+
+/* Select city  */
+.select-city {
+    background-color: red;
+    padding: 5px 0;
+}
+
+.select-city select {
+    padding: 5px 30px;
+    border-radius: 5px;
+    color: white;
+    border: 1px solid white;
+    background-color: transparent;
+}
+
+/* header section */
+header {
+    margin: 30px 5px;
+}
+
+.menu {
+    display: none;
+}
+
+
+.menu-icon {
+    display: none;
+}
+
+
+.menu ul li {
+    margin: 0 10px;
+    font-size: 14px;
+}
+
+.menu li a img {
+    background-color: white;
+}
+
+.menu li a {
+    color: black;
+}
+
+.menu ul li a {
+    display: flex;
+
+}
+
+
+.menu ul li a img {
+    margin-left: 5px;
+
+}
+
+/* Pick right course */
+
+.Pick-right-course {
+    background-color: rgba(211, 211, 211, 0.212);
+}
+
+h1 {
+    padding: 20px 0;
+    color: var(--text-secondary);   
+}
+
+.course-card {
+    margin: 20px 0;
+    background: linear-gradient(150deg, #cfcfcf, white);
+    box-shadow: 0 0 3px -1px;
+    width: 150px;
+    height: 130px;
+    border-radius: 4px;
+}
+
+.course-card-content p {
+    margin-top: 10px;
+    color: rgba(0, 0, 255, 0.61);
+}
+
+/* Guajrat NO #1 institute */
+
+.gujarat-institute {
+    margin: 0 20px;
+}
+
+.gujarat-institute h2,
+strong,
+p {
+    margin: 10px 0;
+}
+
+.gujarat-institute h2 {
+    color: var(--text-secondary);
+    font-size: 20px;
+}
+
+.gujarat-institute p {
+    line-height: 30px;
+}
+
+.list-1 ul li a {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    font-size: 13px;
+}
+
+
+.list-1 ul li img {
+    display: flex;
+    align-items: center;
+
+}
+
+.gujarat-institute-btn button {
+    padding: 10px 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    font-weight: 700;
+    background-color: rgb(20, 10, 135);
+}
+
+
+.mac-screen {
+    position: relative;
+}
+
+.mac-screen iframe {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+}
+
+.gujarat-institute {
+    margin-top: 20px;
+}
+
+/* We are in */
+
+.location-title {
+    font-size: 30px;
+    margin: 30px 0;
+    color: var(--text-secondary);
+}
+
+.locations-items {
+    background-color: white;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 3px -1px;
+}
+
+.locations-img img {
+    border-radius: 5px;
+}
+
+.locations-items strong {
+    color: var(--text-secondary);
+    font-size: 25px;
+}
+
+.locations-items p {
+    font-size: 18px;
+    color: var(--text-secondary);
+}

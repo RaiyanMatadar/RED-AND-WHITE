@@ -1,0 +1,136 @@
+/* XS */
+
+@media (max-width:575px) {
+    .container {
+        width: 100%;
+    }
+
+    /* header */
+    .menu-icon {
+        display: flex;
+    }
+
+    .W-XS-3 {
+        width: 33.33%;
+    }
+
+    /* Pick right course */
+
+    .course-card {
+        width: 100px;
+        height: 100px;
+    }
+
+    .course-card-content p {
+        font-size: 13px;
+    } 
+
+    /* Guajrat NO #1 institute */
+
+    .W-XS-1 {
+        width: 100%;
+    }
+}
+
+/* SM */
+
+@media (min-width:576px) {
+    .container {
+        width: 540px;
+    }
+
+    /* header */
+    .menu-icon {
+        display: flex;
+    }
+
+    
+    .W-SM-3 {
+        width: 33.33%;
+    }
+
+    /* Guajrat NO #1 institute */
+
+    .W-SM-1 {
+        width: 100%;
+    }
+}
+
+/* MD */
+
+@media (min-width:768px) {
+    .container {
+        width: 720px;
+    }
+
+    .W-MD-4 {
+        width: 25%;
+    }
+
+     /* Guajrat NO #1 institute */
+
+    .W-MD-1 {
+        width: 100%;
+    }
+
+    .mac-screen iframe,
+    .mac-screen img {
+        width: 450px;
+    }
+}
+
+/* LG */
+
+@media (min-width:992px) {
+    .container {
+        width: 960px;
+    }
+
+    /* header */
+    .menu {
+        display: flex;
+    }
+
+    .menu ul li a{
+        font-size: 12px;
+    }
+
+
+    .menu-icon {
+        display: none;
+    }
+
+    
+    .W-LG-5 {
+        width: 20%;
+    }
+
+     /* Guajrat NO #1 institute */
+
+    .W-LG-2 {
+        width: 50%;
+    }
+}
+
+
+/* XL */
+
+@media (min-width:1200px) {
+    .container {
+        width: 1140px;
+    }
+
+    /* header */
+    .menu {
+        display: flex;
+    }
+
+    
+    .menu ul li a{
+        font-size: 16px;
+    }
+
+    .W-XL-6 {
+        width: 16.66%;
+    }
+}
