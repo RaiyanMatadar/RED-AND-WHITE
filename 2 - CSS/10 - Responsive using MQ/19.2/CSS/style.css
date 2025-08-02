@@ -381,6 +381,7 @@ p {
 footer {
     background-color: var(--text-primary);
     padding: 20px 0 50px 0;
+    /* height: 100vh; */
 }
 
 .footer-items h4 {

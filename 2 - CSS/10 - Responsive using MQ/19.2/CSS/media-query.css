@@ -1,5 +1,4 @@
 /* XS */
-
 @media (max-width:575px) {
     .container {
         width: 100%;
@@ -10,12 +9,16 @@
         display: flex;
     }
 
-    .W-XS-3 {
-        width: 33.33%;
+    .W-XS-1 {width: 100%;}
+    .W-XS-2 {width: 50%;}
+    .W-XS-3 {width: 33.33%;}
+    
+    .W-XS-3-0--1, 
+    .W-XS-7-0--1 {
+        width: 100%;
     }
 
-    /* Pick right course */
-
+    /* course cards section */
     .course-card {
         width: auto;
         height: 80px;
@@ -32,23 +35,19 @@
     .course-card-content img {
         width: 40px;
     }
-
+    
     .course-card-content p {
         font-size: 7px;
     }
 
-    /* Guajrat NO #1 institute */
-
+    /* mac screen display */
     .mac-screen {
         position: relative;
         width: auto;
     }
-
-
     .mac-screen img {
         width: 250px;
     }
-
     .mac-screen iframe {
         position: absolute;
         z-index: 1;
@@ -57,86 +56,60 @@
         height: auto;
     }
 
+    /* we are in */
+    .locations-items strong {font-size: 15px;}
+    .locations-items p {font-size: 14px;}
 
-    .W-XS-1 {
-        width: 100%;
-    }
-
-
-    /* We are in */
-
-    .W-XS-2 {
-        width: 50%;
-    }
-
-    .locations-items strong {
-        font-size: 15px;
-    }
-
-    .locations-items p {
-    font-size: 14px;
-    }
-
-    /* about infrastructure  */
-    .W-XS-3-0--1,
-    .W-XS-7-0--1 {
-        width: 100%;
-    }
-
-
+    /* infrastructure section */
     .infrastructure-content h2 {
         line-height: 30px;
         font-size: 20px;
         width: auto;
     }
-
     .infrastructure-content p {
         line-height: 15px;
         font-size: 10px;
         width: auto;
     }
-
     .infrastructure-content img {
         max-width: 120px;
         border-radius: 5px;
         margin: 5px;
     }
-
     .infra-imgs-1,
     .infra-imgs-2 {
         display: block;
     }
-
     .infra5 {
         transform: translateX(0px);
     }
-
-    /* Footer */
-
 }
 
 /* SM */
-
 @media (min-width:576px) {
     .container {
         width: 540px;
     }
 
-    /* header */
     .menu-icon {
         display: flex;
+    }
+
+    .W-SM-1 {width: 100%;}
+    .W-SM-2 {width: 50%;}
+    .W-SM-3 {width: 33.33%;}
+    .W-SM-3-0--1,
+    .W-SM-7-0--1 {
+        width: 100%;
     }
 
     .mac-screen {
         position: relative;
         width: auto;
     }
-
-
     .mac-screen img {
         width: 500px;
     }
-
     .mac-screen iframe {
         position: absolute;
         z-index: 1;
@@ -145,8 +118,7 @@
         width: 500px;
     }
 
-
-
+    /* course cards */
     .course-card {
         width: auto;
         height: 120px;
@@ -154,37 +126,15 @@
         justify-content: center;
         align-items: center;
     }
-
-
     .course-card-content {
         margin: 0 5px;
         padding: 0;
     }
-
     .course-card-content img {
         width: 50px;
     }
-
     .course-card-content p {
         font-size: 14px;
-    }
-
-    .W-SM-1 {
-        width: 100%;
-    }
-
-    .W-SM-2 {
-        width: 50%;
-    }
-
-    .W-SM-3 {
-        width: 33.33%;
-    }
-
-    /* About infrastructure */
-    .W-SM-3-0--1,
-    .W-SM-7-0--1 {
-        width: 100%;
     }
 
     .infrastructure-content img {
@@ -193,170 +143,91 @@
         margin: 5px;
     }
 
+    /* Footer */
     .footer-sec-1 ul:nth-of-type(1) li a {
         margin: 0;
     }
-
-    /* footer */
-
-
     .footer-items {
         margin: 20px 10px;
     }
-
     footer {
         padding: 0;
     }
 }
 
 /* MD */
-
 @media (min-width:768px) {
-    .container {
-        width: 720px;
-    }
+    .container {width: 720px;}
 
-    .W-MD-4 {
-        width: 25%;
-    }
+    .W-MD-1 {width: 100%;}
+    .W-MD-2 {width: 50%;}
+    .W-MD-3 {width: 33.33%;}
+    .W-MD-4 {width: 25%;}
 
-    /* Guajrat NO #1 institute */
-
-    .W-MD-1 {
-        width: 100%;
-    }
-
-
-
-    /* We are in */
-
-    .W-MD-3 {
-        width: 33.33%;
-    }
-
-    .W-MD-2 {
-        width: 50%;
-    }
-
-    .W-MD-4 {
-        width: 25%;
-    }
-
-    /* Foooter */
-
-
+    /* footer */
     .footer-items {
         margin: 20px 10px;
     }
-
     .footer-items h4 {
         font-size: 14px;
     }
-
     .branches-info p {
         font-size: 12px;
     }
-
     .footer-items ul li a {
         font-size: 11px;
     }
-
     .footer-images div img {
         width: 30px;
     }
-
 }
 
 /* LG */
-
 @media (min-width:992px) {
     .container {
         width: 960px;
     }
 
-    /* header */
+    /* header menu */
     .menu {
         display: flex;
     }
-
     .menu ul li a {
         font-size: 12px;
     }
-
-
     .menu-icon {
         display: none;
     }
 
-
-    .W-LG-4 {
-        width: 20%;
-    }
-
-    /* Pick right course */
-    .W-LG-5 {
-        width: 20%;
-    }
-
-    /* Guajrat NO #1 institute */
-
-    .W-LG-2 {
-        width: 50%;
-    }
-
-
-    /* We are in */
-
-    .W-LG-4 {
-        width: 25%;
-    }
-
-    /* About infrastructure */
-
-    .W-LG-3-0--2 {
-        width: 30%;
-    }
-
-    .W-LG-7-0--2 {
-        width: 70%;
-    }
+    .W-LG-2 {width: 50%;}
+    .W-LG-4 {width: 25%;}
+    .W-LG-5 {width: 20%;}
+    
+    .W-LG-3-0--2 {width: 30%;}
+    .W-LG-7-0--2 {width: 70%;}
 
     .infrastructure-content img {
         max-width: 350px;
         border-radius: 10px;
         margin: 10px;
     }
-
 }
 
-
 /* XL */
-
 @media (min-width:1200px) {
     .container {
         width: 1140px;
     }
 
-    /* header */
     .menu {
         display: flex;
     }
-
-
     .menu ul li a {
         font-size: 16px;
     }
 
-    .W-XL-6 {
-        width: 16.66%;
-    }
+    .W-XL-6 {width: 16.66%;}
 
-    /* About infrastructure */
-    .W-XL-3-0--2 {
-        width: 30%;
-    }
-
-    .W-XL-7-0--2 {
-        width: 70%;
-    }
+    .W-XL-3-0--2 {width: 30%;}
+    .W-XL-7-0--2 {width: 70%;}
 }
