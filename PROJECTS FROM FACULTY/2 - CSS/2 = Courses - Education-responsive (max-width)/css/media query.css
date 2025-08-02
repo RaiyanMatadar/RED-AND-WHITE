@@ -1,0 +1,89 @@
+/* XLL */
+
+@media (min-width:1400px) {
+    .container {
+        width: 1320px;
+    }
+}
+
+
+
+/* XL */
+
+@media (max-width:1399px) {
+    .container {
+        width: 1140px;
+    }
+}
+
+/* LG */
+
+@media (max-width:1199px) {
+    .container {
+        width: 960px;
+    }
+
+    /* About area 2 */
+    .about-area-2-content h2 {
+        line-height: 40px;
+        padding: 10px 0;
+        font-size: 35px;
+    }
+
+    .about-area-2-content li {
+        font-size: 14px;
+        line-height: 30px;
+        padding: 7px 0;
+        display: flex;
+        align-items: center;
+    }
+}
+
+
+/* MD */
+
+@media (max-width:991px) {
+    .container {
+        width: 720px;
+    }
+
+    /* Header */
+
+    nav {
+        display: none;
+    }
+
+    .menu-icon {
+        display: flex;
+    }
+
+    /* Features  */
+
+    .W-MD-2 {
+        width: 50%;
+    }
+
+}
+
+
+/* SM */
+
+@media (max-width:767px) {
+    .container {
+        width: 540px;
+    }
+
+    .W-SM-1 {
+        width: 100%;
+    }
+
+}
+
+
+/* XS */
+
+@media (max-width:575px) {
+    .container {
+        width: 100%;
+    }
+}
