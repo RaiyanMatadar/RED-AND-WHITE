@@ -1,0 +1,65 @@
+Hey so this file contains how to get into 
+old commits and then how to get into current commits
+
+git log --oneline	Shows commit history
+git checkout 6e55890	Goes to old commit (detached HEAD)
+git checkout -b test 6e55890	Creates an new branch names test from old commit
+git checkout main	Go back to your main branch
+
+
+
+
+HEAD and deteched HEAD
+
+### What is HEAD?
+
+- HEAD is like a bookmark or pointer in Git.
+- It tells you where you currently are in your project.
+- Usually, HEAD points to the latest commit on the branch you’re working on.
+
+Example:
+
+HEAD → main branch → latest commit
+
+This means you are on the main branch at the latest commit.
+
+---
+
+### What is Detached HEAD?
+
+- Detached HEAD happens when HEAD points directly to a specific commit, not a branch.
+- This happens if you check out an older commit by its ID, like:
+
+git checkout 6e55890
+
+Now:
+
+HEAD → commit 6e55890 (not a branch)
+
+- You are not on any branch.
+- You can see the project as it was at that commit.
+- But if you make changes and commit, those commits won’t belong to any branch unless you create a new one.
+
+---
+
+### Why does it matter?
+
+- When HEAD is attached to a branch, your commits update that branch.
+- When HEAD is detached, commits can get “lost” if you switch branches without saving them.
+
+---
+
+### How to fix detached HEAD?
+
+If you want to keep working and save commits, create a new branch from the detached HEAD:
+
+git checkout -b new-branch
+
+---
+
+### Summary:
+
+| State            | HEAD points to                | What it means                    |
+|------------------|------------------------------|---------------------------------|
+| Attached HEAD    | A branch (e.g., main)         | Normal state, safe to commit     |
+| Detached HEAD    | A specific commit (no branch) | Viewing old commit, risky to commit without branch |
