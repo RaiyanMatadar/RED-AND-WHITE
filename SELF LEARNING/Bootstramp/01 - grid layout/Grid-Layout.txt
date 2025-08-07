@@ -1,0 +1,45 @@
+col-xxl-1
+col-xl-2
+col-lg-3
+col-md-4
+col-sm-6
+col-xs-12
+
+col-xxl-1  
+• Applies at ≥1400px  
+• Makes 1 column layout (12 items in 1 row)
+
+col-xl-2  
+• Applies at ≥1200px  
+• Makes 2 column layout (6 items in 1 row)
+
+col-lg-3  
+• Applies at ≥992px  
+• Makes 3 column layout (4 items in 1 row)
+
+col-md-4  
+• Applies at ≥768px  
+• Makes 4 column layout (3 items in 1 row)
+
+col-sm-6  
+• Applies at ≥576px  
+• Makes 6 column layout (2 items in 1 row)
+
+col-12 (extra small)  
+• Applies below 576px  
+• Makes full width (1 item in 1 row)
+
+
+.container 
+
+.container-sm
+
+.container-md
+
+.container-lg
+
+.container-xl
+
+.container-xxl
+
+.container-fluid (this will make the container 100% on all screen sizes)

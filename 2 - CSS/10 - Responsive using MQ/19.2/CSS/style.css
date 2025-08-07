@@ -141,23 +141,12 @@ header {
     font-size: 14px;
 }
 
-.menu li a img {
-    background-color: white;
-}
-
-.menu li a {
-    color: black;
-}
-
 .menu ul li a {
+
     display: flex;
-
-}
-
-
-.menu ul li a img {
-    margin-left: 5px;
-
+    justify-content: center;
+    align-items: center;
+    color: black;
 }
 
 /* Pick right course */
@@ -211,13 +200,11 @@ p {
     align-items: center;
     margin: 10px 0;
     font-size: 13px;
+    color: var(--text-secondary);
 }
 
-
-.list-1 ul li img {
-    display: flex;
-    align-items: center;
-
+.list-1 ul li a i {
+    color: red;
 }
 
 .gujarat-institute-btn button {
@@ -416,11 +403,6 @@ footer {
     z-index: 1;
 }
 
-.branches-info img {
-    width: 30px;
-
-}
-
 .branches-info p {
     color: white;
 }
@@ -435,12 +417,19 @@ footer {
     font-size: 13px;
 }
 
+
+.footer-items ul li {
+    margin: 10px 0;
+}
+
 .footer-items ul li a {
     display: flex;
     align-items: center;
 }
 
-
+.footer-items ul li a i {
+    color: red;
+}
 
 .footer-sec-1 ul:nth-of-type(1) li a {
     margin: 10px 0;

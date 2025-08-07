@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html{
+      background-color: black;
+      color: white;
+      text-align: center;
+    }
+
+    .card {
+      background-color: grey;
+      color: whitesmoke;
+      border-radius: 10px;
+      padding: 2px 10px;
+      margin: 10px;
+      border: 1px solid white;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 200px 200px 200px;      /* This will make 3 columns of 200px  */
+      /* but what if you have 10 columns each of 200px then we use */
+
+      grid-template-columns: repeat(10,200px); /* this is an sort hand this says there will be 10 columns each 200px in sortform */
+      
+      /* but we dont want out child into an fixed px values so we use fractions */
+      grid-template-columns: repeat(4, 1fr);
+      /* this will make the layout responsive not the fixed valued child */
+
+      grid-template-columns: repeat(auto-fit,300px);
+      /* this will autofit the child depending on the screen size like if the screen 
+       is able to fit 2 child then it will do so and so on (300px)   */
+
+      /* we can use justify-content in it as well */
+    }
+
+  </style>
+</head>
+
+<body>
+  <h1>Responsive grid layout</h1>
+  <div class="container">
+    <div class="card">
+      <h2>Lorem, ipsum.</h2>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui eveniet, excepturi autem laborum eum ab molestiae
+        quam fugit, aliquid consectetur cupiditate, libero maxime a. Cum veritatis animi aliquid cupiditate rem!</p>
+    </div>
+
+    <div class="card">
+      <h2>Lorem, ipsum.</h2>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui eveniet, excepturi autem laborum eum ab molestiae
+        quam fugit, aliquid consectetur cupiditate, libero maxime a. Cum veritatis animi aliquid cupiditate rem!</p>
+    </div>
+
+    <div class="card">
+      <h2>Lorem, ipsum.</h2>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui eveniet, excepturi autem laborum eum ab molestiae
+        quam fugit, aliquid consectetur cupiditate, libero maxime a. Cum veritatis animi aliquid cupiditate rem!</p>
+    </div>
+
+    <div class="card">
+      <h2>Lorem, ipsum.</h2>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui eveniet, excepturi autem laborum eum ab molestiae
+        quam fugit, aliquid consectetur cupiditate, libero maxime a. Cum veritatis animi aliquid cupiditate rem!</p>
+    </div>
+
+    <div class="card">
+      <h2>Lorem, ipsum.</h2>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui eveniet, excepturi autem laborum eum ab molestiae
+        quam fugit, aliquid consectetur cupiditate, libero maxime a. Cum veritatis animi aliquid cupiditate rem!</p>
+    </div>
+
+    <div class="card">
+      <h2>Lorem, ipsum.</h2>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui eveniet, excepturi autem laborum eum ab molestiae
+        quam fugit, aliquid consectetur cupiditate, libero maxime a. Cum veritatis animi aliquid cupiditate rem!</p>
+    </div>
+
+    <div class="card">
+      <h2>Lorem, ipsum.</h2>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui eveniet, excepturi autem laborum eum ab molestiae
+        quam fugit, aliquid consectetur cupiditate, libero maxime a. Cum veritatis animi aliquid cupiditate rem!</p>
+    </div>
+  </div>
+</body>
+
+</html>
