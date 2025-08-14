@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    display: inline-block;
+}
+
+li {
+    list-style: none;
+}
+
+/* main CSS start here */
+
+/* To remove menu border */
+.navbar-toggler {
+    border: none;
+}
+
+/* to add banner backgrounds  */
+.slider1 {
+    width: 100%;
+    height: 650px;
+    background-image: url(../images/banner);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+/* To add gradient on background */
+.slider1::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.515);
+}
+
+.slider1 h1 {
+    font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    width: 40%;
+}
+
+.slider1 a {
+    background-color: #007bff;
+    /* border-radius: 50px; */
+    /* padding: 10px 30px; */
+}
+
+/* Changing bg color of btn  */
+.banner-section .btn:hover {
+    background-color: black;
+    border: none;
+}
+

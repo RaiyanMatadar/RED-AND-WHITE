@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    display: inline-block;
+}
+
+li {
+    list-style: none;
+}
+
+
+/* Main CSS Start here */
+
+/* for header btn alignment   */
+@media (min-width: 992px) {
+    .navbar-expand-md .navbar-collapse {
+        flex: none;
+    }
+}
+
+/* for aligning it to the center (slider caption)  */
+.carousel-caption {
+    bottom: 35%;
+}
+
+.carousel-indicators {
+    margin-bottom: 5px;
+}
