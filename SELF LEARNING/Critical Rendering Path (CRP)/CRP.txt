@@ -1,0 +1,54 @@
+Critical Rendering Path (CRP)
+
+CSS is an Render Bloking 
+Javascript is an Parsing Bloking 
+
+Render Bloking 
+for example if we have css 2 files 
+1 index.css 
+2 index2.css
+
+so in the 1st file we have an h1 an red colour
+and in the 2nd we gave h1 blue colour so genrally we
+think that first red will rendered then blue but in the real
+world this doesent happen istead what is actully happening is that 
+first of all the 1st file will load then the 2nd then the final render 
+would happen 
+
+Partial Bloking 
+for example if we have javascript 2 files 
+1 index.js
+2 index2.js
+
+so in the 1st file we have an h1 an green colour
+and in the 2nd we gave h1 orange colour so here the 
+vise versa would happen like first it will load the 
+1st file then render the green colour then the 2nd one 
+would load and render the 2nd colour orange cause its an 
+Parsing bloking 
+_______________________________________________________________
+
+why we should know CRP
+Critical Rendering Path (CRP) – Quick Note
+
+Definition:
+Steps the browser takes to convert HTML, CSS, and JavaScript into pixels on screen.
+
+Goal:
+Show content to the user as quickly as possible (reduce first render time).
+
+Key Points:
+1. HTML Parsing → Builds DOM.
+2. CSS Parsing → Builds CSSOM (render-blocking).
+3. JS Execution → Can block HTML parsing (unless defer/async is used).
+4. DOM + CSSOM → Merge into Render Tree.
+5. Layout & Paint → Page is drawn on screen.
+
+Blocking Types:
+- CSS: Full render-blocking (page waits for all CSS before first paint).
+- JS: Parsing-blocking by default; can be made non-blocking with defer/async.
+
+Why It Matters:
+- Faster CRP = better performance, SEO, and user experience.
+- Helps identify and remove render-blocking resources.
+

@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <header class="navbar navbar-expand-lg position-absolute z-3 w-100">
+    <header class="navbar navbar-expand-lg position-absolute z-3 w-100 py-4 border-bottom">
         <div class="container">
             <div class="logo">
                 <a href="javascript:void(0)" class="text-white fs-3 fw-bolder">ONEDER</a>
@@ -29,7 +29,15 @@
             <nav class="navbar-collapse collapse" id="menu">
                 <ul class="navbar-nav ms-auto">
                     <li><a href="javascript:void(0)" class="text-white mx-4">Home</a></li>
-                    <li><a href="javascript:void(0)" class="text-white mx-4">About Us</a></li>
+                    <li id="about-us">
+                        <a href="javascript:void(0)" class="text-white mx-4 position-relative">About Us<i class="ri-arrow-down-s-line"></i></a>
+                        <ul class="about-us_sub-ul position-absolute p-0 py-2 left-0 bg-dark rounded mt-4">
+                            <li><a href="javascript:void(0)" class="text-white mx-4 my-1 px-4 py-1">Team</a></li>
+                            <li><a href="javascript:void(0)" class="text-white mx-4 my-1 px-4 py-1">Pricing</a></li>
+                            <li><a href="javascript:void(0)" class="text-white mx-4 my-1 px-4 py-1">FAQ</a></li>
+                            <li><a href="javascript:void(0)" class="text-white mx-4 my-1 px-4 py-1">More links</a></li>
+                        </ul>
+                    </li>
                     <li><a href="javascript:void(0)" class="text-white mx-4">Portfolio</a></li>
                     <li><a href="javascript:void(0)" class="text-white mx-4">Services</a></li>
                     <li><a href="javascript:void(0)" class="text-white mx-4">Testimonials</a></li>
@@ -44,7 +52,8 @@
         <!-- banner -->
         <section class="banner-section carousel slide" id="banner-indicators">
             <div class="carousel-indicators">
-                <a href="javascript:void(0)" data-bs-target="#banner-indicators" data-bs-slide-to="0" class="active"></a>
+                <a href="javascript:void(0)" data-bs-target="#banner-indicators" data-bs-slide-to="0"
+                    class="active"></a>
                 <a href="javascript:void(0)" data-bs-target="#banner-indicators" data-bs-slide-to="1"></a>
                 <a href="javascript:void(0)" data-bs-target="#banner-indicators" data-bs-slide-to="2"></a>
             </div>
@@ -76,6 +85,291 @@
                     </div>
                 </div>
             </div>
+        </section>
+
+        <!-- About Oneder -->
+        <section class="about-section py-5">
+            <div class="container">
+                <div class="about-title text-center my-5">
+                    <h2 class="fw-bolder display-5 fw-bolder text-primary">About Oneder</h2>
+                </div>
+                <div class="row d-flex align-items-center">
+                    <div class="col-lg-6">
+                        <div class="about-image">
+                            <img src="images/about.webp" alt="" class="img-fluid position-relative">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <h3 class="my-3">For the next great business</h3>
+                        <p class="my-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. <br> Quo tempora
+                            cumque
+                            eligendi in
+                            nostrum labore omnis quaerat.</p>
+                        <ul class="p-0 lh-lg">
+                            <li><i class="ri-check-line text-success fs-5 mx-2"></i>Officia quaerat eaque neque</li>
+                            <li><i class="ri-check-line text-success fs-5 mx-2"></i>Possimus aut consequuntur incidunt
+                            </li>
+                            <li><i class="ri-check-line text-success fs-5 mx-2"></i>Lorem ipsum dolor sit amet</li>
+                            <li><i class="ri-check-line text-success fs-5 mx-2"></i>Consectetur adipisicing elit</li>
+                        </ul>
+
+                        <a href="javascript:void(0)" class="btn btn-primary text-white px-4 py-2 mt-4 rounded-5">Get in
+                            Touch</a>
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our team -->
+        <section class="our-team py-5">
+            <div class="container">
+                <div class="our-title text-center my-5">
+                    <h2 class="fw-bolder display-5 fw-bolder text-primary">Our team</h2>
+                    <p class="fs-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus minima <br /> neque
+                        tempora reiciendis.</p>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="card position-relative overflow-hidden">
+                            <img src="images/P1.webp" alt="" class="image-fluid">
+                            <div
+                                class="social-icons position-absolute top-0 left-0 d-flex flex-column bg-primary p-2 h-100">
+                                <a href="javascript:void(0)"><i
+                                        class="ri-facebook-fill text-white fs-4 px-1 py-2"></i></a>
+                                <a href="javascript:void(0)"><i
+                                        class="ri-twitter-x-fill text-white fs-4 px-1 py-2"></i></a>
+                                <a href="javascript:void(0)"><i
+                                        class="ri-linkedin-fill text-white fs-4 px-1 py-2"></i></a>
+                                <a href="javascript:void(0)"><i
+                                        class="ri-instagram-fill text-white fs-4 px-1 py-2"></i></a>
+                            </div>
+                            <div class="card-body bg-white z-3">
+                                <h5 class="card-title fs-4 my-3">Kaiara Spencer</h5>
+                                <p class="card-text text-uppercase text-muted my-3">Product Manager</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <div class="card position-relative overflow-hidden">
+                            <img src="images/P2.webp" alt="" class="image-fluid">
+                            <div
+                                class="social-icons position-absolute top-0 left-0 d-flex flex-column bg-primary p-2 h-100">
+                                <a href="javascript:void(0)"><i
+                                        class="ri-facebook-fill text-white fs-4 px-1 py-2"></i></a>
+                                <a href="javascript:void(0)"><i
+                                        class="ri-twitter-x-fill text-white fs-4 px-1 py-2"></i></a>
+                                <a href="javascript:void(0)"><i
+                                        class="ri-linkedin-fill text-white fs-4 px-1 py-2"></i></a>
+                                <a href="javascript:void(0)"><i
+                                        class="ri-instagram-fill text-white fs-4 px-1 py-2"></i></a>
+                            </div>
+                            <div class="card-body bg-white z-3">
+                                <h5 class="card-title fs-4 my-3">Dave Simpson</h5>
+                                <p class="card-text text-uppercase text-muted my-3">Product Manager</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <div class="card position-relative overflow-hidden">
+                            <img src="images/P3.webp" alt="" class="image-fluid">
+                            <div
+                                class="social-icons position-absolute top-0 left-0 d-flex flex-column bg-primary p-2 h-100">
+                                <a href="javascript:void(0)"><i
+                                        class="ri-facebook-fill text-white fs-4 px-1 py-2"></i></a>
+                                <a href="javascript:void(0)"><i
+                                        class="ri-twitter-x-fill text-white fs-4 px-1 py-2"></i></a>
+                                <a href="javascript:void(0)"><i
+                                        class="ri-linkedin-fill text-white fs-4 px-1 py-2"></i></a>
+                                <a href="javascript:void(0)"><i
+                                        class="ri-instagram-fill text-white fs-4 px-1 py-2"></i></a>
+                            </div>
+                            <div class="card-body bg-white z-3">
+                                <h5 class="card-title fs-4 my-3">Ben Thompson</h5>
+                                <p class="card-text text-uppercase text-muted my-3">Product Manager</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <div class="card position-relative overflow-hidden">
+                            <img src="images/P4.webp" alt="" class="image-fluid">
+                            <div
+                                class="social-icons position-absolute top-0 left-0 d-flex flex-column bg-primary p-2 h-100">
+                                <a href="javascript:void(0)"><i
+                                        class="ri-facebook-fill text-white fs-4 px-1 py-2"></i></a>
+                                <a href="javascript:void(0)"><i
+                                        class="ri-twitter-x-fill text-white fs-4 px-1 py-2"></i></a>
+                                <a href="javascript:void(0)"><i
+                                        class="ri-linkedin-fill text-white fs-4 px-1 py-2"></i></a>
+                                <a href="javascript:void(0)"><i
+                                        class="ri-instagram-fill text-white fs-4 px-1 py-2"></i></a>
+                            </div>
+                            <div class="card-body bg-white z-3">
+                                <h5 class="card-title fs-4 my-3">Kyla Stewart</h5>
+                                <p class="card-text text-uppercase text-muted my-3">Product Manager</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <div class="card position-relative overflow-hidden">
+                            <img src="images/P5.webp" alt="" class="image-fluid">
+                            <div
+                                class="social-icons position-absolute top-0 left-0 d-flex flex-column bg-primary p-2 h-100">
+                                <a href="javascript:void(0)"><i
+                                        class="ri-facebook-fill text-white fs-4 px-1 py-2"></i></a>
+                                <a href="javascript:void(0)"><i
+                                        class="ri-twitter-x-fill text-white fs-4 px-1 py-2"></i></a>
+                                <a href="javascript:void(0)"><i
+                                        class="ri-linkedin-fill text-white fs-4 px-1 py-2"></i></a>
+                                <a href="javascript:void(0)"><i
+                                        class="ri-instagram-fill text-white fs-4 px-1 py-2"></i></a>
+                            </div>
+                            <div class="card-body bg-white z-3">
+                                <h5 class="card-title fs-4 my-3">Kaiara Spencer</h5>
+                                <p class="card-text text-uppercase text-muted my-3">Product Manager</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <div class="card position-relative overflow-hidden">
+                            <img src="images/P6.webp" alt="" class="image-fluid">
+                            <div
+                                class="social-icons position-absolute top-0 left-0 d-flex flex-column bg-primary p-2 h-100">
+                                <a href="javascript:void(0)"><i
+                                        class="ri-facebook-fill text-white fs-4 px-1 py-2"></i></a>
+                                <a href="javascript:void(0)"><i
+                                        class="ri-twitter-x-fill text-white fs-4 px-1 py-2"></i></a>
+                                <a href="javascript:void(0)"><i
+                                        class="ri-linkedin-fill text-white fs-4 px-1 py-2"></i></a>
+                                <a href="javascript:void(0)"><i
+                                        class="ri-instagram-fill text-white fs-4 px-1 py-2"></i></a>
+                            </div>
+                            <div class="card-body bg-white z-3">
+                                <h5 class="card-title fs-4 my-3">Dave Simpson</h5>
+                                <p class="card-text text-uppercase text-muted my-3">Product Manager</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <div class="card position-relative overflow-hidden">
+                            <img src="images/P7.webp" alt="" class="image-fluid">
+                            <div
+                                class="social-icons position-absolute top-0 left-0 d-flex flex-column bg-primary p-2 h-100">
+                                <a href="javascript:void(0)"><i
+                                        class="ri-facebook-fill text-white fs-4 px-1 py-2"></i></a>
+                                <a href="javascript:void(0)"><i
+                                        class="ri-twitter-x-fill text-white fs-4 px-1 py-2"></i></a>
+                                <a href="javascript:void(0)"><i
+                                        class="ri-linkedin-fill text-white fs-4 px-1 py-2"></i></a>
+                                <a href="javascript:void(0)"><i
+                                        class="ri-instagram-fill text-white fs-4 px-1 py-2"></i></a>
+                            </div>
+                            <div class="card-body bg-white z-3">
+                                <h5 class="card-title fs-4 my-3">Ben Thompson</h5>
+                                <p class="card-text text-uppercase text-muted my-3">Product Manager</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <div class="card position-relative overflow-hidden">
+                            <img src="images/P8.webp" alt="" class="image-fluid">
+                            <div
+                                class="social-icons position-absolute top-0 left-0 d-flex flex-column bg-primary p-2 h-100">
+                                <a href="javascript:void(0)"><i
+                                        class="ri-facebook-fill text-white fs-4 px-1 py-2"></i></a>
+                                <a href="javascript:void(0)"><i
+                                        class="ri-twitter-x-fill text-white fs-4 px-1 py-2"></i></a>
+                                <a href="javascript:void(0)"><i
+                                        class="ri-linkedin-fill text-white fs-4 px-1 py-2"></i></a>
+                                <a href="javascript:void(0)"><i
+                                        class="ri-instagram-fill text-white fs-4 px-1 py-2"></i></a>
+                            </div>
+                            <div class="card-body bg-white z-3">
+                                <h5 class="card-title fs-4 my-3">Chris Stewart</h5>
+                                <p class="card-text text-uppercase text-muted my-3">Product Manager</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- our services -->
+        <section class="our-services py-5">
+            <div class="container">
+                <div class="our-services text-center my-5">
+                    <h2 class="fw-bolder display-5 fw-bolder text-primary">Our services</h2>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="services-items my-3">
+                            <i class="ri-rocket-2-fill display-3 text-primary"></i>
+                            <h4>Business Consulting</h4>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae
+                                eligendi at.</p>
+
+                            <a href="javascript:void(0)" class="mt-4">Learn More</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="services-items my-3">
+                            <i class="ri-line-chart-fill display-3 text-primary"></i>
+                            <h4>Market Analysis</h4>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae
+                                eligendi at.</p>
+                            <a href="javascript:void(0)" class="mt-4">Learn More</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="services-items my-3">
+                            <i class="ri-tools-fill display-3 text-primary"></i>
+                            <h4>User Monitoring</h4>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae
+                                eligendi at.</p>
+                            <a href="javascript:void(0)" class="mt-4">Learn More</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="services-items my-3">
+                            <i class="ri-alarm-warning-fill display-3 text-primary"></i>
+                            <h4>Insurance Consulting</h4>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae
+                                eligendi at.</p>
+                            <a href="javascript:void(0)" class="mt-4">Learn More</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="services-items my-3">
+                            <i class="ri-customer-service-2-fill display-3 text-primary"></i>
+                            <h4>Financial Investment</h4>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae
+                                eligendi at.</p>
+                            <a href="javascript:void(0)" class="mt-4">Learn More</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="services-items my-3">
+                            <i class="ri-bank-fill display-3 text-primary"></i>
+                            <h4>Financial Management</h4>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae
+                                eligendi at.</p>
+                            <a href="javascript:void(0)" class="mt-4">Learn More</a>
+                        </div>
+                    </div>
+                </div>
         </section>
     </main>
 
