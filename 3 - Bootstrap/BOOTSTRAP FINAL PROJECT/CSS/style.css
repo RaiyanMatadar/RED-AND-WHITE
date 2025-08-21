@@ -47,8 +47,6 @@ li {
 
 .slider1 a {
     background-color: #007bff;
-    /* border-radius: 50px; */
-    /* padding: 10px 30px; */
 }
 
 /* Changing bg color of btn  */
@@ -59,7 +57,7 @@ li {
 
 /* for making bg circle to  */
 /* about section img */
-.about-image {
+.about-image img{
     position: relative;
 }
 
@@ -98,11 +96,48 @@ li {
     transform: translateX(0%);
 }
 
+
+
+/* Need to make sure that it doesnt take ::-webkit-scrollbar-track-piece
+you still need to fix it . its temporary working */
+
 .about-us_sub-ul {
-    display: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 100ms ease-in-out;
+
 }
 
 #about-us:hover .about-us_sub-ul {
+    opacity: 1;
     visibility: visible;
-    display: block;
+}
+
+/* .Testimonial */
+.Testimonial .carousel-indicators a {
+    background-color: #0d6efd;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+}
+
+.blog img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+
+.footer-input input {
+    border-radius: 20px 0 0 20px;
+    border: 1px solid white;
+    padding-left: 10px;
+    width: 60%;
+}
+
+.footer-input a {
+    border-radius: 0 20px 20px 0;
+    width: 100px;
+    background-color: white;
+    color: black;
 }
