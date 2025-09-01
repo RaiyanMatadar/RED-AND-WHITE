@@ -15,11 +15,34 @@ li {
 
 /* main CSS start here */
 
+/* header */
+
 /* To remove menu border */
 .navbar-toggler {
     border: none;
 }
 
+
+.about-us_sub-ul, 
+.about-us_sub-ul-1 {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 100ms ease-in-out;
+
+}
+
+#about-us:hover .about-us_sub-ul, #more-link:hover .about-us_sub-ul-1 {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* To align the ul inside of more links */
+.about-us_sub-ul-1 {
+    transform: translateY(-50px);
+}
+
+
+/* banner */
 /* to add banner backgrounds  */
 .slider1 {
     width: 100%;
@@ -57,15 +80,15 @@ li {
 
 /* for making bg circle to  */
 /* about section img */
-.about-image img{
+.about-image{
     position: relative;
 }
 
 .about-image::before {
     content: '';
     position: absolute;
-    width: 200px;
-    height: 200px;
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
     transform: translate(50px, 70px);
     background-color: #d3d3d342;
@@ -73,6 +96,15 @@ li {
     right: 0;
     z-index: -1;
 }
+
+/* to make sure that the image 
+around circle get hided */
+
+ @media (max-width:992px){
+    .about-image::before {
+        position: static;
+    }
+} 
 
 /* Our team */
 
@@ -96,23 +128,6 @@ li {
     transform: translateX(0%);
 }
 
-
-
-/* Need to make sure that it doesnt take ::-webkit-scrollbar-track-piece
-you still need to fix it . its temporary working */
-
-.about-us_sub-ul {
-    opacity: 0;
-    visibility: hidden;
-    transition: all 100ms ease-in-out;
-
-}
-
-#about-us:hover .about-us_sub-ul {
-    opacity: 1;
-    visibility: visible;
-}
-
 /* .Testimonial */
 .Testimonial .carousel-indicators a {
     background-color: #0d6efd;
@@ -127,17 +142,27 @@ you still need to fix it . its temporary working */
     object-fit: cover;
 }
 
-
-.footer-input input {
-    border-radius: 20px 0 0 20px;
-    border: 1px solid white;
-    padding-left: 10px;
-    width: 60%;
+/* footer */
+.footer-links ul li a {
+    color: rgb(255 255 255 / 28%);
+    transition: all 200ms ease-in-out;
 }
 
-.footer-input a {
-    border-radius: 0 20px 20px 0;
-    width: 100px;
-    background-color: white;
-    color: black;
+.footer-links ul li:hover a {
+    color: white;
+}
+
+
+.footer-icons i {
+    color: #ffffff47;
+    transition: all 200ms ease-in-out;
+}
+
+.footer-icons i:hover {
+    color: white;
+} 
+
+footer .input-group input::placeholder {
+    color: #ffffff47;
+
 }
