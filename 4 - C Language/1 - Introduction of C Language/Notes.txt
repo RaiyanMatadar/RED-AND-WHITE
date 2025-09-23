@@ -1,0 +1,29 @@
+ASCII 
+American Standard Code for Information Interchange.
+It is a standard way to represent characters (letters, digits, symbols) as numbers. like 65 , 71, 74
+Computer cant understand letters as A , B or C they understand numbers. ASCII is like 
+a translation chart between characters and numbers.
+A -> 65
+B -> 66
+So when you type 'A', the computer actually stores 65.
+
+
+0–31,127-	Control characters-(non-printable)-NUL, TAB, LF, CR, DEL
+32–126-		Printable characters - Space, digits, letters, symbols
+48–57-		Digits-'0' to '9'
+65–90-		Uppercase letters-'A' to 'Z'
+97–122-		Lowercase letters-'a' to 'z'
+33–47,58–64,91–96,123–126-	Symbols-!, @, #, $, etc.
+
+
+Standard ASCII = 128 characters (7-bit)
+Extended ASCII = 256 characters (8-bit) → includes special symbols and foreign letters.
+ASCII is the first 128 characters of Unicode.
+
+4. Binary Representation
+Each ASCII character can be stored in binary (8-bit).
+Example:
+'A' → 65 → 01000001
+'a' → 97 → 01100001
+'0' → 48 → 00110000
+

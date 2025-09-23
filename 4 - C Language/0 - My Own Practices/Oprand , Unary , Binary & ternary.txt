@@ -1,0 +1,19 @@
+Operand → Data (value/variable/constant)
+Operator → Symbol that does something with operand(s)
+
+
+Unary Operators: Operators that work on single operand.
+Example: Increment( ++) , Decrement(--)
+Unary operator → works on 1 operand only.
+Examples: ++, --, -, !, ~, &, *.
+
+Binary Operators: Operators that work on two operands.
+Example: Addition (+), Subtraction( -) , Multiplication (*)
+Binary operator → works on 2 operands.
+Examples: +, -, *, /, %, >, <, &&, ||, &, |, =, +=, etc.
+
+Ternary Operators: Operators that work on three operands.
+Example: Conditional Operator( ? : )
+C has only 1 ternary oprator which : works on 3 operands.
+(condition) ? (expression_if_true) : (expression_if_false);
+

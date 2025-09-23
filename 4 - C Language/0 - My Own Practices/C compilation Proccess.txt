@@ -1,0 +1,127 @@
+Step 1
+Create an source file of C 
+means create an executable program
+
+Step 2 
+Compiling using GCC Compiler 
+gcc filename.c –o filename
+
+We can pass many instructions to the GCC compiler for diffrent tasks as
+-Wall enables all compiler's warning messages. This option is recommended to 
+generate better code.
+
+-o is used to specify the output file name. If we do not use this option, then an 
+output file with the name a.out is generated.
+
+Step 3: Executing the program
+After compilation executable is generated and we run the generated executable using the below command.
+
+ ./filename // for linux
+ filename // for windows
+The program will be executed, and the output will be shown in the terminal.
+
+Quick way
+open vs code make Simple c program.
+gcc main.c -o check (gcc main.c for targetting this file.-o main for giving an name for it if you skip the defauld name would be a.exe)
+./main (for executing the file)
+ 
+What goes inside the compilation process?
+A compiler converts a C program into an executable. There are four phases for a C program to become an executable: 
+gcc -Wall -save-temps filename.c –o filename (for making these all files to understant the below concept)
+
+1.Pre-processing (filename.i)(#include stdio.h)
+2.Compilation	 (filename.s)(convert code into assembly)
+3.Assembly	 (filename.o)(convert assembly into binary 0s and 1s)
+4.Linking	 external functions like `printf` are not yet converted into binary so this help 
+		 to find the machine code for it and convert it into binary) 
+		
+
+Pre-processing	(filename.i)
+this file is expanded from #include <stdio.h> 
+it contains all the code of the header.
+
+Compilation	(filename.s)
+This file is in assembly-level instructions.
+which the assembler can understand.
+
+Assembly	(filename.o)
+In this file filename.s is taken as input and turned into filename.o 
+by the assembler. This file contains machine-level instructions. 
+At this phase, only existing code is converted into machine language, 
+and the function calls like printf() are not resolved. 
+
+CHATGPT Silplified version
+
+Big Picture
+
+When you write a C program, the compiler doesn’t directly convert it into an executable.
+It goes through four stages:
+
+1.Preprocessing → `filename.i
+2.Compilation → `filename.s
+3.Assembly → `filename.o
+4.Linking → filename (exe)
+
+Step 1: Preprocessing (`filename.i`)
+
+Your code is cleaned up and all **`#include`, `#define` macros, comments** are handled.
+Example:
+
+```c
+#include <stdio.h>
+int main() {
+    printf("Hello");
+}
+```
+
+After preprocessing, the `#include <stdio.h>` expands into thousands of lines of code(the actual implementation of `printf`, etc.).
+So now you have a **pure C file** with no directives.
+
+Step 2: Compilation (`filename.s`)
+
+The compiler now translates your C code into assembly language.
+Assembly is human-readable but closer to machine code.
+ Example snippet (not exact, but similar):
+
+```asm
+movl $.LC0, %edi
+call printf
+```
+
+Here:
+
+* `movl $.LC0, %edi` → moves a string (like "Hello") into a register.
+* `call printf` → tells the CPU to call the function `printf`.
+
+At this stage, the compiler **knows you called `printf`**, but it doesn’t yet know where the actual `printf` machine code is located.
+That’s why it just writes **"call printf"** as a placeholder.
+
+Step 3: Assembly (`filename.o`)
+
+Now the assembler converts the assembly instructions (`.s`) into machine code (binary).
+`printf` is still not resolved here — instead, the `.o` file contains something like:
+
+```asm
+... call printf  ; external function reference
+```
+
+So your `.o` file is **incomplete**, it only has:
+
+Your function machine code (`main`).
+A placeholder for external functions like `printf`.
+
+Step 4: Linking (final executable)
+
+The linker’s job is to resolve those placeholders.
+It looks into libraries like libc(standard C library) to find the actual machine code for `printf`.
+Once it finds it, it "glues" everything together into one complete executable.
+
+✅ So, answering your confusion:
+
+> *“in this process the C code first gets compiled into assembly then what?”*
+
+👉 After C → Assembly, the assembler turns assembly into object code (`.o`).
+At this point, your program is in machine code,but incomplete (because external 
+functions like `printf` are not yet filled in). Finally, the linker finds and attaches 
+those missing pieces → making the final executable.
+
