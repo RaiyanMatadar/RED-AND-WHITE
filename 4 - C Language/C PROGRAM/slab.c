@@ -1,27 +1,23 @@
 #include <stdio.h>
-int main()
-{
-
-  int number = 19;
-  int remaining = number / 10;    //1
-  int last = number % 10;         //9
+#include <string.h>
   
-//   for (int i = number; i != 1; i++){
-//     int results = remaining * remaining + last * last;
-//     number = results; 
-// }
+// 1. String Input Print
 
-int i = number;
-while (i != 1){
-    int results = remaining * remaining + last * last;
-    if (i == 1){
-    printf("%d",results);
-    }
-}
+// Write a program in C to input a string and print it.
 
-  if (number == 1){
-    printf("Yes");
-  } else {
-    printf("No");
-  }
+// Test Data :
+// Input the string : Welcome, w3resource
+
+// Expected Output :
+
+// The string you entered is : Welcome, w3resource 
+
+int main(){
+  
+  char str[100];
+  
+  printf("Input the string : ");
+  scanf("%s",&str);
+  
+  printf("The string you entered is : %s",str);
 }
