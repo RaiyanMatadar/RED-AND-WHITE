@@ -1,0 +1,21 @@
+1 keynote of Array 
+if you make an array as int arr[100] then the compiler will reserve the 
+space of 100 array element no matter you use the whole 100 elements space 
+its will reserved the 100 elemets space. 
+
+Array Operations 
+
+* Traversal
+* Insertion
+* Deletion
+* Searching 
+
+1 - Travrsal
+Traversal means every elements of array have to be visited once.
+when we need to use it 
+for printing every elements. its not specifically are used for only 
+printing array we can also use them for multiple purpose such that
+updating every value by travarsal,also for setting the elements etc.
+
+2 - Insertion 
+    

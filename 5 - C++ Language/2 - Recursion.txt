@@ -1,0 +1,33 @@
+Recursion
+
+when we make an function first it gets into stack memmory right
+
+in recursion what we actully doing is we are calling an function inside an function
+
+Example code for understanding..
+#include <iostream>
+using namespace std;
+
+void fun(int n) {
+    if (n == 0) return;   // base condition
+    cout << n << " ";     
+    fun(n - 1);           // recursive call
+}
+
+int main() {
+    fun(3);
+}
+
+The main() function first calls a function (let’s call it fun()),
+then inside fun(), the same function fun() is called again — this keeps happening again and again.
+
+Each time the function calls itself, a new copy of that function is created and stored in the stack memory.
+This process continues until the if (base condition) becomes true.
+example
+fun(3)
+  fun(2)
+    fun(1)
+      fun(0)  ← stops here
+
+When that condition is met, the function stops calling itself and starts returning — one by one — from the last function call to the first.
+This returning process is called stack unwinding.

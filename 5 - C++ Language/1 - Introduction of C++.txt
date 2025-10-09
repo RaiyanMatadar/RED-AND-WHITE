@@ -1,0 +1,18 @@
+#include <iostream> (include the cout & cin)
+using namespace strd: (we must add this for running the object)
+
+count = console out
+
+in C++ OOP were introduces
+
+cout & cin (these are object)
+cout - its work as printf
+cin - its work as scanf (in scaf we were able to write mesaage but in 
+      cin we cant able to write message)
+
+Note = in C we dont need to use format specifer 
+
+end1 & \n (these are same for getting 2 diffrent ne line)
+
+Recuresion 
+recursion used to allocate that problem into small parts 
