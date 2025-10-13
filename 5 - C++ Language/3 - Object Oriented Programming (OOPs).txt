@@ -1,0 +1,58 @@
+what is object oriented programming 
+basic fonda is the OOPs help up to create one structure and we can 
+use them as many times as we want.
+
+OOPs All Pillars
+1 - Class
+2 - Abstraction (main)
+3 - Polymorphism (Main)
+4 - Encapsulation (main)
+5 - Inheritance  (main)
+6 - Object
+Note = these 4 are the main pillars of the OOPs 
+
+inside of class the variables and function has diffrent names.
+Variables: are typically referred to as memberVariables or attributes.
+Functions: are typically referred to as memberFunctions or methods.
+
+class Student {
+
+private:
+ int updatemark;
+ 
+
+public:
+  int id;
+  int marks;
+  int setupdate(int n){
+    updatemark=n;
+  }
+
+  int getmark(){
+   return updatemark;
+  }
+};
+
+int main (){
+
+ student raiyan;  //here raiyan is an object 
+ raiyan.id=10465;
+ raiyan.mark=45;
+ 
+ 
+
+ cout << raiyan.id << raiyan.mark;
+ return 0;
+
+}
+
+
+
+there are two main things in class which is private and public.
+Private : if we define somthing in private we cant access outside of class.
+Public : if we define somthing in public we can access outside of the class. 
+
+we have to specifically add public or private so the compiler can understand what is it if we dont then the compiler will do whether public or private.
+
+Object 
+in object we can only declare key once after that we cant update the key value.

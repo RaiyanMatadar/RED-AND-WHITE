@@ -1,0 +1,66 @@
+s1 = {
+
+}
+
+internally its gets stored as it 
+
+What is an array of object ?
+An array of objects is just like a normal array, but instead of storing int, float, or char, 
+it stores objects of a class.
+So if you create 10 objects of the same class, you can store them together using an array.
+
+class Student {
+public:
+    string name;
+    int age;
+
+    void getData() {
+        cout << "Enter name: ";
+        cin >> name;
+        cout << "Enter age: ";
+        cin >> age;
+    }
+
+    void showData() {
+        cout << "Name: " << name << ", Age: " << age << endl;
+    }
+};
+
+int main() {
+    Student s[3]; // 👈 Array of 3 objects of class Student
+
+    // Taking input for each object
+    for (int i = 0; i < 3; i++) {
+        cout << "\nEnter details for student " << i + 1 << endl;
+        s[i].getData();
+    }
+
+    // Displaying data
+    cout << "\nDisplaying student details:\n";
+    for (int i = 0; i < 3; i++) {
+        s[i].showData();
+    }
+
+    return 0;
+}
+
+Student s[3]; //This line creates 3 objects of class Student:
+such as = s[0], s[1], s[2]
+Each object has its own name and age.
+
+Memory Concept (Important ⚙️)
+All objects are stored sequentially in memory.
+Each object gets its own copy of the class members (name, age).
+Functions are shared, but data is unique per object.
+
+
+🧠 Key Points to Remember
+
+Concept			Description
+Definition		Array storing multiple objects of same class
+Syntax			ClassName obj[array_size];
+Access Members		obj[index].member_function();
+Use			When you need to manage many similar objects easily
+Memory			Each object has separate data memory
+Looping			Perfect for for-loops and structured data
+Constructor Support	Yes, you can initialize using constructors

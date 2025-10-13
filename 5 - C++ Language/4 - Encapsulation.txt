@@ -1,0 +1,38 @@
+Encapsulation 
+Encapsulation means wrapping data (variables) and functions (methods) into a single unit (class), and restricting direct 
+access to that data from outside the class. We make data private and control it using public methods (getters/setters) — this 
+helps to protect the data from being changed accidentally or improperly.
+“Encapsulation is the process of making data private and using public methods to access or modify it safely.”
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+// Class representing a Programmer
+class Programmer
+{
+  private:
+    string name; // Private variable
+
+  public:
+    // Getter method to access the private data
+    string getName()
+    {
+        return name;
+    }
+
+    // Setter method to modify the private data
+    void setName(string newName)
+    {
+        name = newName;
+    }
+};
+
+int main()
+{
+    Programmer p;
+    p.setName("Geek");                        // Set the name
+    cout << "Name=> " << p.getName() << endl; // Get the name
+    return 0;
+}
+

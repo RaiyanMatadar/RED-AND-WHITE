@@ -1,0 +1,39 @@
+1 - What is the static keyword?
+👉 The static keyword in C++ gives a variable or function a special property:
+it remembers its value even after the function or object is destroyed.
+So, it doesn’t get re-created each time — it stays in memory for the whole program.
+
+
+takeaway : class static variable 
+static int count; we cant write it as static int count = 0;
+if we still wanna write it we can use "inline static int count = 0;" by this way you can 
+assign any value to it inlinely but for accesing it outside the class you will have to priciusly 
+tell to it as  Student::count (here student is an class name ) means this will tell that i wanna access 
+the count static variable in an student class.
+
+
+
+2 - What is a Static Data Member?
+A static data member is a variable that is shared by all objects of the class.
+🧠 Meaning:
+Only one copy of that variable exists — no matter how many objects you create.
+If one object changes it → it changes for all objects.
+
+
+
+3 - What is a Static Member Function?
+A static member function:
+is a function that can access only static data members (variable) of the class.
+📌 You can call it Without creating any object. Using the class name directly.
+
+
+
+4 - What is the Scope Resolution Operator (::) ?
+👉 It’s used to define or access members outside the class — especially static ones.
+Examples:
+✅ Defining static data member outside class:
+int Student::count = 0;
+
+✅ Accessing static member directly:
+cout << Student::count;
+Student::showCount();
