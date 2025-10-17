@@ -1,0 +1,103 @@
+promblem for better understanding it-
+so in an destructor the deleation work in reverse way like the last one will delated first and so on 
+so lets say i have defined an copy constructor which is talking the same memmory so if the destruction works 
+then the last will delated first but lets say i have made 2 object which has the same address and value (second 
+one i have copied from the first object) so while dealiting the last one the memmory would be deleated first so 
+if the memmory has already deleated then how will the destructor would delete the first object then i belive 
+there will be an conflic so can you explain me this scenario.
+
+Destructor and Copy Constructor Memory Handling in C++
+
+In C++, destructors and copy constructors are crucial for managing memory safely. 
+When an object allocates dynamic memory using 'new', it must release that memory in its destructor. 
+If objects share the same memory due to shallow copying, it can lead to double deletion errors.
+
+1. Destructor Behavior
+• A destructor is automatically called when an object goes out of scope.
+• Destruction happens in reverse order of creation.
+• The destructor cleans up (frees) dynamically allocated memory or resources.
+Example:
+
+•	class Demo {
+public:
+    Demo() { cout << "Constructor called\n"; }
+    ~Demo() { cout << "Destructor called\n"; }
+};
+
+int main() {
+    Demo d1;
+    Demo d2;
+}
+
+
+2. Shallow Copy Problem
+When you copy an object without defining your own copy constructor, C++ performs a 'shallow copy' by default. 
+This means both objects point to the same memory location.
+Example:
+class Student {
+public:
+    char* name;
+
+    Student(const char* n) {
+        name = new char[strlen(n) + 1];
+        strcpy(name, n);
+    }
+
+    ~Student() {
+        delete[] name;
+        cout << "Destructor called\n";
+    }
+};
+
+
+int main() {
+    Student s1("Raiyan");
+    Student s2 = s1; // Shallow copy
+}
+
+❌ Problem: Both 's1' and 's2' point to the same memory. When one object is destroyed, 
+the second one tries to delete the same memory, causing a crash or undefined behavior.
+
+3. Deep Copy Solution
+To avoid this issue, define your own copy constructor that performs a deep copy. This 
+ensures each object has its own separate copy of the memory.
+
+class Student {
+public:
+    char* name;
+
+    Student(const char* n) {
+        name = new char[strlen(n) + 1];
+        strcpy(name, n);
+    }
+
+    // Deep Copy Constructor
+    Student(const Student& other) {
+        name = new char[strlen(other.name) + 1];
+        strcpy(name, other.name);
+        cout << "Deep copy constructor called\n";
+    }
+
+    ~Student() {
+        delete[] name;
+        cout << "Destructor called\n";
+    }
+};
+✅ Now each object manages its own memory, and destructors will safely delete separate 
+memory blocks without conflict.
+
+
+4. The Rule of Three
+If your class uses dynamic memory (new/delete), you should define all three of these:
+1. Destructor (~ClassName)
+2. Copy Constructor (ClassName(const ClassName&))
+3. Copy Assignment Operator (operator=)
+
+This ensures that every object copies and frees memory safely.
+🧩 Summary
+• Destructors are called in reverse order of creation.
+• Shallow copy causes double deletion errors.
+• Deep copy creates new memory for each object, preventing conflict.
+• Follow the Rule of Three when using dynamic memory.
+
+By understanding this concept, you can prevent serious memory errors and write safer, professional C++ code.

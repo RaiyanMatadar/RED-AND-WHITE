@@ -1,0 +1,5 @@
+What is Dynamically allocating memory?
+Dynamically allocating memory on the heap means requesting memory from the operating 
+system while your program is running, rather than having it pre-allocated when your program 
+starts. This is useful when you don't know exactly how much memory you'll need beforehand, or 
+when the amount of memory required changes during execution.
