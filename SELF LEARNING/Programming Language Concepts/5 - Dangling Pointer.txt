@@ -1,0 +1,24 @@
+🧨 5. Dangling Pointer
+
+Concept:
+When a pointer points to memory that no longer exists, it becomes a dangling pointer.
+
+Example 1:
+int *p = new int(10);
+delete p;  // memory freed
+cout << *p;  // ❌ dangling pointer (undefined behavior)
+
+Example 2:
+int *ptr;
+{
+    int a = 10;
+    ptr = &a;
+} // a is destroyed here
+cout << *ptr;  // ❌ dangling pointer
+
+✅ Fix:
+
+Always set pointer to nullptr after delete.
+
+delete p;
+p = nullptr;

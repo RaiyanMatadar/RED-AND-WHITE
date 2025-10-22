@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Main CSS Starts here */
+
+/* Navbar  */
+.navbar-center ul li a {
+    text-decoration: none;
+    color: #222;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.navbar-center ul li:hover {
+    border: 0 10px 0 0;
+    border-bottom: 3px solid green;
+}
+
+.navbar-right i {
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    background-color: #d4d4d4;
+}
+
+.navbar-right i:hover {
+    background-color: #c0c0c0;
+}
+
+/* ===== Search Bar ===== */
+.search-section{
+    flex: 1;
+    padding: 0 20px;
+    border-right: 1px solid #e0e0e0;
+    cursor: pointer;
+}
+
+.search-section:last-child {
+    border-right: none;
+}
+
+.search-section p {
+    margin: 0;
+    font-size: 12px;
+    color: #555;
+    font-weight: 600;
+}
+
+.search-section span {
+    font-size: 14px;
+    color: #999;
+}
+
+.search-btn {
+    background-color: #ff385c;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .navbar-center ul {
+        gap: 20px;
+    }
+
+    .search-bar {
+        width: 90%;
+    }
+
+    .navbar-right {
+        gap: 8px;
+    }
+}

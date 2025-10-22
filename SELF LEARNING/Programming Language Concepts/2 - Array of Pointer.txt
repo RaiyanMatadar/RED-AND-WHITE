@@ -1,0 +1,23 @@
+🧮 2. Array of Pointers
+
+Concept:
+When we make multiple pointers stored in one array, it’s called an array of pointers.
+
+Example:
+
+int main() {
+    int a = 10, b = 20, c = 30;
+    int *arr[3] = {&a, &b, &c}; // array of 3 pointers
+
+    for (int i = 0; i < 3; i++) {
+        cout << *arr[i] << " ";  // prints 10 20 30
+    }
+}
+
+
+Visualization:
+arr[0] → &a → 10  
+arr[1] → &b → 20  
+arr[2] → &c → 30
+
+👉 Useful when you want to manage multiple memory locations using a single collection.

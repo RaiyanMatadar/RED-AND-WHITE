@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airbnb Clone</title>
+    <link rel="stylesheet" href="CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="Remix icons/remixicon.css">
+    <link rel="stylesheet" href="x.css">
+</head>
+
+<body>
+    <!-- this is an navbar section -->
+    <header class="container">
+        <nav class="navbar py-4">
+            <!-- Leftside of navbar (airbnb logo)  -->
+            <div class="navbar-left">
+                <a href="#" class="logo">
+                    <!-- 2 img for responsive. like for bigger screen size big logo would so and for small 
+                    screen size small logo would show -->
+                    <img src="images/airbnb-Logo.png" alt="logo" class="d-none d-lg-inline" width="100px">
+                    <img src="images/airbnb-Logo-2.png" alt="logo" class="d-inline d-lg-none" width="50px">
+                </a>
+            </div>
+
+            <!-- Center part of navbar (home, experience, services) -->
+            <div class="navbar-center">
+                <ul class="d-flex m-0 p-0">
+                    <li class="mx-2"><img src="images/home.png" class="mx-2" alt="home" width="28px"><a
+                            href="#">Homes</a></li>
+                    <li class="mx-2"><img src="images/experience.png" class="mx-2" alt="Experience" width="28px"><a
+                            href="#">Experiences</a></li>
+                    <li class="mx-2"><img src="images/bell.png" alt="Services" class="mx-2" width="28px"><a
+                            href="#">Services</a></li>
+                </ul>
+            </div>
+
+            <!-- Right side of the navbar  -->
+            <div class="navbar-right d-flex justify-content-center align-items-center text-center">
+                <a href="#" class="text-dark d-none d-lg-block me-2 fw-medium">Become a host</a>
+                <i class="ri-global-line ms-3 rounded-pill"></i>
+                <i class="ri-menu-line ms-3 rounded-pill"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ===== Search Bar ===== -->
+    <section class="search-bar d-flex justify-content-center rounded-pill bg-dark mx-5 p-2 shadow-lg">
+        
+        <div class="search-section">
+            <p>Where</p>
+            <!-- <span>Search destinations</span> -->
+            <input type="text" placeholder="Search destinations" class="">
+        </div>
+
+        <div class="search-section">
+            <p>When</p>
+            <span>Add dates</span>
+        </div>
+        <div class="search-section">
+            <p>Who</p>
+            <span>Add guests</span>
+        </div>
+        <button class="search-btn">
+            <i class="ri-search-line"></i>
+        </button>
+    </section>
+
+    <script src="JS/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

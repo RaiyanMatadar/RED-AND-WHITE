@@ -3,3 +3,13 @@ Dynamically allocating memory on the heap means requesting memory from the opera
 system while your program is running, rather than having it pre-allocated when your program 
 starts. This is useful when you don't know exactly how much memory you'll need beforehand, or 
 when the amount of memory required changes during execution.
+
+Static memory allocation
+-Allocation is done before the program's execution
+-there is no memory allocated cannot be freed
+-less efficient
+
+Dynamic Memory Allocation
+-Allocation is done during the program's execution
+-There is memory reusability and the allocated memory can be freed when not required
+-more efficient

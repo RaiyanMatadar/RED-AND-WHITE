@@ -1,0 +1,130 @@
+How Memory Allocated in C program
+
+its divided into 4 pairs 
+1 - code (text segment) 
+where your code gets stored.
+
+2 - static/global variable 
+static/global variable are divided into 2 pairs.
+1 - data segment 
+storing initialized data
+example - int global = 10;
+
+2 - bss segment (block started by segment)
+storing uninitialized data
+example - int global;
+
+int global = 10; global variable
+static global = 10; 
+
+3 - stack (stack work from ground to top)
+#include <stdio.h>
+int b = 34; // global variable
+
+int ret() {
+    return 43 * 3;
+}
+
+int func1(int b1) {
+    static int myvar = 45; // static variable
+    printf("The value of myvar is %d\n", myvar);
+    myvar++;
+    return b1 + myvar;
+}
+
+int main() {
+    int b = 344;
+    int val = func1(b);
+    val = func1(b);
+    val = func1(b);
+    val = func1(b);
+    val = func1(b);
+    int *ptr = &val;
+    return 0;
+}
+
+🧠 Concept Explanation
+🧩 Stack Memory
+The stack is a region of memory that stores function call data, local variables, and function return addresses.
+It follows LIFO (Last In, First Out) — the last function that enters the stack is the first one to leave.
+The stack grows downward in memory (from high address → low address) but conceptually we imagine it as growing upward (bottom to top).
+
+⚙️ Program Flow (Stack Behavior)
+1- The program starts from the main() function → creates the main stack frame.
+    Local variables of main (like b, val, ptr) are stored here.
+2- When func1(b) is called →
+    A new stack frame for func1 is created on top of the main frame.
+    Local variables like b1 are stored in this new frame.
+3- Inside func1, we call printf() →
+    Another stack frame for printf is created on top of func1’s frame.
+    The func1 execution is paused until printf finishes.
+4- When printf finishes →
+    The printf frame is popped off the stack.
+    Execution returns to func1.
+5- func1 completes → its frame is popped off and control returns to main.
+6- main finally returns → the main frame is popped off, and the program ends.
+
+VISUALIZATION
+
+When the printf function is executing:
+[printf()]   ← top (will be popped first)
+[func1()]    
+[main()]     ← bottom (entered first, popped last)
+
+After printf returns:
+[func1()]
+[main()]
+
+After func1 returns:
+[main()]
+
+4 - heap (heap work from top to ground) 
+heap gets grow when we dynamically allocate the memory
+
+🧠 What is Heap?
+The heap is another area of memory (different from the stack).
+It is used for dynamic memory allocation — memory that you manually manage using new, delete (in C++) or malloc, free (in C).
+Memory in the heap doesn’t get deleted automatically when a function ends — you must free it yourself.
+
+⚙️ How It Works
+When you use new or malloc, memory is taken from the heap.
+The variable on the stack only stores a pointer to that heap memory.
+You can keep that memory as long as you want — even after the function returns.
+But if you forget to delete or free it → that memory stays reserved → this is called a memory leak.
+
+Example 
+#include <iostream>
+using namespace std;
+
+int main() {
+    int *ptr = new int(10);   // memory allocated in heap
+    cout << *ptr << endl;     // prints 10
+
+    delete ptr;               // frees the heap memory
+    return 0;
+}
+
+Stack vs Heap
+
+| Feature         | Stack                    | Heap                                  |
+| --------------- | ------------------------ | ------------------------------------- |
+|   Created by    | System (automatically)   | Programmer (manually)                 |
+|   Deleted by    | System (automatically)   | Programmer (using `delete` or `free`) |
+|   Lifetime      | Ends when function ends  | Until manually freed                  |
+|   Speed         | Fast                     | Slower                                |
+|   Memory size   | Small, fixed             | Large, flexible                       |
+|   Access type   | LIFO (Last In First Out) | Random access (via pointers)          |
+
+🔍 Visual Example
+
+When you write:
+int *p = new int(5);
+
+Memory looks like this:
+Stack:             Heap:
+[p] ───────────► [ 5 ]
+
+When you call delete p;, that heap memory is released:
+
+Stack:  [p] → now pointing to nothing (dangling pointer)
+Heap:   memory freed ✅

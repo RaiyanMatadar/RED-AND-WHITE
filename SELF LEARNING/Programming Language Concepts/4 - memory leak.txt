@@ -1,0 +1,20 @@
+💀 4. Memory Leaks
+
+Concept:
+When you allocate memory dynamically (using new) but forget to free it (delete),
+the memory stays occupied → that’s a memory leak.
+
+Example:
+
+int main() {
+    int *p = new int(10);
+    // forgot delete p; ❌
+    return 0;
+}
+
+👉 This program ends, but memory of that 10 is not released back to system.
+Over time, this wastes RAM.
+
+✅ Fix:
+delete p;
+
