@@ -1,0 +1,2 @@
+try catch for error handling (its an function)
+

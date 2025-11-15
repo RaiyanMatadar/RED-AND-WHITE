@@ -1,0 +1,14 @@
+what is inheritance?
+we make class and for using class A code into class B we can use inheritance .
+
+type of inheritance.
+single inheritance 
+multiple inheritance
+hierarchical inheritance 
+multilevel inheritance 
+hybrid inheritance 
+
+what is an ambiguous error & its solution?
+when we make an class with inheritance for for class A we make an member function as wheels and in class B we made an member function with the same name 
+so in this scenario the compiler will get counfuse if we made an object and try to get the wheels function to then it will throw the error as ambiguous.
+if  we want to use the specific class member function we can use the resolution operator eg. t1.car::wheels();

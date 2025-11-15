@@ -1,0 +1,27 @@
+this when we declare 
+
+1 What is Operator Overloading?
+You can make operators work with your objects just like they work with 
+primitive types (like int, float, etc.)
+
+Why use it?
+Because it makes code cleaner and more readable.
+
+Example:
+
+Complex c1(3, 4), c2(2, 5);
+Complex c3 = c1 + c2;  // easy to read
+
+
+Without operator overloading, you’d have to write something like:
+
+Complex c3 = c1.add(c2);
+
+2 Types of Operators You Can Overload
+
+Unary operators → Work on one operand
+Example: ++, --, -, !
+
+Binary operators → Work on two operands
+Example: +, -, *, /, ==, >
+

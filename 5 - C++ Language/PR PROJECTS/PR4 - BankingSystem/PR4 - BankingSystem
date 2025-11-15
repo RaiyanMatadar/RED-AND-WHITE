@@ -1,0 +1,219 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+
+class BankAccount {
+protected:
+    int accountNumber;
+    char accountHolderName[50];
+
+private:
+    double balance;
+
+public:
+    BankAccount() {
+        accountNumber = 0;
+        strcpy(accountHolderName, "");
+        balance = 0.0;
+    }
+
+    BankAccount(int accNo, const char *name, double initialBalance) {
+        accountNumber = accNo;
+        strcpy(accountHolderName, name);
+        balance = initialBalance;
+    }
+
+    void deposit(double amount) {
+        if(amount > 0) {
+            balance += amount;
+            cout << "Deposit Successful! New Balance: " << balance << endl;
+        } else {
+            cout << "Invalid Deposit Amount!" << endl;
+        }
+    }
+
+    void withdraw(double amount) {
+        if(amount <= 0) {
+            cout << "Invalid Withdraw Amount!" << endl;
+        } 
+        else if(amount > balance) {
+            cout << "Insufficient Balance!" << endl;
+        }
+        else {
+            balance -= amount;
+            cout << "Withdrawal Successful! Remaining Balance:  " << balance << endl;
+        }
+    }
+
+    double getBalance() const {
+        return balance;
+    }
+
+    virtual void displayAccountInfo() const {
+        cout << "\n------ Account Information ------\n";
+        cout << "Account Number : " << accountNumber << endl;
+        cout << "Holder Name    : " << accountHolderName << endl;
+        cout << "Balance        :  " << balance << endl;
+        cout << "---------------------------------\n";
+    }
+
+    virtual void calculateInterest() {
+        cout << "Base Account has no interest calculation.\n";
+    }
+};
+
+
+class SavingsAccount : public BankAccount {
+protected:
+    double interestRate;
+
+public:
+    SavingsAccount(int accNo, const char *name, double balance, double rate)
+        : BankAccount(accNo, name, balance) 
+    {
+        interestRate = rate;
+    }
+
+    void calculateInterest() override {
+        double interest = (getBalance() * interestRate) / 100.0;
+        cout << "Savings Account Interest:  " << interest << endl;
+    }
+
+    void displayAccountInfo() const override {
+        BankAccount::displayAccountInfo();
+        cout << "Account Type   : Savings\n";
+        cout << "Interest Rate  : " << interestRate << "%\n";
+    }
+};
+
+
+class CheckingAccount : public BankAccount {
+protected:
+    double overdraftLimit;
+
+public:
+    CheckingAccount(int accNo, const char *name, double balance, double limit)
+        : BankAccount(accNo, name, balance) 
+    {
+        overdraftLimit = limit;
+    }
+
+    void checkOverdraft(double amount) {
+        if(amount > getBalance() + overdraftLimit) {
+            cout << "Transaction Denied! Overdraft Limit Exceeded.\n";
+        } else {
+            cout << "Overdraft OK. You can withdraw.\n";
+        }
+    }
+
+    void displayAccountInfo() const override {
+        BankAccount::displayAccountInfo();
+        cout << "Account Type   : Checking\n";
+        cout << "Overdraft Limit:  " << overdraftLimit << endl;
+    }
+};
+
+
+class FixedDepositAccount : public BankAccount {
+protected:
+    int term;
+
+public:
+    FixedDepositAccount(int accNo, const char *name, double balance, int termMonths)
+        : BankAccount(accNo, name, balance) 
+    {
+        term = termMonths;
+    }
+
+    void calculateInterest() override {
+        double interest = (getBalance() * 8 * term) / (12 * 100); 
+        cout << "Fixed Deposit Interest for " << term 
+             << " months :  " << interest << endl;
+    }
+
+    void displayAccountInfo() const override {
+        BankAccount::displayAccountInfo();
+        cout << "Account Type   : Fixed Deposit\n";
+        cout << "Term Duration  : " << term << " months\n";
+    }
+};
+
+
+int main() {
+    BankAccount *acc = nullptr;
+    int choice;
+
+    while(true) {
+        cout << "\n========= BANKING SYSTEM =========\n";
+        cout << "1. Create Savings Account\n";
+        cout << "2. Create Checking Account\n";
+        cout << "3. Create Fixed Deposit Account\n";
+        cout << "4. Deposit Money\n";
+        cout << "5. Withdraw Money\n";
+        cout << "6. Display Account Info\n";
+        cout << "7. Calculate Interest\n";
+        cout << "8. Exit\n";
+        cout << "Choose option: ";
+        cin >> choice;
+
+        if(choice == 8) break;
+
+        if(choice == 1) {
+            int accNo; char name[50]; double bal, rate;
+            cout << "Enter Acc No: "; cin >> accNo;
+            cout << "Enter Name: "; cin >> name;
+            cout << "Enter Balance: "; cin >> bal;
+            cout << "Enter Interest Rate: "; cin >> rate;
+
+            acc = new SavingsAccount(accNo, name, bal, rate);
+            cout << "Savings Account Created!\n";
+        }
+
+        else if(choice == 2) {
+            int accNo; char name[50]; double bal, limit;
+            cout << "Enter Acc No: "; cin >> accNo;
+            cout << "Enter Name: "; cin >> name;
+            cout << "Enter Balance: "; cin >> bal;
+            cout << "Enter Overdraft Limit: "; cin >> limit;
+
+            acc = new CheckingAccount(accNo, name, bal, limit);
+            cout << "Checking Account Created!\n";
+        }
+
+        else if(choice == 3) {
+            int accNo; char name[50]; double bal; int term;
+            cout << "Enter Acc No: "; cin >> accNo;
+            cout << "Enter Name: "; cin >> name;
+            cout << "Enter Balance: "; cin >> bal;
+            cout << "Enter Term (months): "; cin >> term;
+
+            acc = new FixedDepositAccount(accNo, name, bal, term);
+            cout << "Fixed Deposit Account Created!\n";
+        }
+
+        else if(choice == 4) {
+            double amt;
+            cout << "Enter Deposit Amount: ";
+            cin >> amt;
+            acc->deposit(amt);
+        }
+
+        else if(choice == 5) {
+            double amt;
+            cout << "Enter Withdraw Amount: ";
+            cin >> amt;
+            acc->withdraw(amt);
+        }
+
+        else if(choice == 6) {
+            acc->displayAccountInfo();
+        }
+
+        else if(choice == 7) {
+            acc->calculateInterest();
+        }
+    }
+
+    return 0;
+}

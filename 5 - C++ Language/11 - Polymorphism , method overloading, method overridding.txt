@@ -1,0 +1,126 @@
+chatgpt version
+
+
+                        Polymorphism
+                              |
+          -------------------------------------
+          |                                   |
+       Compile Time                        Run Time
+          |                                   |
+   -------------------                 ----------------
+   |                 |                        |
+Function       Operator                   Function
+Overloading   Overloading                Overriding
+
+-------------------------------------------------------------
+
+Polymorphism → "Many forms" → allows same function/operator 
+to behave differently depending on context.
+
+
+TYPES:
+1. Compile Time → Function Overloading, Operator Overloading
+2. Run Time     → Function Overriding (using virtual function)
+
+
+<<< COMPILE TIME POLYMORPYSM >>>
+
+This type of polymorphism is resolved at compile time, meaning the compiler 
+determines which function or operator to call before the program executes.
+
+1-Function Overloading:
+
+- Same function name, different parameter list.
+- Parameters differ by number or data type.
+- Decided at compile time.
+Example:
+    void show(int a);
+    void show(double a);
+    void show(int a, int b);
+
+
+
+2-Operator Overloading:
+
+- Gives new meaning to existing operators for user-defined types.
+Example:
+    Complex operator+(Complex obj);
+
+
+<<< RUN TIME POLYMORPYSM >>>
+
+1-Function Overriding:
+- Needs at least 2 classes (Base & Derived).
+- Same function name + same parameters.
+- Base function declared as virtual.
+- Decided at run time using vtable.
+Example:
+    class Base {
+      public:
+        virtual void show() { cout << "Base\n"; }
+    };
+
+    class Derived : public Base {
+      public:
+        void show() { cout << "Derived\n"; }
+    };
+
+
+Virtual Table (vtable):
+-------------------------------------------------------------
+- Created when class has virtual functions.
+- Stores addresses of virtual functions.
+- Each object has hidden pointer (vptr) → points to vtable.
+- Enables runtime polymorphism (dynamic binding).
+-------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+_________________________________________________
+My Version
+
+                        Polymorphism
+                              |
+          -------------------------------------
+          |                                   |
+       Compile Time                        Run Time
+          |                                   |
+   -------------------                 ----------------
+   |                 |                        |
+Function       Operator                	   Function
+Overloading    Overloading                Overriding
+
+
+plymorphism run in both way as compiletime and runtime.
+
+in compile time 
+function overloading 
+operator overloading 
+
+runtime 
+fucntion overidding (implemented using virtual function)
+
+function overloading 
+for function overloading we must declare every function name must be same for function overloading 
+data type & data count (parameters) must be diffrent.
+
+function overidding.
+for making the overidding work we need atleast 2 class to be able to empliment this method.
+there is an also concept of virtual function and when we declare it it must be declared in an parent class fucntion.
+
+when we declare vircual in parent class its make an table then inside of it there will be an hidden pointer aswell 
+so the virtual table will store the address of that function's all data as variables and all of that of the functions.
+
+
+
+
+
+
+

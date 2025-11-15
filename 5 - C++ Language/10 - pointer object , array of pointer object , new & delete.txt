@@ -1,0 +1,21 @@
+when we make an Class the class that we made is actully an data type.
+
+student s1;
+s1.id = 10;
+
+student* ptr = &s1;
+
+(here student is an data type)
+
+1. Pointer Object
+A pointer object is a pointer that stores the address of an object instead of a normal variable.
+
+    Student s1;        // Normal object
+    Student *ptr;      // Pointer declaration
+    ptr = &s1;         // Pointer stores address of s1
+
+    ptr->show();       // Access object through pointer
+
+2. array of pointer object
+    Student s1, s2, s3; 
+    Student *arr[3] = { &s1, &s2, &s3};  // Array of object pointers

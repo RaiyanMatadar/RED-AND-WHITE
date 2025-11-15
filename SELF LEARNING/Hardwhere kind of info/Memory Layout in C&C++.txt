@@ -128,3 +128,10 @@ When you call delete p;, that heap memory is released:
 
 Stack:  [p] → now pointing to nothing (dangling pointer)
 Heap:   memory freed ✅
+
+
+
+
+sir 
+wehn we create an object of class the int get stored in object by default and the methods fucntion of its get stored in an global segment of memory
+
