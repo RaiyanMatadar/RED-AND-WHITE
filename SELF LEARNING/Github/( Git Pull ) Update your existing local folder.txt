@@ -1,0 +1,8 @@
+if you have repo and your friend has the same repo and now if your 
+friend made an changes on code then for getting the updated code from 
+your friend on github we can use git pull.
+
+To update your existing local folder, we use 
+git pull
+
+note - DO NOT USE!! git clone it will clone the whole repo.

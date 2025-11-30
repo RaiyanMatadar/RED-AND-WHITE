@@ -15,16 +15,16 @@ class Programmer
     string name; // Private variable
 
   public:
-    // Getter method to access the private data
-    string getName()
-    {
-        return name;
-    }
-
     // Setter method to modify the private data
     void setName(string newName)
     {
         name = newName;
+    }
+
+    // Getter method to access the private data
+    string getName()
+    {
+        return name;
     }
 };
 

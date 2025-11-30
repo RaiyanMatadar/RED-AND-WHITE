@@ -16,9 +16,10 @@ If objects share the same memory due to shallow copying, it can lead to double d
 • A destructor is automatically called when an object goes out of scope.
 • Destruction happens in reverse order of creation.
 • The destructor cleans up (frees) dynamically allocated memory or resources.
+
 Example:
 
-•	class Demo {
+class Demo {
 public:
     Demo() { cout << "Constructor called\n"; }
     ~Demo() { cout << "Destructor called\n"; }
@@ -33,6 +34,7 @@ int main() {
 2. Shallow Copy Problem
 When you copy an object without defining your own copy constructor, C++ performs a 'shallow copy' by default. 
 This means both objects point to the same memory location.
+
 Example:
 class Student {
 public:
@@ -48,7 +50,6 @@ public:
         cout << "Destructor called\n";
     }
 };
-
 
 int main() {
     Student s1("Raiyan");

@@ -1,0 +1,23 @@
+Modulo :
+It is basically an operator which is denoted by "mod" and, in programming, uses "%". 
+It is a function which returns the remainder value when a number is divided by another number.
+For example -
+
+console.log(10 % 3);   // 1   (10 divided by 3 → remainder 1)
+console.log(15 % 4);   // 3   (15 divided by 4 → remainder 3)
+console.log(8 % 2);    // 0   (8 is perfectly divisible by 2)
+console.log(17 % 5);   // 2   (17 divided by 5 → remainder 2)
+console.log(100 % 30); // 10  (100 divided by 30 → remainder 10)
+
+in MATH it defined as this 
+12 mod 5 // here the Modulo means
+
+38 ≡ 14 (mod 12)
+✅ They leave the same remainder when divided by 12.
+
+Example:
+38 ÷ 12 → remainder = 2
+14 ÷ 12 → remainder = 2
+Both give remainder 2, so they are called congruent modulo 12.
+
+38 and 14 are the same “value” if you only care about remainders when dividing by 12.

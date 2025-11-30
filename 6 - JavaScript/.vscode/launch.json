@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "d:/SOFTWARE RELATED ALL FOLDERS/RED-AND-WHITE/4 - C Language",
-      "program": "d:/SOFTWARE RELATED ALL FOLDERS/RED-AND-WHITE/4 - C Language/build/Debug/outDebug",
+      "cwd": "d:/SOFTWARE RELATED ALL FOLDERS/RED-AND-WHITE/6 - JavaScript",
+      "program": "d:/SOFTWARE RELATED ALL FOLDERS/RED-AND-WHITE/6 - JavaScript/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

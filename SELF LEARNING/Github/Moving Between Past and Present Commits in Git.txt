@@ -7,8 +7,6 @@ git checkout -b test 6e55890	Creates an new branch names test from old commit
 git checkout main	Go back to your main branch
 
 
-
-
 HEAD and deteched HEAD
 
 ### What is HEAD?
@@ -59,7 +57,7 @@ git checkout -b new-branch
 
 ### Summary:
 
-| State            | HEAD points to                | What it means                    |
-|------------------|------------------------------|---------------------------------|
-| Attached HEAD    | A branch (e.g., main)         | Normal state, safe to commit     |
+| State            | HEAD points to                | What it means                   			|
+|------------------|-------------------------------|----------------------------------------------------|
+| Attached HEAD    | A branch (e.g., main)         | Normal state, safe to commit     			|
 | Detached HEAD    | A specific commit (no branch) | Viewing old commit, risky to commit without branch |

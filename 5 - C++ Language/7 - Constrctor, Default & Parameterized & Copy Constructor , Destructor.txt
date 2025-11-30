@@ -87,9 +87,12 @@ public:
     number(int num){
         a = num;
     }    
+
     // copy constructor - when there is no copy constructor found compiler supply its own copy constructor.
-    //(here the (number &obj this means its want refrent of number objects )
-    number (number &obj){       
+    //(here the (number &obj) this means its want refrent of number objects that you wanna pass mean if you 
+    //pass obj1 in the parameter it would copy the data of the obj1 into another object)
+
+    number (const number &obj){       
         a = obj.a;    
     }
     
@@ -105,6 +108,7 @@ int main(){
 
   //here z1 obejcts's a (a in int a) has assigned the value. & the value is object, the object 
   //that we assigned here is x so this means the z1 has assign the value of the object x.
+
   number z1(x);  // copy constructor invoked
   
   z2 = z;        // copy constructor not invoked (reason its didnt invoked is  because the object is already made then after it made we 

@@ -1,0 +1,40 @@
+so when you start programing you usually just go to VS code editor and make an file with the extension that you wanna code of the perticular programming language 
+but some programming just dosnt work with the extension like you just cant go and make the programming file and run the code such as C++ & JavaScript you just 
+cant go and make file with its extension and start programming you will have to download the envirment for it after that you will have to go to the envirment 
+variable setup and path and new then select the setup file path and paste it there then check whether it is setup or not using commands of it then you can run 
+the program of it 
+
+
+Creating a file in VS Code is not enough.
+The file is just text. Your computer cannot run it directly.
+
+Every language needs its own compiler or runtime installed.
+Examples:
+
+C++ → MinGW / GCC
+Java → JDK
+JavaScript (outside browser) → Node.js
+Python → Python interpreter
+C# → .NET SDK
+
+You must add the language’s “bin” folder to the PATH in Environment Variables.
+This allows the terminal to recognize commands like:
+g++, java, node, python, etc.
+
+Verify installation with version commands:
+
+g++ --version
+java --version
+node --version
+python --version
+
+Only after installing and setting PATH can you run programs.
+Examples:
+
+C++ → g++ file.cpp -o file then ./file
+Java → javac Main.java then java Main
+Node.js → node script.js
+Python → python app.py
+
+VS Code does not run code by itself.
+It only calls the compiler/interpreter you installed.

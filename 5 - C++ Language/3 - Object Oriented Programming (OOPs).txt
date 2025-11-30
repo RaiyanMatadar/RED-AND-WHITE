@@ -24,6 +24,7 @@ private:
 public:
   int id;
   int marks;
+  
   int setupdate(int n){
     updatemark=n;
   }
@@ -52,7 +53,8 @@ there are two main things in class which is private and public.
 Private : if we define somthing in private we cant access outside of class.
 Public : if we define somthing in public we can access outside of the class. 
 
-we have to specifically add public or private so the compiler can understand what is it if we dont then the compiler will do whether public or private.
+we have to specifically add public or private so the compiler can understand what is it if we dont 
+then the compiler will do whether public or private mainly compiler make it private.
 
 Object 
 in object we can only declare key once after that we cant update the key value.
