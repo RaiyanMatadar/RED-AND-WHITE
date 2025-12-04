@@ -1,0 +1,5 @@
+for jumping one to another language heh 
+so how do we do that, best approach is lear about them first
+
+1.primitive data type & non primitive data type (also known as refrence type)
+
