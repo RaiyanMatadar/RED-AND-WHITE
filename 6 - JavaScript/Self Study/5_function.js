@@ -88,4 +88,46 @@ func1(10, 20) // this values are called Arguments
 
 
 
-//--- FIrst Class Funciton ---
+//--- FIrst Class Funciton & first class citizens both are same thing ---
+
+// Definition (clean & accurate):
+// A language has first-class functions if functions are treated like normal values.
+// In JavaScript, functions are values, just like numbers, strings, arrays, objects.
+
+// What “ treated like values ” means?
+
+// 1 - Store a function in a variable
+const x = function() { console.log("hi") }
+
+// 2 - Store a function in an object
+const obj = {
+    say() { console.log("hello") }
+}
+
+// 3 - Store a function in an array
+const arr = [function() { console.log("a") }, function() { console.log("b") }]
+
+// 4 - Pass a function as an argument
+function doSomething(fn) {
+    fn()
+}
+doSomething(function() { console.log("done") })
+
+// 5 - Return a function from another function
+
+function outer() {
+    return function() { console.log("inner") }
+}
+const innerFn = outer()
+innerFn()
+
+// 6 - Assign a function to another variable
+function greet() {}
+const copy = greet
+
+
+
+
+
+
+// --- Arrow function ---

@@ -1,0 +1,63 @@
+-----------------------------------------------How internet Works?-----------------------------------------------
+
+---what is internet---
+internet is an connection between the computers and electronics device available on the internet 
+which used to transfer information from one device to another which followes some satoff rules.
+simple analogy : its basically an connection between computers & electronics 
+
+---TCP (Transmission Control Protocol)---
+When you need accuracy.
+Connection-based (handshake happens before data transfer).
+Reliable: ensures every packet reaches the destination.
+Orders data: packets arrive in correct sequence.
+Resends lost packets.
+Slower because of reliability checks and confirmations.
+
+Used for:
+Web browsing (HTTP/HTTPS)
+File download/upload
+Emails
+Anything that must not lose data
+
+Why TCP exists:
+If you’re loading a webpage or downloading a file, a missing packet breaks the whole thing. TCP prevents that.
+
+---UDP (User Datagram Protocol)---
+When you need speed.
+Connectionless (no handshake, just sends).
+Unreliable: packets can be lost, duplicated, or arrive out of order.
+No packet ordering.
+No resending.
+Faster because it skips all checks.
+
+Used for:
+Online gaming
+Video calls
+Livestreams
+DNS lookup
+Anything where speed > perfection
+
+Why UDP exists:
+If you’re in a voice call, losing a few packets is better than having delays. You want real-time, not perfection.
+
+-----------------------------------------------Histroy Of Internet?-----------------------------------------------
+
+there was much more history of the internet but the first message that was send via using internet was LO they wanted to
+send LOGIN but duo to error only the LO was sent.
+
+the messeage was sent but there wasnt any centralized language (setoff rules)
+so 2 genius scintist developed TCP/IP in 1983
+
+DNS = Domain Name System.
+Its job: Convert a human-friendly name (google.com) into an IP address (142.250.190.78).
+Because the internet only understands IP addresses, not names.
+DNS translates domain names into IP addresses so devices can communicate.
+
+-----------------------------------------------How data transferred? -----------------------------------------------
+
+
+TO BE CONTINUE......
+
+
+
+
