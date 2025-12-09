@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Traversing</title>
+
+    <style>
+        body {
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="main-header" class="header top">
+        <h1 class="title">My Website</h1>
+        <nav id="nav-bar" class="navigation">
+            <ul class="nav-list">
+                <li class="nav-item active"><a href="#" id="home-link">Home</a></li>
+                <li class="nav-item"><a href="#" class="about-link">About</a></li>
+                <li class="nav-item"><a href="#" class="contact-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="content" class="content-section">
+        <div class="card" id="card-1">
+            <h2 id="card-title-cardOne" class="card-title">Card One</h2>
+            <p class="card-text">This is the first card.</p>
+            <button class="btn read-more">Read More</button>
+        </div>
+
+        <div class="card" id="card-2" data-info="special">
+            <h2 class="card-title highlight">Card Two</h2>
+            <p class="card-text">This is the second card.</p>
+            <button class="btn read-more">Read More</button>
+        </div>
+
+        <ul id="todo-list" class="list">
+            <li class="item" data-status="done">Buy groceries</li>
+            <li class="item" data-status="done">Buy groceries</li>
+            <li class="item" data-status="done">Buy groceries</li>
+            <li class="item" data-status="done">Buy groceries</li>
+            <li class="item" data-status="done">Buy groceries</li>
+            <li class="item" data-status="done">Buy groceries</li>
+            <li class="item" data-status="done">Buy groceries</li>
+            <li class="item" data-status="pending">Wash car</li>
+            <li class="item important" data-status="urgent">Pay bills</li>
+        </ul>
+
+        <article id="article" class="post">
+            <h2 class="post-title">Latest Post</h2>
+            <p class="post-body">Lorem ipsum dolor sit amet.</p>
+            <span class="tag">News</span>
+            <span class="tag highlight">Update</span>
+        </article>
+    </section>
+
+    <footer id="footer" class="footer bottom">
+        <p class="footer-text">© 2025 My Website</p>
+    </footer>
+
+    <script>
+        // Get Element By ID
+        const cardOne = document.getElementById("card-title-cardOne");
+
+        // Update text
+        cardOne.textContent = "Card has been Updated"
+        cardOne.innerText = "Card has been Updated";
+
+        // textContent → this will print the context as the way its written in html 
+        console.log("Using textContent:", cardOne.textContent);
+
+        // innerText → this will print the context as the way its rendered on browser
+        console.log("Using innerText:", cardOne.innerText);
+
+        // innerHTML → returns the HTML inside the element (tags included)
+        console.log("Using innerHTML:", cardOne.innerHTML);
+
+        // Styling (CSS → JS) everything that we write in css is available in the js
+        // CSS properties turn into camelCase in JS
+        // Example: font-size → fontSize, background-color → backgroundColor
+        cardOne.style.color = "red";
+        cardOne.style.backgroundColor = "green";
+
+        // ---------------------------------------------------------------------------
+
+        // getElementsByClassName → returns an HTMLCollection (live collection)
+        console.log(document.getElementsByClassName("card"));
+        // Shows ALL elements that have class="card"
+
+        console.log(document.getElementsByClassName("card")[0]);
+        // Shows the FIRST element in the collection
+
+
+        // Select all elements with class="item"
+        const item = document.getElementsByClassName("item");
+
+        // Loop through the HTMLCollection
+        // Apply different background colors based on index (even/odd)
+        for (let i = 0; i < item.length; i++) {
+            item[i].style.backgroundColor = (i % 2 === 0) ? "gold" : "red";
+        }
+
+        // ---------------------------------------------------------------------------
+
+        // getElementsByTagName → returns an HTMLCollection of all <div> elements
+        console.log(document.getElementsByTagName("div"));
+
+        // ---------------------------------------------------------------------------
+
+        // querySelector
+        // Returns the FIRST matching element for the given CSS selector
+        console.log(document.querySelector('.item'));
+
+
+        // querySelectorAll
+        // Returns a NodeList containing ALL elements that match the selector
+        // Supports full CSS selectors: classes, ids, tags, nth-child, attributes, etc.
+        console.log(document.querySelectorAll('.item'));
+
+
+        // NOTE:
+        // getElementsByClassName() and getElementsByTagName() return an HTMLCollection
+        // → HTMLCollection is NOT an array
+        // → It does NOT support forEach() directly
+        //
+        // querySelectorAll() returns a NodeList
+        // → NodeList DOES support forEach() in modern browsers
+        // → Much easier to loop through than HTMLCollection
+    </script>
+</body>
+
+</html>
