@@ -1,0 +1,43 @@
+DOM, CSSOM and Render Tree (Easy Explanation)
+
+1. DOM (What exists on the page)
+- Browser reads all HTML (head + body).
+- Turns every tag into a tree (like a family tree).
+- DOM = “These elements exist.”
+
+Example:
+<body>
+  <h1>Hello</h1>
+  <p>World</p>
+</body>
+
+DOM says:
+There is a body → inside it h1 → inside it text “Hello” → then a p → inside it “World”.
+
+2. CSSOM (How things should look)
+- Browser reads all CSS rules.
+- Builds another tree that stores the styles.
+- CSSOM = “How these elements should look.”
+
+Example:
+h1 { color: red; }
+p { font-size: 20px; }
+
+CSSOM says:
+h1 should be red.
+p should be 20px.
+
+3. Render Tree (What will actually be visible on screen)
+- Browser combines DOM + CSSOM.
+- Removes elements that should not be shown (like display:none).
+- Render Tree = “What will appear on the screen.”
+
+Example:
+If a paragraph has display:none → it will NOT exist in the render tree.
+
+4. Final Flow
+HTML → DOM  
+CSS → CSSOM  
+DOM + CSSOM → Render Tree  
+Render Tree → Layout (positions)  
+Layout → Paint (pixels on screen)
