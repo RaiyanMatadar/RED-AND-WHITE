@@ -14,4 +14,20 @@ results, especially when using var, let, const, or function expressions.
 -'var' variables are hoisted with undefined, while 'let' and 'const' are hoisted but remain in the 
 Temporal Dead Zone until initialized.
 
-TDZ to be comtinued......
+--Temporal Dead Zone--
+If you try to use a let or const before they are initialized, JS gives an error.
+Why? Because they are in the Temporal Dead Zone — JS knows the variable exists but doesn’t 
+let you use it yet, so you don’t create bugs like what happened with var.
+
+|--> TDZ starts for x (x exists in memory but uninitialized)
+|
+|--> alert(x)  // ReferenceError
+|
+|--> let x;    // x declared (still uninitialized)
+|
+|--> x = 1;    // x initialized, TDZ ends
+|
+|--> alert(x)  // Works now, outputs 1  
+
+TDZ is the period from the start of the scope until the let or const is initialized.
+Accessing the variable anywhere in the TDZ gives a ReferenceError.

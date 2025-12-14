@@ -14,7 +14,7 @@ Example:
 DOM says:
 There is a body → inside it h1 → inside it text “Hello” → then a p → inside it “World”.
 
-2. CSSOM (How things should look)
+2. CSSOM ((CSS Object Model) How things should look)
 - Browser reads all CSS rules.
 - Builds another tree that stores the styles.
 - CSSOM = “How these elements should look.”

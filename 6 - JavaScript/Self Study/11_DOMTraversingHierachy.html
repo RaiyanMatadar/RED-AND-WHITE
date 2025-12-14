@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Traversing Hierachy</title>
+</head>
+
+<body>
+    <div class="main-content">
+        <h2>Transaction History</h2>
+
+        <ul class="transaction-list" id="items">
+            <li class="transaction-item">1</li>
+            <li class="transaction-item">2</li>
+            <li class="transaction-item">3</li>
+            <li class="transaction-item">4</li>
+        </ul>
+    </div>
+
+    <script>
+        // Direct Child Element Selection
+
+        // const parent = document.querySelector('#items');
+        // const children = parent.children;
+        // console.log(children[children.length - 1]);
+
+        // `children` holds an HTMLCollection of only the direct <li> elements
+        // inside the #items <ul>.
+        //
+        // We could select <li> elements using other methods like
+        // document.querySelectorAll('li'), but that would select ALL <li> elements
+        // in the document, not just the ones inside the #items <ul>.
+        //
+        // Using parent.children ensures we are targeting only the <li> elements
+        // that belong to this specific <ul>.
+
+        // ---------------------------------------------------------------------------
+
+        // Avoiding Index-Based DOM Traversal ( grandParent, parent & child ) 
+
+        // const grandParent = document.querySelector(".main-content");
+        // const parent = grandParent.children[1];
+        // const children = parent.children;
+        // console.log(children[children.length - 1]);
+
+        // This approach accesses elements by relying on child indexes.
+        // It assumes that the second child of `.main-content` is the desired <ul>.
+        //
+        // This is a bad practice because indexes are fragile.
+        // Adding, removing, or reordering elements in the HTML can change the indexes
+        // and break the JavaScript logic.
+        //
+        // Instead of navigating the DOM using indexes, always select elements
+        // using stable selectors like class names, IDs, or scoped query selectors.
+
+        // ---------------------------------------------------------------------------
+
+        // Accessing a Descendant Element Directly from the Grandparent 
+
+        const grandParent = document.querySelector(".main-content");
+        const children = grandParent.querySelectorAll(".transaction-item");
+
+        console.log(children[children.length - 1]);
+
+        // Accessing a descendant element:
+        // We select elements that exist anywhere inside the grandParent element
+        // without manually traversing parent → child relationships.
+        // querySelectorAll searches the entire subtree (nested) of grandParent and returns
+        // all matching descendant elements, regardless of depth.
+    </script>
+</body>
+
+</html>

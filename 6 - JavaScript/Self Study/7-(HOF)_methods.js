@@ -54,7 +54,7 @@ console.log(Output3);
 // • map() loops through each element.
 // • Executes the provided function.
 // • Creates a new array with the returned values.
-// • Does NOT change the original array.
+// • Does NOT change the original array & length.
 // • You can pass a named function or write an inline arrow function.
 //
 // ---------------------------------------------------------
@@ -72,7 +72,7 @@ const outputFilter = arr.filter((x) => {
     return x % 2 == 0;
 })
 
-// this will give us the even numbers
+// this will give us the even numbers & also this can mines the length.
 
 
 // ---------------------------------------------------------
