@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Hello, World!</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <!--<h1 class="title">Hello World!</h1>-->
+    <p id="currentTime"></p>
+
+    <ul></ul>
+    <ul></ul>
+
+    <script>
+        // Q1
+        let book = {
+            title: "The Hobbit",
+            author: "J.R.R Tolkien",
+            year: 1937
+        };
+
+        const Ul = document.getElementsByTagName('ul')[0];
+
+        for (let key in book) {
+            const madeLi = document.createElement('li');
+            madeLi.textContent = `${key}: ${book[key]}`;
+            Ul.appendChild(madeLi);
+        }
+
+        // Q2
+        let student = [{
+            name: "mark",
+            marks: "75"
+        }, {
+            name: "charlie",
+            marks: "5"
+        }, {
+            name: "ragnor",
+            marks: "50"
+        }, {
+            name: "masai",
+            marks: "24"
+        }, ];
+
+        const Ul2 = document.getElementsByTagName('ul')[1];
+
+        for (let v of student) {
+            if (v.marks >= '50') {
+                const li = document.createElement('li');
+                li.innerText = `${v.name}, ${v.marks}`;
+                Ul2.appendChild(li);
+            }
+        }
+    </script>
+</body>
+
+</html>

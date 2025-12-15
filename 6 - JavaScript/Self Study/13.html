@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>asyncronous & Event Loop</title>
+</head>
+
+<body>
+    <button class="btn">this is an btn</button>
+</body>
+
+<script>
+    console.log("start");
+
+    const btn = document.getElementsByClassName("btn")[0]
+
+    btn.addEventListener("click", () => {
+        console.log("middle");
+    });
+
+    console.log("end");
+</script>
+
+</html>

@@ -1,0 +1,158 @@
+=========================================================
+JavaScript, Browser & Web APIs
+========================================================= 
+
+JavaScript is a programming language.
+JavaScript itself has NO access to browser features.
+
+To run JavaScript, we need a runtime environment.
+In the browser, that runtime is the JavaScript Engine.
+
+
+=========================================================
+JavaScript Engine
+========================================================= 
+
+The browser contains a JavaScript Engine (like V8).
+
+The JavaScript Engine has:
+1) Call Stack  → Executes JavaScript code
+2) Heap        → Stores memory (objects, variables)
+
+=========================================================
+How JavaScript Engine Executes Code ( Call Stack Notes )
+========================================================= 
+
+• JavaScript is single-threaded, meaning it executes one task at a time.
+• The JavaScript engine uses a Call Stack to manage execution of code.
+• Call Stack follows LIFO (Last In, First Out) principle.
+
+Call Stack Basics:
+• A stack data structure that stores execution contexts.
+• Keeps track of which function is currently running.
+
+Execution Flow:
+• When the program starts, the Global Execution Context (GEC) is created and pushed to the stack.
+• JavaScript executes code line by line inside the GEC.
+• When a function is called, a new Function Execution Context is created.
+• This function context is pushed onto the call stack.
+• When the function finishes execution, it is popped off the stack.
+• Control returns to the previous execution context.
+• When all code finishes, the call stack becomes empty.
+
+Example Call Order:
+Global → function A → function B → function B ends → function A ends → Global ends
+
+Important Points:
+• Only one function can execute at a time.
+• Too many nested calls or infinite recursion causes stack overflow.
+• The call stack handles only synchronous code.
+• Asynchronous tasks are handled by Web APIs and the Event Loop.
+
+One-line Summary:
+• The call stack ensures JavaScript executes functions in the correct order using LIFO. 
+
+
+
+
+The browser has many powers that JavaScript alone does NOT have
+=========================================================
+Web APIs (provided by the browser, not JavaScript itself)
+=========================================================
+
+Web APIs 
+they are provided by the browser and expose their functionality
+to the JavaScript engine, allowing JavaScript code (executed in the
+Call Stack) to interact with browser features.
+
+Note:
+Web APIs are exposed to JavaScript through the global `window` object.
+Thats why methods like `setTimeout()` are actually `window.setTimeout()`.
+We usually dont write `window.` because JavaScript automatically looks
+for these methods on the `window` object by default.
+
+Web APIs 
+- DOM APIs → DOM access
+  (document, querySelector, getElementById, etc.)
+
+- Timer APIs → Timers
+  (setTimeout(), setInterval())
+
+- Network APIs → Network requests (HTTP/HTTPS)
+  (fetch(), XMLHttpRequest)
+
+- Storage APIs → Storage
+  (localStorage, sessionStorage, IndexedDB)
+
+- Console API → Console
+  (console.log(), console.error(), etc.)
+
+- Location & Device APIs → Location, Bluetooth, Camera, etc.
+  (location, geolocation, MediaDevices, Bluetooth)
+
+Important:
+- setTimeout(), fetch(), localStorage, console.log(), location
+  are NOT JavaScript language features.
+- They are Web APIs provided by the browser.
+- JavaScript can only call them; the browser executes them.
+
+One-line summary:
+JavaScript runs the logic.
+Web APIs provide extra capabilities.
+The browser owns and executes those capabilities.
+
+=========================================================
+JavaScript Event Loop ( Step-by-Step )
+=========================================================
+Code:
+console.log("start");
+
+setTimeout(function cb() {
+  console.log("callback");
+}, 5000);
+
+console.log("End");
+
+
+Execution Steps:
+1) console.log("start")
+- Goes to Call Stack
+- Executes immediately
+- Output: start
+- Removed from stack
+
+2) setTimeout(cb, 5000)
+- Goes to Call Stack
+- Browser registers timer in Web APIs
+- Callback is NOT executed now
+- setTimeout is removed from stack
+
+3) console.log("End")
+- Goes to Call Stack
+- Executes immediately
+- Output: End
+- Removed from stack
+
+4) After 5 seconds
+- Timer finishes in Web APIs
+- Callback (cb) is pushed into Callback Queue
+
+5) Event Loop
+- Continuously checks Call Stack
+- If Call Stack is empty → moves callback from
+  Callback Queue to Call Stack
+
+6) Callback execution
+- console.log("callback") runs
+- Output: callback
+
+Final Output Order:
+start
+End
+callback
+
+Key Rules:
+- JavaScript is single-threaded
+- setTimeout is non-blocking
+- setTimeout delay is minimum, not exact
+- Event Loop runs callbacks only when Call Stack is empty

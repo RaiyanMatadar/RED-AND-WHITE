@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: lightgrey;
+        }
+        
+        li {
+            list-style: none;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <ul style="display: flex;">
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+
+    <script>
+        const ulSelected = document.getElementsByTagName('ul')[0];
+        const child1 = ulSelected.children[0];
+        const child2 = ulSelected.children[1];
+        const child3 = ulSelected.children[2];
+
+        setInterval(() => {
+            const now = new Date();
+            child1.textContent = now.getHours();
+            child2.textContent = now.getMinutes();
+            child3.textContent = now.getSeconds();
+        }, 1000);
+    </script>
+</body>
+
+</html>

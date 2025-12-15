@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Quesiotns</title>
+</head>
+
+<body>
+    <!-- Q1 -->
+    <div class="container">
+        <div class="h1-div">
+            <h1 id="idOfh1">Hello World</h1>
+        </div>
+        <div class="container">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita, atque?</p>
+        </div>
+
+        <div class="container">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita, atque?</p>
+        </div>
+    </div>
+
+    <!-- Q2  -->
+    <ul>
+        <li>list 1 </li>
+        <li>list 2 </li>
+        <li>list 3 </li>
+    </ul>
+
+    <button>Add Items</button>
+
+    <!-- Q3 -->
+    <form>
+        <input type="text" id="colorInput" placeholder="Enter color name">
+
+        <input type="text" id="textInput" placeholder="Enter text">
+
+        <button id="changeBgBtn">Change Background</button>
+
+        <button id="updateTextBtn">Update Text</button>
+
+        <div id="outputBox">This is some initial text.</div>
+    </form>
+
+    <script>
+        // Q1 
+        const chnageH1 = document.getElementById("idOfh1");
+        chnageH1.innerText = "Welcome To the DOM World!"
+
+        const pChange = document.getElementsByTagName("p");
+        for (let i = 0; i < pChange.length; i++) {
+            pChange[i].style.color = 'red'
+        }
+
+        const firstDiv = document.querySelector('.container');
+        firstDiv.style.color = 'green'
+
+        // Q2
+        const selectUl = document.querySelector('ul');
+        const selectBtn = document.querySelector('button');
+
+        if (selectBtn) {
+            selectBtn.addEventListener('click', () => {
+                const newLi = document.createElement('li');
+                newLi.textContent = 'New item'
+                selectUl.appendChild(newLi);
+            })
+        }
+
+        // Q3
+        const colorInput = document.getElementById('colorInput');
+        const textInput = document.getElementById('textInput');
+
+        const changeBgBtn = document.getElementById('changeBgBtn');
+        const updateTextBtn = document.getElementById('updateTextBtn');
+
+        const outputBox = document.getElementById('outputBox');
+
+        changeBgBtn.addEventListener('click', function(event) {
+            event.preventDefault();
+            outputBox.style.backgroundColor = colorInput.value;
+        });
+
+        updateTextBtn.addEventListener('click', function(event) {
+            event.preventDefault();
+            outputBox.innerText = textInput.value;
+        });
+    </script>
+</body>
+
+</html>
