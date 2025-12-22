@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closures</title>
+</head>
+
+<body>
+
+
+</body>
+<script>
+    // ===============================================
+    // Lexical Scoping 
+    // ===============================================
+
+    // Lexical scoping means:
+    // A function can access variables from the place
+    // where it is DEFINED, not where it is CALLED.
+
+    function outerL() {
+        let username = "Lexical"; // outer's scope
+
+        function inner() {
+            // inner is defined inside outer
+            // so it can access outer's variables
+            console.log(username);
+        }
+
+        inner();
+    }
+
+    outerL(); // output: raiyan
+
+    // Scope lookup order (Scope Chain):
+    // inner → outer → global
+
+    // Key rule:
+    // Defined location decides access, not call location.
+
+
+    // ===============================================
+    // Closure 
+    // ===============================================
+    function outerC() {
+        let username = "closer";
+
+        function inner() {
+            console.log(username);
+        }
+
+        return inner; // returns function reference, does NOT execute it
+    }
+
+    const funcContainer = outerC();
+    // outerC() executes and returns `inner`
+    // `funcContainer` now holds a reference to the `inner` function
+
+    funcContainer(); // logs "closer"
+
+    // NOTES (Correct Understanding)
+    // 1. `return inner;` returns the FUNCTION itself, not its execution
+    // 2. outerC() finishes execution and is removed from the call stack
+    // 3. The variable `username` is NOT deleted from memory
+    // 4. `inner()` remembers `username` because it was created inside outerC()
+    // 5. This remembering of outer variables is called a CLOSURE
+    // 6. `funcContainer` stores a reference to `inner`, not a copy of the function
+
+    // FINAL TRUTH (Memorize This Line)
+    // A closure means: a function remembers the variables
+    // of the lexical environment in which it was created
+</script>
+
+</html>

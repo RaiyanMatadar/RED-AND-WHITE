@@ -54,11 +54,11 @@ One-line Summary:
 
 
 
-
+================================================================
 The browser has many powers that JavaScript alone does NOT have
-=========================================================
+================================================================
 Web APIs (provided by the browser, not JavaScript itself)
-=========================================================
+================================================================
 
 Web APIs 
 they are provided by the browser and expose their functionality
