@@ -1,0 +1,71 @@
+SYNCHRONOUS EXECUTION
+
+Synchronous execution means code runs line by line in a fixed sequence.
+Each line waits for the previous operation to finish before executing.
+The program is blocked until the current task is completed.
+
+Key points:
+
+* Executes in sequential order
+* Blocking in nature
+* Slow when a task takes more time
+* Simple and predictable execution flow
+
+Example behavior:
+Start
+Process
+End
+
+The order is always the same.
+
+---
+
+ASYNCHRONOUS EXECUTION
+
+Asynchronous execution means code does not wait for a long operation to finish.
+Time-consuming tasks are handled in the background while the program continues running.
+
+Key points:
+
+* Non-blocking execution
+* Improves performance and responsiveness
+* Used for tasks like API calls, timers, file handling
+* Execution order is not strictly sequential
+
+Example behavior:
+Start
+End
+Async Task
+
+The async task runs later, even if written earlier.
+
+this code will first run the settimeout things then after that get runed it will run the normal things, 
+function func1(callback) {
+    setTimeout(() => {
+        console.log("setTimeout");
+        callback()
+    }, 10000);
+}
+
+function func2() {
+    console.log("task 1 ");
+    console.log("task 2 ");
+    console.log("task 3 ");
+}
+
+func1(func2);
+
+---
+
+DIFFERENCE BETWEEN SYNCHRONOUS AND ASYNCHRONOUS
+
+Synchronous:
+
+* Blocks the program
+* Waits for task completion
+* Slower for heavy operations
+
+
+* Does not block the program
+* Moves to next task immediately
+* Faster and more efficient
