@@ -171,8 +171,8 @@ fetch('https://jsonplaceholder.typicode.com/users')
 
 {
     // By Vikram Sir 
-    Promise.all
-        // its take an array if even one promise get rejected it will trow an error
+    // Promise.all
+    // its take an array if even one promise get rejected it will trow an error
 
     // promise.allsettled
     // it will return an   array of object

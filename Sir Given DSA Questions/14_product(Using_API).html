@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    
+    body {
+        background-color: #1f1f1f;
+        padding: 40px;
+        color: #f1f1f1;
+    }
+    /* Parent container */
+    
+    .parent {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 25px;
+    }
+    /* Product card */
+    
+    .box {
+        background-color: #2b2b2b;
+        border-radius: 12px;
+        padding: 15px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    /* Hover effect */
+    
+    .box:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+    }
+    /* Product image */
+    
+    .box img {
+        width: 100%;
+        height: 200px;
+        object-fit: contain;
+        background-color: #fff;
+        border-radius: 8px;
+        padding: 10px;
+        margin-bottom: 15px;
+    }
+    /* Category */
+    
+    .box p:first-of-type {
+        font-size: 13px;
+        color: #aaa;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 8px;
+    }
+    /* Price */
+    
+    .box p:nth-of-type(2) {
+        font-size: 20px;
+        font-weight: bold;
+        color: #4caf50;
+        margin-bottom: 6px;
+    }
+    /* Rating */
+    
+    .box span {
+        background-color: #ffc107;
+        color: #000;
+        padding: 4px 10px;
+        border-radius: 20px;
+        font-size: 14px;
+        font-weight: 600;
+    }
+</style>
+
+<body>
+    <div class="parent">
+    </div>
+</body>
+<script>
+    async function getProducts() {
+        try {
+            const response = await fetch("https://fakestoreapi.com/products");
+            const data = await response.json()
+
+            const parent = document.querySelector('div');
+
+            data.forEach((element) => {
+                const div = document.createElement("div");
+                let {
+                    image,
+                    category,
+                    description,
+                    price,
+                    rating: {
+                        rate,
+                        count
+                    },
+                    title
+                } = element
+
+                div.classList.add("box")
+                div.innerHTML = `
+            <img src="${image}" alt="">
+            <p>${category}</p>
+            <p>${price}</p>
+            <span>${rate}</span>
+            <p>${title}</p>
+            <button>Add to cart</button>
+            `
+                parent.appendChild(div)
+            })
+
+        } catch (error) {
+            console.log("Sorry there is an error");
+
+        }
+
+        const btn = document.querySelector("button");
+
+        btn.onclick = () => {
+            document.body.style.backgroundColor = "red";
+        };
+
+    }
+
+    getProducts()
+</script>
+
+</html>

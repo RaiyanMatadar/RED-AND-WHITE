@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(64, 64, 64);
+        }
+        
+        .parent {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        <input type="text" class="user" placeholder="enter username">
+        <input type="text" class="itemname" placeholder="item name">
+        <input type="number" class="price" placeholder="price">
+        <input type="number" class="quantity" placeholder="quality">
+        <input type="number" class="total" placeholder="total cost of item">
+        <button id="btn">Add</button>
+    </div>
+    <div class="parentBox">
+
+    </div>
+</body>
+
+<script>
+    //1 - first fetch DATA 
+    //2 - <input type="text"> // here the user will enter thir username
+    //3 - each user will have the data stored in the localstorage 
+    // -- item name 
+    // -- price 
+    // -- Quanitty 
+    // -- total cost per item  
+    // 4 - after we get the data in the local storage we also need to perform task as 
+    // -- add item to cart 
+    // -- edit quantity of items 
+    // -- remove items 
+    // -- display the total cost for all items
+    // in the local storage it should be stored as an JSON format where key = username , V_username = cart data
+
+    // assigning the elements with the variable's
+    const username = document.getElementsByClassName('user')[0];
+    const button = document.getElementById('btn');
+    const itemName = document.getElementsByClassName('itemname')[0];
+    const price = document.getElementsByClassName('price')[0];
+    const quantity = document.getElementsByClassName('quantity')[0];
+    const total = document.getElementsByClassName('total')[0];
+
+    let count = 1;
+    button.addEventListener('click', () => {
+        // getting input value (asiging it to the variable)
+        let V_username = username.value;
+        const V_itemName = itemName.value
+        const V_price = price.value
+        const V_quality = quantity.value
+        const V_total = total.value
+
+        let arr = [];
+        arr.push(V_itemName, V_price, V_quality, V_total);
+        localStorage.setItem(JSON.stringify(V_username), JSON.stringify(arr))
+
+        const parentBox = document.getElementsByClassName('parentBox')[0];
+        const div = document.createElement('div');
+        div.innerHTML = `user${count} = username : ${V_username} , 
+        item name : ${V_itemName} , price : ${V_price} , quality : ${V_quality} , total : ${V_total}`
+
+        parentBox.appendChild(div);
+
+        if (localStorage.getItem(JSON.stringify(V_username))) {
+            alert(`Data for username "${V_username}" already exists!`);
+            return;
+        }
+
+        count++;
+    })
+</script>
+
+</html>

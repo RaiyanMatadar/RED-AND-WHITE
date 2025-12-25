@@ -1,0 +1,221 @@
+CLIENT-SIDE STORAGE IN WEB BROWSERS
+(localStorage, sessionStorage, Cookies)
+
+All three are client-side storage mechanisms.
+This means the data is stored in the users browser, not on the server, not in a database, and not secure by default.
+
+Cookies came first.
+localStorage and sessionStorage were created later to solve cookie limitations.
+
+────────────────────────────────
+
+COOKIES
+
+What cookies are:
+Cookies are small pieces of text data stored in the browser and automatically sent to the server with every HTTP request.
+
+This automatic sending is the main reason cookies still exist.
+
+Size limit:
+Approximately 4 KB per cookie.
+Very small. Not suitable for large data.
+
+Lifetime:
+Cookies can be:
+
+* Session cookies: deleted when the browser closes
+* Persistent cookies: expire at a specific date
+
+Example:
+Set-Cookie: token=abc123; expires=Fri, 31 Dec 2026
+
+Accessibility:
+
+* Accessible by the server
+* Accessible by JavaScript unless marked HttpOnly
+
+JavaScript access:
+document.cookie
+Returns a single string, not an object.
+
+Security flags:
+HttpOnly  -> JavaScript cannot access the cookie (prevents XSS)
+Secure   -> Sent only over HTTPS
+SameSite -> Helps prevent CSRF attacks
+
+localStorage and sessionStorage do NOT have these security features.
+
+Typical cookie use cases:
+
+* Authentication sessions
+* Login tokens
+* User tracking
+* Server-side preferences (language, region)
+
+Disadvantages:
+
+* Sent with every request (performance cost)
+* Very small storage size
+* Messy API
+* Security risks if misused
+
+Key point:
+If data must be sent automatically to the server, cookies are the only option.
+
+────────────────────────────────
+
+LOCALSTORAGE
+
+What localStorage is:
+A browser-based key–value storage that persists even after the browser is closed.
+
+Data is NOT automatically sent to the server.
+
+Size limit:
+Approximately 5–10 MB per domain.
+
+Lifetime:
+Permanent.
+Data stays until:
+
+* Explicitly removed by code
+* User clears browser data
+
+API:
+localStorage.setItem(key, value)
+localStorage.getItem(key)
+localStorage.removeItem(key)
+localStorage.clear()
+
+Important:
+localStorage only stores strings.
+
+Objects must be converted using:
+JSON.stringify()
+JSON.parse()
+
+Accessibility:
+Accessible by any JavaScript running on the same domain.
+Not accessible by the server directly.
+
+Security reality:
+
+* Vulnerable to XSS attacks
+* No HttpOnly protection
+* No Secure flag
+* Any injected script can read it
+
+Never store:
+
+* Passwords
+* Authentication tokens
+* Sensitive personal data
+
+Correct use cases:
+
+* Theme preferences (dark/light)
+* Shopping carts
+* UI state
+* Offline data
+* Cached API responses
+
+Rule:
+Use localStorage only for non-sensitive client-side data.
+
+────────────────────────────────
+
+SESSIONSTORAGE
+
+What sessionStorage is:
+Same as localStorage, but with a shorter lifetime.
+
+API:
+Same as localStorage:
+sessionStorage.setItem(key, value)
+sessionStorage.getItem(key)
+
+Size limit:
+Same as localStorage (5–10 MB).
+
+Lifetime:
+Exists only for a single browser tab.
+Destroyed when:
+
+* The tab is closed
+* The browser is closed
+
+Each tab has its own sessionStorage.
+Opening the same site in a new tab creates a new session.
+
+Use cases:
+
+* Multi-step forms
+* Temporary UI state
+* One-time session data
+* Prevent data sharing between tabs
+
+Do NOT use if:
+
+* Data must persist across sessions
+* User expects saved data
+
+────────────────────────────────
+
+COMPARISON SUMMARY
+
+Cookie:
+
+* Max size: ~4 KB
+* Sent to server: Yes
+* Lifetime: Configurable
+* Security flags: Yes
+* Best for: Authentication, sessions
+
+localStorage:
+
+* Max size: ~5-10 MB
+* Sent to server: No
+* Lifetime: Permanent
+* Security flags: No
+* Best for: UI state, carts, preferences
+
+sessionStorage:
+
+* Max size: ~5-10 MB
+* Sent to server: No
+* Lifetime: Per tab
+* Security flags: No
+* Best for: Temporary session data
+
+────────────────────────────────
+
+WHY JSON IS USED
+
+localStorage and sessionStorage store only strings.
+
+Wrong:
+localStorage.setItem("cart", {a:1});
+
+Correct:
+localStorage.setItem("cart", JSON.stringify({a:1}));
+
+Reading data:
+JSON.parse(localStorage.getItem("cart"));
+
+────────────────────────────────
+
+COMMON BEGINNER MISTAKES
+
+* Storing passwords in localStorage
+* Storing JWT tokens in localStorage
+* Forgetting JSON.parse
+* Using sessionStorage when persistence is needed
+* Assuming client-side storage is secure
+
+────────────────────────────────
+
+FINAL DECISION RULE
+
+If the server needs the data automatically → Use Cookies
+If data must persist after browser close → Use localStorage
+If data should disappear when tab closes → Use sessionStorage
