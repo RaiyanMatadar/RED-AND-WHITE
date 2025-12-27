@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> EventListener</title>
+</head>
+
+<body>
+
+    <h1 id="expense_tracker" class="title">
+        Expense <span>Tracker</span>
+    </h1>
+
+    <form id="expenseForm">
+        <input type="text" id="amount" name="amount">
+
+        <input type="text" id="description" name="description">
+
+        <button type="submit">Add Expense</button>
+    </form>
+
+    <script>
+        const headerElement = document.querySelector('.title');
+
+        headerElement.addEventListener("click", (even) => {
+            console.log(event);
+            // event is an object of type click 
+        })
+
+        // for form submission 
+        const formElement = document.querySelector('form');
+
+        formElement.addEventListener("submit", (even) => {
+            event.preventDefault(); // browser auto reload the browser so preventing the browser to reload
+            console.log(event);
+            // event is an object of type click 
+
+            console.log(event.target.amount.value);
+            // event means the form, target = the object we are targetting 
+            // amount is connected with the name in this case name="amount" in html   
+
+            // 'event' refers to the form submission event.
+            // 'target' is the object we are targeting (e.g., the form element).
+            // 'amount' corresponds to the input field with name="amount" in the HTML.
+            // The value means to take that value from it.
+
+        })
+    </script>
+</body>
+
+</html>

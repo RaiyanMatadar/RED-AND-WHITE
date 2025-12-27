@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            text-align: center;
+            background-color: rgb(218, 250, 224);
+        }
+        
+        .container {
+            /* width: 500px; */
+            margin: 0 auto;
+            /* text-align: center; */
+        }
+        
+        .min-price,
+        .max-price {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin: 10px;
+        }
+        
+        .min-price input,
+        .max-price input {
+            width: 60%;
+            height: 30px;
+            border-radius: 8px;
+        }
+        /* #ranger {
+            width: 80%;
+        } */
+        
+        .slider-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        #min-ranger,
+        #max-ranger {
+            position: absolute;
+            width: 70%;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>Price range Slider</h1>
+        <div class="min-price">
+            <h4>minimum Price</h4>
+            <input type="number" class="min-price">
+        </div>
+        <div class="max-price">
+            <h4>maximum Price</h4>
+            <input type="number" class="max-price">
+        </div>
+        <div class="slider-container">
+            <input type="range" id="min-ranger" min="0" max="10000" value="2500" step="1">
+            <input type="range" id="max-ranger" min="0" max="10000" value="8500" step="1">
+        </div>
+    </div>
+</body>
+
+<script>
+    const minPrice = document.getElementsByClassName('min-price')[0];
+    const maxPrice = document.getElementsByClassName('max-price')[0];
+    const minRanger = document.getElementById('min-ranger');
+    const maxRanger = document.getElementById('max-ranger');
+    const rangeGap = 5;
+
+    minRanger.addEventListener('input', () => {
+        if ((minRanger.value) > (maxRanger.value)) {
+            minRanger.value = parseInt(maxRanger.value) - rangeGap;
+        }
+    })
+</script>
+
+</html>

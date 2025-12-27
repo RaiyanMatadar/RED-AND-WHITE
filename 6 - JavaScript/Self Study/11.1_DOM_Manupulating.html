@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM manupulating</title>
+    <style>
+        .red {
+            height: 40px;
+            width: 40px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="balance-summary">
+        <h3>Balance Summary</h3>
+        <div class="lable">Total Balance</div>
+        <div class="total-balance">$5.750.00</div>
+        <div class="income-expense"></div>
+    </div>
+
+
+    <script>
+        // create new Element
+        const divElement = document.createElement('div');
+        divElement.className = "red"; // className make an class for elements 
+        // - you can style class & id or anything that you have made from DOM into CSS file
+
+        // we can assign any attribute (attribute , value) 
+        divElement.setAttribute('id', 'red');
+        divElement.setAttribute("title", 'red div');
+
+        const container = document.querySelector(".balance-summary");
+        const h3Element = container.querySelector("h3");
+
+        // insertBefore takes 2 arguments 
+        // 1 - element we want to insert & 2 - the element before we want to insert
+        container.insertBefore(divElement, h3Element);
+
+        // we have learned how to insert element to the first child 
+        // now we will learn how to add it to the last child
+
+        // appendChild will add elements to the end 
+        // both insert element to the end but the diffrence 
+        container.appendChild(divElement); // it will only append element 
+        container.append(divElement); // anything you can append even text or text nodes
+
+        container.append(divElement, `<p>hello world</p>`, document.createElement('span'));
+
+        // return value 
+        const doesReturn = container.appendChild(divElement);
+        const dontReturn = container.append(divElement);
+        console.log(doesReturn); // appendChild will return tag
+        console.log(dontReturn); // appendChild wont return anything
+    </script>
+</body>
+
+</html>
