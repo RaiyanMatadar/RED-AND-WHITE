@@ -102,22 +102,25 @@
             const parent = document.querySelector('div');
 
             // after fetch we have made product card for all the data 
-            data.forEach((element) => {
-                const div = document.createElement("div");
-                let {
-                    image,
-                    category,
-                    description,
-                    price,
-                    rating: {
-                        rate,
-                        count
-                    },
-                    title
-                } = element
+            function ShowData(arr) {
+                parent.innerHTML = ""; // CLEAR OLD CARDS
 
-                div.classList.add("box")
-                div.innerHTML = `
+                arr.forEach((element) => {
+                    const div = document.createElement("div");
+                    let {
+                        image,
+                        category,
+                        description,
+                        price,
+                        rating: {
+                            rate,
+                            count
+                        },
+                        title
+                    } = element
+
+                    div.classList.add("box")
+                    div.innerHTML = `
             <img src="${image}" alt="">
             <p>${category}</p>
             <p>${price}</p>
@@ -125,21 +128,25 @@
             <p>${title}</p>
             <button>Add to cart</button>
             `
-                parent.appendChild(div)
-            })
+                    parent.appendChild(div)
+                })
+            }
 
-            // showData();
+            ShowData(data);
             const search = document.getElementById('search');
 
-            // this will take input then return the data based on input 
+            // this will take input then return the data based on input
+            let debounceTimeout;
             search.addEventListener('input', (event) => {
-                let input = event.target.value.toLowerCase().trim()
-
-                let filtered = data.filter((element) => {
-                    return element.title.toLowerCase().includes(input) ||
-                        element.category.toLowerCase().includes(input);
-                });
-                console.log(filtered);
+                clearTimeout(debounceTimeout);
+                debounceTimeout = setTimeout(() => {
+                    let input = event.target.value.toLowerCase().trim()
+                    let filtered = data.filter((element) => {
+                        return element.title.toLowerCase().includes(input) ||
+                            element.category.toLowerCase().includes(input);
+                    });
+                    ShowData(filtered)
+                }, 1000);
             })
 
 
