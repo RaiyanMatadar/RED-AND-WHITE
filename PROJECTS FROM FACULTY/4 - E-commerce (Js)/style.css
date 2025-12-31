@@ -64,8 +64,7 @@ body {
 /* Hover lift */
 
 .box:hover {
-    transform: translateY(-12px) scale(1.03);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+    transform: translateY(-6px) scale(1);
 }
 
 
@@ -81,10 +80,6 @@ body {
     border-radius: 14px;
     padding: 14px;
     transition: transform 0.4s ease;
-}
-
-.box:hover img {
-    transform: scale(1.08) rotate(-1deg);
 }
 
 

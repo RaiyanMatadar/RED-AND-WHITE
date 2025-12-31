@@ -43,6 +43,7 @@ function ShowDataFetchedData(arr) {
             <span>${rate}</span>
             <p>${title}</p>
             <button onclick="addtolocalstorage(${id})">Add to cart</button>
+            <button onclick="ProductsDetails(${id})">Products Details</button>            
             `
         parent.appendChild(div)
     })
@@ -89,4 +90,8 @@ function addtolocalstorage(id) {
 // Add to Cart Product feture (this will select the products then add them into local storage)
 document.getElementById("viewcart").onclick = () => {
     window.location.href = 'cart.html';
+}
+
+function ProductsDetails(id) {
+    window.location.href = `ProductsDetails.html?id=${id}`;
 }
