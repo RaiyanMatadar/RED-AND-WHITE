@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #080a0f;
+    /* Deepest black-blue */
+    background-image: radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.1) 0%, transparent 40%), radial-gradient(circle at 80% 80%, rgba(168, 85, 247, 0.1) 0%, transparent 40%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    color: #e2e8f0;
+}
+
+
+/* --- Main Card Container --- */
+
+.container {
+    background: #111827;
+    /* Dark Grey/Blue Card */
+    width: 95%;
+    max-width: 550px;
+    padding: 2rem;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* --- Question Title --- */
+
+.header h1 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+    color: #f8fafc;
+}
+
+
+/* --- Options Container --- */
+
+#parentOfOptions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 2rem;
+}
+
+
+/* --- Option Styling --- */
+
+
+/* --- Individual Option --- */
+
+.option {
+    padding: 1.2rem 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #94a3b8;
+    background: rgba(255, 255, 255, 0.02);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.option:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+
+/* --- Click/Selected Animation: Turns Green --- */
+
+
+/* Important: This class must be toggled via your JavaScript on click */
+
+.option.selected {
+    background: #10b981;
+    /* Emerald Green Tint */
+    border-color: #10b981;
+    color: white;
+    font-weight: 600;
+    box-shadow: 0 0 25px rgba(16, 185, 129, 0.2);
+    animation: selectPulse 0.4s ease-out;
+}
+
+@keyframes selectPulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.02);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/* --- Next Button --- */
+
+button {
+    width: 100%;
+    background: #6366f1;
+    /* Bright Indigo */
+    color: white;
+    border: none;
+    padding: 1.1rem;
+    border-radius: 14px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.3);
+}
+
+button:hover {
+    background: #4f46e5;
+    transform: translateY(-2px);
+    box-shadow: 0 15px 20px -3px rgba(99, 102, 241, 0.4);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+
+/* --- Result Page & Pie Chart Fix --- */
+
+#result {
+    text-align: center;
+}
+
+#result h1 {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+}
+
+
+/* Fixed Modern Pie Chart/Circle */
+
+#circle {
+    width: 150px;
+    /* Slightly bigger */
+    height: 150px;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Clean gradient ring effect */
+    border: 8px solid #1f2937;
+    box-shadow: 0 0 30px rgba(99, 102, 241, 0.15);
+    animation: rotatePop 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes rotatePop {
+    0% {
+        transform: scale(0.5) rotate(-45deg);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1) rotate(0);
+        opacity: 1;
+    }
+}
+
+#final-score {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #ffffff;
+}
+
+#result p:last-child {
+    color: #94a3b8;
+    font-size: 1rem;
+}

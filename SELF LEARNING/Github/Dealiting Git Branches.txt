@@ -1,0 +1,10 @@
+this below will delete the branch from the github website 
+its called remotly 
+git push origin : test
+
+locally 
+this will force delete dosent matter if its merged or not 
+git branch -D test
+
+this will delete safely, it wont delete if its not merged 
+git branch -d test

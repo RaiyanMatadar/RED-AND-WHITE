@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Using Javascript</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div id="quiz">
+            <div class="header">
+                <h1 id="display-question">answer will be shown here</h1>
+            </div>
+            <div id="parentOfOptions">
+                <p class="option" onclick="selectOption(0)">0</p>
+                <p class="option" onclick="selectOption(1)">1</p>
+                <p class="option" onclick="selectOption(2)">2</p>
+                <p class="option" onclick="selectOption(3)">3</p>
+            </div>
+            <button onclick="changePage()">Next</button>
+        </div>
+
+        <!-- this is for showing the final score at the end page -->
+        <div id="result" style="display:none;">
+            <h1>Final Score</h1>
+            <div id="circle"></div>
+            <p id="final-score"></p>
+        </div>
+
+    </div>
+
+    <script src="/script.js"></script>
+</body>
+
+</html>

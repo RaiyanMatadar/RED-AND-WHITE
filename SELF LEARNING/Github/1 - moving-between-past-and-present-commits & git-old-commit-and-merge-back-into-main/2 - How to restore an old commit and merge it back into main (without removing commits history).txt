@@ -1,0 +1,33 @@
+i have switched to to old commit using this 
+git checkout -b test a47003521415d7d37d133fe9fc44e4a8e8df79bb
+
+so this has made an branch right and if i make changes in my project then push it so it will go to the test branch right 
+then if i belive this is the final that i wanna have in my project then how do i make it as my latest commit in my main branch rather than the 
+test branch 
+
+go to the branch you wanna make the final 
+as here 
+git branch 
+then 
+git checkout main 
+then run the below command 
+
+git pull origin main
+git merge test
+git push origin main
+
+What this does
+Keeps all history
+
+main now includes everything from test
+No commits are deleted
+Safe for team projects
+
+✔ Recommended if:
+Repo is shared
+You don’t want to rewrite history
+
+THIS ONE FOR DELETING THE TEST BRANCH AFTER ALL WORK IS FINE 
+
+git branch -d test
+git push origin --delete test

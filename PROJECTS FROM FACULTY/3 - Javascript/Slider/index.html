@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /* main slider wrapper */
+        
+        .container {
+            width: 100%;
+            height: 100vh;
+            background: black;
+            position: relative;
+            overflow: hidden;
+        }
+        /* image container */
+        
+        #img-container {
+            width: 100%;
+            height: 100%;
+        }
+        /* image itself */
+        
+        #slider-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* fills area without distortion */
+        }
+        /* buttons wrapper */
+        
+        #btn-parent {
+            width: 100%;
+            padding: 0 20px;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            display: flex;
+            justify-content: space-between;
+            pointer-events: none;
+            /* prevents blocking image clicks */
+        }
+        /* buttons */
+        
+        #btn-parent button {
+            pointer-events: all;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: 0.2s ease;
+        }
+        
+        #btn-parent button:hover {
+            background: rgba(255, 255, 255, 0.9);
+            color: black;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div id="img-container">
+            <img id="slider-image" src="" alt="Image" />
+        </div>
+        <div id="btn-parent">
+            <button id="Privious">prievious</button>
+            <button id="next">next</button>
+        </div>
+    </div>
+
+    <script src="/script.js"></script>
+</body>
+
+</html>
