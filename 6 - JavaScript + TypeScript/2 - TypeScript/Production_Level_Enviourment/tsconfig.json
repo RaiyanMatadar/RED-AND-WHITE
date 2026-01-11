@@ -1,0 +1,47 @@
+// {
+//   "compilerOptions": {
+//     "module": "nodenext",
+//     "target": "esnext",
+
+//     "strict": true,
+//     "noEmitOnError": true,
+// "types": ["node"],
+
+//     "sourceMap": true,
+//     "declaration": true,
+//     "declarationMap": true,
+
+//     "noUncheckedIndexedAccess": true,
+//     "exactOptionalPropertyTypes": true,
+
+//     "jsx": "react-jsx",
+//     "verbatimModuleSyntax": true,
+//     "isolatedModules": true,
+//     "noUncheckedSideEffectImports": true,
+//     "moduleDetection": "force",
+//     "skipLibCheck": true
+//   },
+
+//   "include": ["src/**/*.ts"],
+//   "exclude": ["node_modules"]
+// }
+
+
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "CommonJS",
+
+    "strict": true,
+    "noEmitOnError": true,
+    "types": ["node"],
+
+    "sourceMap": true,
+    "declaration": true,
+
+    "noUncheckedIndexedAccess": true,
+
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*.ts"]
+}
