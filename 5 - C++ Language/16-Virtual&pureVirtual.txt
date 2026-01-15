@@ -1,0 +1,6 @@
+// Knowledge Notes: Virtual & Pure Virtual
+
+// 1. When we create a virtual function, we only define the function, 
+//    but we don't declare anything.
+
+// 2. We cannot create an object through a virtual class function.

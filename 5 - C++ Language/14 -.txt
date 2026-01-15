@@ -1,4 +1,0 @@
-virtual & pure virtual
-
-first case when we make virtual function we will only make function we wont declare anything 
-second case we cannot make object trough an virtual class function.
