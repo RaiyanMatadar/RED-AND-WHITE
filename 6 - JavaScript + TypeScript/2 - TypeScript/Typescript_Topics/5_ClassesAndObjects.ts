@@ -114,6 +114,7 @@ class readOnlyClass {
     }
 
     changeName(){
+        // it will give error in only compile time but it will work on run time 
         this.name = "name chnage ho gaya he bhai"
         console.log(this.name); 
     }
@@ -154,20 +155,101 @@ class withoParameterProperties {
     constructor(public name: string, public age: number) {}
 }
 
-
 // # getter & setter  (we dont need getter & setter here but you must know it : sheriyan's bhaiya ne bola hain )
 
-class GetSet {
-    constructor (public name : string,public age : number){
-        
-        setter(){
-            this.name = name
-        }
+// this is how the typical setter & getter works 
+class getterAndSetter{
+    constructor(public name : string, public age : number){}
 
-        getter (){
-            return name
-        }
+    getName(){
+        return this.name
+    }
+
+    setName(value : string){
+        this.name = value
     }
 }
 
-let x = new GetSet("raiyan",10);
+let user1 = new getterAndSetter("raiyan",10);
+user1.setName("faizan")
+
+
+// built-in getters and setters by TypeSript 
+// TypeScript provides built-in support for getters and setters using the `get` and `set` keywords.
+// This allows us to define properties with custom logic for getting and setting values.
+// Once defined, we can use these properties like regular variables without explicitly calling a function.
+// Example: u1.name = "value";
+
+class TsGivenSetterAndGetter{
+    constructor(public _name : string, public age : number){}
+    // We use _name because without it, we cannot use the get and set keywords for a property named 'name'. 
+    // its just an way for preventing name conflicts its not Ts rule or anything  
+    
+    get name(){
+        return this._name;
+    }
+
+    set name(value : string){
+        this._name = value
+    }
+}
+
+let u1 = new TsGivenSetterAndGetter("new User",25);
+u1.name = "subman gill"
+
+console.log(u1.name);
+
+
+// # static member 
+
+// console.log(Math.PI);
+// Math.PI
+// here the Math (capital M of Math) indicates that its an class but 
+// we are accesing the PI value by just using .PI 
+
+// so how do we do that for our own classes ? 
+// so for that we gonna learn how do we that so we can use it the way as Math.PI
+
+class Shery {
+    static version = 1.1 // static version 
+    version = 1.1;       // non static version
+
+    static getRandomNumber(){
+        return Math.random()
+    }
+}
+
+// To access a property like `version` directly from the class (e.g., Math.PI), 
+// we need to declare it as a static member in the class:
+// Example: static version = 1.1;
+// This allows us to access it directly using the class name:
+// Shery.version
+
+// Static members are associated with the class itself, not with instances of the class.
+// This means we can use the properties or methods of the class without creating an instance.
+
+// BEFORE:
+// let s = new Shery();
+// console.log(s);
+// The instance `s` will not have access to static members of the class, 
+// because static members are not part of the instance. They belong to the class itself.
+
+// NOW:
+// Shery.version
+// By declaring `version` as a static member, we can directly access it using the class name 
+// without creating an instance of the class.
+
+// # abstract classes & modifier 
+
+class cookingEssentials{
+    constructor(protected gas : number,public gasKaName:string){}   
+}
+
+class sabji extends cookingEssentials{
+
+}
+
+// The `cookingEssentials` class is designed to serve as a base class and will not be instantiated 
+// directly. It provides shared functionality and properties essential for other derived classes.
+// more about it coming 
+

@@ -29,8 +29,7 @@ const person = {
     address: "hingalla",
     get: function() {
         console.log(name); // without this keyword
-        console.log(this.name); // with this keyword 
-
+        console.log(this.name); // with this keyword
     }
 }
 
@@ -61,6 +60,7 @@ let User = function(firstName, courseCount) {
 }
 
 let user1 = new User("raiyan", 20);
+
 console.log(user1);
 
 // this keyword always point toward the window object.

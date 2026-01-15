@@ -1,46 +1,28 @@
-class usingClass {
-    // constructor(public name : string, public age : number, public gender? : string ){
-    //     this.name = name
-    //     this.age = age
-    //     this.gender = gender
-    // }
-    public name : string = "unkown"
-    public age : number= 0
+// Functions 
+// # Funciton types 
+// # Optional and Default parameters
+// # Rest parameter 
+// # overloads 
 
-    get(){
-        console.log(this.name,this.age);
-    }
+// # Funciton types
+
+
+function funcType(name : string,callback: (value : string)=>void){
+    callback("callback Funciton called");
 }
 
+funcType("raiyan",(value:string)=>{
+    console.log(value);
+})
 
+// # Optional and Default parameters
 
-
-// class GetSet {
-//     constructor(public name: string, public age: number) {}
-
-//     setName(name: string): void {
-//         this.name = name;
-//     }
-
-//     getName(): string {
-//         return this.name;
-//     }
-
-//     getDetails(): void {
-//         console.log(this.name, this.age);
-//     }
-// }
-
-// let x = new GetSet("raiyan", 10);
-// x.setName("x");
-// console.log(x.getName());
-// x.getDetails();
-
-class getset{
-    constructor(public name: string, public age: number) {}
-
-    get {
-        
-    }
-
+function identity(name : string, age : number , gender: string = "not to be disclosed"){
+    console.log(name,age,gender);
 }
+
+identity("harsh",20,"male");
+identity("zishan",22);
+
+// # Rest parameter 
+

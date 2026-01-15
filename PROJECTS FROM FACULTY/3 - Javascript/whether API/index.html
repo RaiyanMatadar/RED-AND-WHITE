@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+      :root {
+    --bg: #050505;
+    --card: #0f0f0f;
+    --border: #1f1f1f;
+    --accent: #ffffff;
+    --text-dim: #949494;
+    --text-bright: #ffffff;
+    --font: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text-bright);
+    font-family: var(--font);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+#search {
+    width: 90%;
+    max-width: 450px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 20px;
+    color: var(--text-bright);
+    font-size: 16px;
+    text-align: center;
+    outline: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#search:focus {
+    border-color: var(--text-dim);
+    background: #141414;
+}
+
+button {
+    background: var(--accent);
+    color: var(--bg);
+    border: none;
+    border-radius: 8px;
+    padding: 12px 32px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+button:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+#outputWhether:empty, 
+#forcast:empty {
+    display: none;
+}
+
+#outputWhether {
+    width: 90%;
+    max-width: 600px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    text-align: center;
+    animation: fadeIn 0.8s ease-out;
+}
+
+#outputWhether p {
+    color: var(--text-dim);
+    font-size: 0.95rem;
+}
+
+#outputWhether p:nth-child(4) {
+    font-size: clamp(3rem, 10vw, 4rem);
+    font-weight: 200;
+    color: var(--text-bright);
+    margin-top: 15px;
+    letter-spacing: -2px;
+}
+
+#forcast {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 16px;
+    width: 100%;
+    animation: fadeIn 1s ease-out;
+}
+
+.day-box {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 20px 12px;
+    text-align: center;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.day-box:hover {
+    border-color: #333;
+    transform: translateY(-4px);
+}
+
+.day-box b {
+    display: block;
+    font-size: 11px;
+    color: var(--text-dim);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.day-box p {
+    margin: 6px 0;
+    font-size: 13px;
+    color: var(--text-dim);
+}
+
+.day-box p:nth-child(2),
+.day-box p:nth-child(3) {
+    color: var(--text-bright);
+    font-weight: 500;
+    font-size: 15px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsiveness Fixes */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px 15px;
+    }
+
+    #forcast {
+        grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+        gap: 10px;
+    }
+
+    .day-box {
+        padding: 15px 8px;
+    }
+
+    .day-box p {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    #forcast {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    #outputWhether p:nth-child(4) {
+        font-size: 3rem;
+    }
+
+    button {
+        width: 100%;
+        max-width: 450px;
+    }
+}
+</style>
+     
+  </head>
+<body>
+<div class="container">
+    <input type="text" id="search">
+    <button>Search</button>
+    <!-- displaying inside this div -->
+    <div id="outputWhether"></div>
+    <div id="forcast"></div>
+</div>
+
+<script>
+const input = document.getElementById("search");
+const button = document.querySelector("button");
+const outputWhether = document.getElementById("outputWhether");
+const forcast = document.getElementById("forcast");
+
+async function fetchingData(inputCity) {
+    try {
+        const responseCurrentWheather = await fetch(`http://api.weatherapi.com/v1/current.json?key=14cbafa8a4e343a7b6675447261201&q=${inputCity}&aqi=no`);
+        const dataCurrentWheather = await responseCurrentWheather.json();
+        displayData(dataCurrentWheather);
+
+        const lat = dataCurrentWheather.location.lat;
+        const lon = dataCurrentWheather.location.lon;
+
+        const APIForcast = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,relative_humidity_2m_max&forecast_days=7`;
+
+        const responseForcastWheather = await fetch(APIForcast);
+        const dataForcastWheather = await responseForcastWheather.json();
+
+        displayForcastData(dataForcastWheather);
+
+    } catch (error) {
+        console.error("Couldn't get the weather data", error);
+    }
+}
+
+button.addEventListener("click", async () => {
+    const city = input.value.trim();
+    if (!city) return;
+
+    await fetchingData(city);
+});
+
+function displayData(data) {
+    const {
+        location: { name, lat, lon },
+        current: { temp_c }
+    } = data;
+
+    outputWhether.innerHTML = `
+        <p>City : ${name}</p>
+        <p>Latitude : ${lat}</p>
+        <p>Longitude : ${lon}</p>
+        <p>Temperature : ${temp_c} °C</p>
+    `;
+}
+
+function displayForcastData(data) {
+    const daily = data.daily;
+    let box = "";
+
+    for (let i = 0; i < 7; i++) {
+        box += `
+        <div class="day-box">
+            <p><b>Day ${i + 1}</b></p>
+            <p>Temp Max: ${daily.temperature_2m_max[i]}°C</p>
+            <p>Temp Min: ${daily.temperature_2m_min[i]}°C</p>
+            <p>Humidity: ${daily.relative_humidity_2m_max[i]}%</p>
+            <p>Rain: ${daily.precipitation_sum[i]} mm</p>
+        </div>
+        `;
+    }
+
+    forcast.innerHTML = box;
+}
+
+</script>
+
+</body>
+</html>

@@ -1,42 +1,36 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-class usingClass {
-    // constructor(public name : string, public age : number, public gender? : string ){
-    //     this.name = name
-    //     this.age = age
-    //     this.gender = gender
-    // }
-    name = "unkown";
-    age = 0;
-    get() {
-        console.log(this.name, this.age);
-    }
+// Functions 
+// # Funciton types 
+// # Optional and Default parameters
+// # Rest parameter 
+// # overloads 
+// # Funciton types
+function funcType(name, callback) {
+    callback("callback Funciton called");
 }
-// class GetSet {
-//     constructor(public name: string, public age: number) {}
-//     setName(name: string): void {
-//         this.name = name;
-//     }
-//     getName(): string {
-//         return this.name;
-//     }
-//     getDetails(): void {
-//         console.log(this.name, this.age);
-//     }
-// }
-// let x = new GetSet("raiyan", 10);
-// x.setName("x");
-// console.log(x.getName());
-// x.getDetails();
-class getset {
-    name;
-    age;
-    constructor(name, age) {
-        this.name = name;
-        this.age = age;
-    }
-    get;
+funcType("raiyan", function (value) {
+    console.log(value);
+});
+// # Optional and Default parameters
+function identity(name, age, gender) {
+    if (gender === void 0) { gender = "not to be disclosed"; }
+    console.log(name, age, gender);
 }
-{
+identity("harsh", 20, "male");
+identity("zishan", 22);
+
+// # Rest parameter 
+
+let count = 0;
+document.querySelector("button")
+.addEventListener("click",()=>{
+    console.log("btn clicked",++count);
+})
+
+function xyz (){
+    let count = 0;
+    document.querySelector("button")
+    .addEventListener("click",()=>{
+        console.log("btn clicked",++count);
+    })
 }
-//# sourceMappingURL=test.js.map
+xyz()
