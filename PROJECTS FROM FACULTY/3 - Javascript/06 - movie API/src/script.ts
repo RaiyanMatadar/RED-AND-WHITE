@@ -17,26 +17,29 @@ async function fetchData (title:string):Promise<void>{
         const API_KEY = 'f6ab01ff';
         let response: Response = await fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&t=${title}`);
         let data : MovieResponse = await response.json()
+        console.log("fetchData called");
         console.log(data);
         showData(data)
     } catch (error) {
         throw new Error("error");
     }
 }
-  
+
 fetchData("Baahubali");
 
-const input = document.getElementsByClassName("input")[0];
-const movieResults = document.querySelector(".movie-results");
-
 function showData(dataInput : MovieResponse){
-    console.log("showdata");
+    console.log("showdata called");
 
-    const createElement = document.createElement('div');
+    // // input selects tag input using getElementsByClassName which returns html collection 
+    // htmlCollection dosent have the method value it will work as we have selected the first input tag 
+    // so we can perform value method on it but Ts wont give us the suggestion so for telling the Ts compiler this is 
+    // an input that can take the valu method we can assign as HTMLInputElement so it acn get the method of it 
+    // const input = (document.getElementsByClassName("input")[0] as HTMLInputElement).value.trim();
+    // const input : HTMLElement= document.getElementById("input")! // you can use this way too
+    
+    const input = (document.getElementsByClassName("input")[0] as HTMLInputElement).value.trim();
+    const movieResults = document.getElementsByClassName("movie-results")[0]
 
-    movieResults!.innerHTML = "saljjc"
-    movieResults!.appendChild(createElement);
+    
 }
 
-console.log("object");
-console.log("2object");

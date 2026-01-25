@@ -18,5 +18,5 @@ export function sum(a:number,b:number):number{
 // but why this exist ?
 export default class defaultExport{
     constructor(public name : string){}
-    
+
 }

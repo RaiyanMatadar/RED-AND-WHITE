@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fetch Practice</title>
+    <style>
+        img {
+            max-width: 100px;
+            display: block;
+            /* overflow: hidden; */
+        }
+
+        #cardContainer{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .productCard {
+            width: 100px;
+            background-color: grey;
+            margin: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <input id="input" type="text">
+        <button id="clickbtn">click</button>
+    </header>
+
+    <main>
+    <select id="cetegory-order">
+        <option disabled selected hidden>Choose by cetegory</option>
+    </select>
+
+    <select id="ase-desc-order">
+        <option disabled selected hidden>Choose Order</option>
+        <option value="">ASE</option>
+        <option value="">DESC</option>
+    </select>
+
+
+    <div id="cardContainer">
+        <!-- <div class="card"></div> -->
+    </div>
+</main>
+    <script>
+
+        // this will store the whole data from the fetch 
+        let product = [] 
+
+        // selecting DOM elements 
+        const cardContainer = document.getElementById("cardContainer");
+        const clickbtn = document.getElementById("clickbtn");
+        const cetegoryOrder = document.getElementById("cetegory-order");
+        const aseDescOrder = document.getElementById("ase-desc-order");
+
+        async function fetchData(){
+            try {
+
+                let response = await fetch(`https://fakestoreapi.com/products`);
+                product = await response.json()
+                addingCetegoryToDropdown(product)
+                console.log(product);
+                showData(product)
+
+            } catch (error) {
+                throw new Error("hey");   
+            }
+        }
+        fetchData()
+
+        function showData(data){  
+            cardContainer.innerHTML = ""
+
+            data.forEach(element => {
+                const { id, title, price, description, category, image, rating: { rate, count } } = element;
+                
+                let createCard = document.createElement("div");
+                createCard.classList.add("productCard");
+                
+                cardContainer.appendChild(createCard);
+
+                createCard.innerHTML = `
+                    <h3>${title}</h3>
+                    <img src="${image}"/>
+                    <p>$${price}</p>
+                    <p>⭐ ${rate} (${count})</p>
+                `;
+            });
+        }
+        
+        clickbtn.addEventListener("click",()=>{
+            const input = document.getElementById("input").value.trim().toLowerCase();
+            
+            const filteredProducts = product.filter(productF =>
+                productF.title.toLowerCase().includes(input)
+            );
+
+            showData(filteredProducts)    
+        });
+
+        function addingCetegoryToDropdown(data){
+
+            //returns cetegory (without duplication ) from the orignal array  
+            const addingCetegory = data.filter((filterData, index, self) =>
+                index === self.findIndex((item) => 
+                item.category === filterData.category
+                )
+            );
+            
+            cetegoryOrder.innerHTML = `
+
+            `
+            
+        }
+    </script>
+</body>
+</html>
