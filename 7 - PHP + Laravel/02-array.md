@@ -19,4 +19,3 @@ switch case is exactly same as js (syntax)
 
 Loops  
 We have a few different kinds of loops in PHP: while, do while, for, and foreach.
-

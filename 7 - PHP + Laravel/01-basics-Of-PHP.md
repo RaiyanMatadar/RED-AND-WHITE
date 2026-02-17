@@ -10,7 +10,7 @@
   - [Assignment Operators](#2-assignment-operators)
   - [Comparison Operators](#3-comparison-operators)
   - [Logical Operators](#4-logical-operators)
-  - [String Concatenation Operator](#5-string-concatenation-operator-)
+  - [String Concatenation Operator](#5-string-concatenation-operator)
   - [Other Operators](#6-other-operators)
 
 
