@@ -94,7 +94,9 @@ export default layout;
 
 we have used props of childrens in the parameter of the layout and by doing this only the dashboard route will have the <div>Dashboard Navbar</div> in the whole dashboard route
 
-but wait what if we dont want the root Element(here its navbar) to the dashboard then we can use the Routes Groups 
+but wait what if we dont want the root Element(here in this case its navbar and Footer ) to the dashboard then we can use the Routes Groups 
+
+simply - what if you want seprate navbar for dashboard and exept that the whole page shares the same navbar just diffrent navbar for dashboard route so in such scenario we can use the Routes Groups 
 
 ### Routes Groups 
-they allow 
+they allow  
