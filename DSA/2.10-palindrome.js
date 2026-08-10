@@ -44,6 +44,7 @@ console.log(Math.floor(number / 10)) // 123 (last digit removed)
 
 
 function palindrome(n) {
+  
     n = Math.abs(n)
     let originalNumber = n
     let reversed = 0
@@ -129,6 +130,8 @@ palindrome(123)   // not palindrome
 
 //function palindrome(n) {
 //    let newNumber = n
+
+//    reversed is for saving the reversed number  
 //    let reversed = 0
 
 //    while (n > 0) {
