@@ -238,7 +238,7 @@
 // 4 - O(n log n) // O of n log n 
 
 // for (let i = 0; i < n; i++) {
-// this loop runs n times 
+// this loop runs n times asz4
 
 // for (we are doing as n/2 x n/2..) { //basically perfoming binary inside the loop 
 
